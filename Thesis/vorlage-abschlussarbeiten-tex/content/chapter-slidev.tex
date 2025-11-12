@@ -1,0 +1,24 @@
+\chapter{Slidev Communication Layer}
+\label{ch:slidev}
+
+The thesis is complemented by a Slidev presentation that mirrors key insights for executive briefings. Maintaining parity between the written document and live presentations prevents message drift and ensures stakeholders receive consistent evidence regardless of medium.
+
+\section{Design Principles}
+The Slidev deck follows three principles:
+\begin{itemize}
+  \item \textbf{Traceability:} Every chart or statistic references the same processed data used in the thesis. Slides embed figure captions that cite the originating automation script.
+  \item \textbf{Narrative Cohesion:} Each slide corresponds to a thesis section, enabling quick cross-references. For example, a slide titled ``Semiconductor Fabs: Transfer Learning Gains'' summarizes the findings from Section~\ref{ch:casestudies}.
+  \item \textbf{Progressive Disclosure:} Detailed tables remain in the thesis, while slides highlight only the insight and supporting trend line or bar chart. This approach keeps presentations concise without omitting the underlying data.
+\end{itemize}
+
+\section{Data Synchronization}
+Slide content is generated from the same JSON summaries powering the thesis tables. A lightweight Node.js script reads \texttt{\detokenize{data/processed/synthesis_notes.md}} and injects bullet points into \texttt{\detokenize{slidev/slides.md}}. Bar and line charts are exported as PNG files and referenced in Slidev using relative paths, ensuring that figure updates appear in both the PDF and the slides after a single \texttt{make data} run. When new domains are added, the script flags slides that might require updates so no section lags behind the thesis narrative.
+
+\section{Speaker Notes and Q\&A Preparation}
+Slidev supports markdown-based speaker notes, which are used to store common questions and ready-made answers. For instance, the slide on energy-aware scheduling includes notes about tariff models, carbon accounting, and safety overrides, mirroring the details discussed in Chapter~\ref{ch:casestudies}. Keeping these notes alongside the slides helps presenters respond consistently even when multiple team members share presentation duties.
+
+\section{Distribution Workflow}
+After regenerating the thesis, \texttt{make slidev} installs dependencies (if necessary) and runs \texttt{npx slidev build}. The command outputs a static site that can be hosted internally or shared via secure links. To maintain confidentiality, sensitive case-study names are abstracted before publishing the deck. The repository retains only anonymized data, while client-specific details reside in private overlays that can be applied when presenting under NDA.
+
+\section{Future Enhancements}
+Planned improvements include automated diff reports that highlight which slides changed between releases, interactive charts that let audiences filter domains during live demos, and lightweight analytics to see which slides resonate most with stakeholders. These additions will further tighten the feedback loop between literature curation, thesis updates, and executive communication.

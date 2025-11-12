@@ -1,0 +1,155 @@
+\chapter{PRISMA Documentation}
+\label{app:prisma}
+This appendix archives the artifacts required to reproduce the PRISMA workflow.
+\begin{description}
+  \item[Flow counts:] \texttt{data/prisma/flow\_counts.csv} (auto-ingested by \texttt{automation/prisma\_flow.py} to render Figure~\ref{fig:prisma-flow}).
+  \item[Search log:] \texttt{data/prisma/search\_log.csv} records database, query string, filters, export date, and hit count.
+  \item[Screening log:] \texttt{data/prisma/screening\_log.csv} stores \texttt{paper\_id}, decisions at abstract/full-text stages, exclusion reasons, and reviewer notes.
+  \item[Automation scripts:] \texttt{automation/agent\_pipeline.py} (orchestrates agent runs), \texttt{automation/prisma\_flow.py} (chart generation), and \texttt{automation/summarize\_studies.py} (statistics).
+\end{description}
+All CSV files are UTF-8 encoded; schema definitions are provided in Appendix~\ref{app:templates}.
+
+\chapter{Search Strategies}
+\label{app:search}
+Table~\ref{tab:search-strings} lists the search configurations executed between 2--4 Nov 2025. Queries follow database-specific syntax but share the core structure ``(\textit{reinforcement learning terms}) AND (\textit{manufacturing scheduling terms}).''
+
+\begin{table}[t]
+  \centering
+  \caption{Executed database queries for the initial PRISMA cycle. For updates, extend \texttt{data/prisma/search\_log.csv}.}
+  \label{tab:search-strings}
+  \begin{tabular}{p{3cm} p{7cm} p{3cm} p{1.5cm}}
+    \toprule
+    Source & Query (abridged) & Filters & Hits \\
+    \midrule
+    Scopus & \texttt{TITLE-ABS-KEY ("reinforcement learning" AND "job shop scheduling")} & 2014--2024, journal+conference & 124 \\
+    IEEE Xplore & \texttt{("reinforcement learning" NEAR/3 scheduling) AND ("flow shop" OR "flexible job shop")} & 2014--2024, manufacturing subject area & 68 \\
+    Web of Science & \texttt{TS=("multi-agent reinforcement learning" AND scheduling AND manufacturing)} & 2014--2024, SCI-Expanded & 57 \\
+    ACM DL & \texttt{All: "manufacturing scheduling" AND "deep reinforcement learning"} & 2014--2024, proceedings & 36 \\
+    arXiv & \texttt{cat:cs.AI AND ("manufacturing scheduling" OR "job shop") AND "reinforcement learning"} & 2019--2024 & 41 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\chapter{Data Extraction Templates}
+\label{app:templates}
+Structured artifacts live under \texttt{data/processed/} and are generated/validated through Python scripts. Table~\ref{tab:catalog-schema} documents the current schema for \texttt{study\_catalog.csv}; the accompanying \texttt{study\_summary.json} aggregates counts by year, domain, RL method, and KPI.
+
+\begin{table}[t]
+  \centering
+  \caption{Schema for \texttt{data/processed/study\_catalog.csv}.}
+  \label{tab:catalog-schema}
+  \begin{tabular}{p{3cm} p{10cm}}
+    \toprule
+    Column & Description \\
+    \midrule
+    \texttt{paper\_id} & Stable identifier (prefix domain year). \\
+    \texttt{title} & Official publication title. \\
+    \texttt{year} & Publication year (YYYY). \\
+    \texttt{manufacturing\_domain} & Categorized domain (job shop, flexible job shop, etc.). \\
+    \texttt{rl\_method} & Primary RL approach (e.g., PPO actor-critic, cooperative MARL). \\
+    \texttt{baseline} & Baseline heuristics/optimizers used for comparison. \\
+    \texttt{kpis} & Comma-separated performance metrics (makespan, energy). \\
+    \texttt{notes} & Evidence strength, dataset availability, or experimental remarks. \\
+    \texttt{statistical\_testing} & Tests or intervals reported (if any). \\
+    \texttt{deployment\_status} & Simulation, digital twin, pilot line, etc. \\
+    \texttt{code\_available} & Whether public code is available. \\
+    \texttt{simulator\_available} & Simulator/digital-twin availability. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Researchers updating the dataset should:
+\begin{enumerate}
+  \item Run \texttt{python automation/summarize\_studies.py} to refresh aggregate statistics.
+  \item Rebuild tables/charts via \texttt{make data} (runs summary, table rendering, KPI/deployment/year plots, and PRISMA figure).
+  \item Document any new exclusion reasons directly in \texttt{data/prisma/screening\_log.csv}; every rejected full-text entry should include a brief justification.
+\end{enumerate}
+
+\chapter{Study Catalog Overview}
+\label{app:overview}
+Table~\ref{tab:overview} condenses the 55 curated studies into high-level counts. Domains align with the controlled vocabulary used throughout the thesis, and RL methods refer to the primary algorithm class. This appendix helps readers scan the corpus without opening the CSV files.
+
+\begin{table}[t]
+  \centering
+  \caption{Snapshot of catalog composition (counts as of current PRISMA run).}
+  \label{tab:overview}
+  \begin{tabular}{p{4cm} p{3cm} p{6cm}}
+    \toprule
+    Category & Count & Notes \\
+    \midrule
+    Flexible job shops & 8 & Includes aerospace cells, curriculum RL, continual learning. \\
+    Flow/hybrid shops & 6 & Covers multi-stage MARL, NSGA-II hybrids, battery lines. \\
+    Semiconductor fabs & 12 & Encompasses EUV, supply-chain coordination, energy-aware dispatching. \\
+    Energy/microgrid plants & 11 & Combines factory scheduling with carbon-aware microgrids. \\
+    Regulated industries & 7 & Pharma, biopharma, remanufacturing, circular manufacturing. \\
+    Robot/assembly cells & 5 & Human-aware actor-critic dispatching. \\
+    Other specialized domains & 6 & Multi-plant energy, digital-twin orchestration, circular networks. \\
+    \midrule
+    Value-based RL (DQN variants) & 9 & Primarily early semiconductor/energy works. \\
+    Policy gradient / PPO & 18 & Dominant in flexible job shops and energy-aware scheduling. \\
+    SAC / DDPG & 10 & Common for microgrids and continuous controls. \\
+    Multi-agent RL & 12 & Cluster tools, microgrids, robot cells. \\
+    Hybrid RL+OR & 6 & CP-SAT refinement, NSGA-II warm starts. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Counts will change as the corpus grows; regenerated tables ensure this appendix stays synchronized with the processed dataset.
+
+\bigskip
+\noindent\textbf{Per-study catalog.} Table~\ref{tab:catalog-list} provides a long-form view of every study, listing its domain, RL method, and reported KPIs. The table is generated automatically from \texttt{\detokenize{data/processed/study_catalog.csv}} to guarantee consistency.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{minipage}{\linewidth}
+\captionof{table}{Full study catalog (abridged metadata).}
+\label{tab:catalog-list}
+\input{\tabledir/study_catalog_overview.tex}
+\end{minipage}
+\end{center}
+
+\chapter{Interview Protocol}
+\label{app:interviews}
+Semi-structured interviews supported the qualitative assessments in Chapters~\ref{ch:casestudies} and~\ref{ch:adoption}. Each conversation covered four themes: (i) current scheduling workflows and pain points, (ii) digital infrastructure readiness, (iii) governance and compliance requirements, and (iv) success criteria for RL pilots. Interviewees included planners from battery manufacturing, semiconductor fabs, aerospace assembly, and pharmaceutical operations. Notes were anonymized and synthesized into theme clusters (reward design, interpretability, digital-twin fidelity), which informed the cross-domain lessons.
+
+\chapter{Glossary of Terms}
+\label{app:glossary}
+\begin{description}
+  \item[ATC] Apparent Tardiness Cost, a heuristic dispatching rule balancing due dates and processing times.
+  \item[Digital Twin] A living simulation of physical assets that exchanges state data with the real factory, often implemented in FlexSim, AnyLogic, or proprietary fab models.
+  \item[HIL] Hardware-in-the-loop testing, where RL policies issue commands to real controllers while the legacy scheduler remains in charge.
+  \item[MARL] Multi-agent reinforcement learning, wherein multiple policies coordinate via shared rewards or communication protocols.
+  \item[Reward Council] Cross-functional forum proposed in Chapter~\ref{ch:casestudies} where stakeholders tune reward weights before retraining policies.
+\end{description}
+
+\chapter{Computation Environment}
+\label{app:environment}
+All automation scripts run on Python~3.10 with pandas, matplotlib, and seaborn. LaTeX compilation uses TeX Live 2019 with \texttt{latexmk}. Slidev builds require Node.js 18+ and npm. Experiments referenced in Chapter~\ref{ch:toolchain} used Ubuntu 22.04 workstations equipped with 32\,GB RAM; GPU acceleration was optional because most policy training occurred on remote clusters described within individual studies. Reproducing the thesis from scratch involves cloning the repository, installing Python dependencies listed in \texttt{automation/README.md}, running \texttt{make data}, and finally invoking \texttt{make thesis} and \texttt{make slidev}.
+
+\chapter{Key Performance Indicator Glossary}
+\label{app:kpi}
+\begin{description}
+  \item[Makespan] Completion time of the final job; often reported as average across test instances or normalized against benchmarks.
+  \item[Total tardiness] Sum of positive lateness values; weighted variants emphasize high-priority orders.
+  \item[Throughput] Jobs completed per horizon; flow shops frequently report percentage gains relative to NEH or GA baselines.
+  \item[Energy/Demand charge] Kilowatt-hours consumed or cost-based proxies (USD, EUR); microgrid studies also track carbon intensity.
+  \item[Resilience metrics] Recovery time after disruption, number of schedule adjustments, or variance of KPI under stochastic perturbations.
+\end{description}
+When comparing studies, ensure KPIs share units; Chapter~\ref{ch:metaanalysis} consolidates reported values where feasible.
+
+\chapter{Hyperparameter Reference}
+\label{app:hyper}
+Although each paper tunes hyperparameters differently, several patterns recur:
+\begin{itemize}
+  \item PPO clip ratios between 0.1 and 0.3, entropy coefficients 0.01--0.05, and value-loss coefficients near 0.5 for job shops and energy-aware contexts.
+  \item SAC temperature parameters auto-tuned with target entropy equal to $-|\mathcal{A}|$, enabling stable training in microgrids \cite{RL-MARL-ENERGY-2022}.
+  \item Replay buffers of at least 500k transitions for flow shops to capture diverse queue states; prioritized replay helps when reward signals are sparse.
+  \item Curriculum schedules that increase job counts every 1--2 million steps, preventing catastrophic forgetting when scaling to industrial instance sizes.
+\end{itemize}
+Documenting these values helps practitioners benchmark compute requirements and reproduce published results.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "thesis.tex"
+%%% End: 

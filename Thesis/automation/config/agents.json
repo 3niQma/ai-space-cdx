@@ -1,0 +1,40 @@
+{
+  "agents": [
+    {
+      "name": "search",
+      "description": "Crafts database-specific queries and stores search strings with metadata.",
+      "inputs": ["data/raw"],
+      "outputs": ["data/prisma/search_log.csv"]
+    },
+    {
+      "name": "screen",
+      "description": "Performs title/abstract screening and records inclusion/exclusion labels.",
+      "inputs": ["data/prisma/search_log.csv"],
+      "outputs": ["data/prisma/screening_log.csv"]
+    },
+    {
+      "name": "extract",
+      "description": "Captures structured metadata for each accepted study.",
+      "inputs": ["data/prisma/screening_log.csv"],
+      "outputs": ["data/processed/study_catalog.csv"]
+    },
+    {
+      "name": "synthesize",
+      "description": "Generates narrative summaries and statistical highlights.",
+      "inputs": ["data/processed/study_catalog.csv"],
+      "outputs": ["data/processed/synthesis_notes.md"]
+    },
+    {
+      "name": "critic",
+      "description": "Validates coverage, flags inconsistencies, and maintains audit logs.",
+      "inputs": ["data/processed/study_catalog.csv", "data/processed/synthesis_notes.md"],
+      "outputs": ["data/processed/qa_report.md"]
+    },
+    {
+      "name": "present",
+      "description": "Updates Slidev content and figure references based on the latest synthesis.",
+      "inputs": ["data/processed/synthesis_notes.md"],
+      "outputs": ["slidev/slides.md"]
+    }
+  ]
+}

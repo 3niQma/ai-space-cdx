@@ -1,0 +1,35 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Current manufacturing-domain coverage of the curated dataset (auto-generated via \texttt {make data}).\relax }}{23}{table.caption.10}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces RL method distribution derived from \texttt {study\_summary.json}; automation regenerates this table via \texttt {make data}.\relax }}{24}{table.caption.13}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Reproducibility snapshot: code and simulator availability among included studies.\relax }}{25}{table.caption.14}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Representative makespan/tardiness improvements reported in the literature.\relax }}{34}{table.caption.15}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Executed database queries for the initial PRISMA cycle. For updates, extend \texttt {data/prisma/search\_log.csv}.\relax }}{51}{table.caption.17}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {C.1}{\ignorespaces Schema for \texttt {data/processed/study\_catalog.csv}.\relax }}{53}{table.caption.18}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {D.1}{\ignorespaces Snapshot of catalog composition (counts as of current PRISMA run).\relax }}{55}{table.caption.19}%
+\contentsline {table}{\numberline {D.2}{\ignorespaces Full study catalog (abridged metadata).\relax }}{55}{table.D.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

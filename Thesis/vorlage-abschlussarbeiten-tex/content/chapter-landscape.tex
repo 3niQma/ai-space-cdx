@@ -1,0 +1,123 @@
+\chapter{Literature Landscape}
+\label{ch:landscape}
+
+This chapter summarizes macro-level trends observed after screening and extracting the manufacturing scheduling corpus. The most recent PRISMA run yielded 810 records across five databases plus 45 additional sources; 540 remained after deduplication, 120 full-texts were studied in detail, and 50 currently satisfy all inclusion criteria, resulting in 55 curated studies in the catalog. Quantitative values will continue to be refreshed as we approach the 200-paper target.
+
+\section{Descriptive Statistics}
+Preliminary counts indicate a sharp inflection in publications after 2018, coinciding with the broader adoption of deep RL frameworks and accessible simulators (FlexSim, AnyLogic, Plant Simulation). Journals such as \emph{Computers \& Industrial Engineering}, \emph{International Journal of Production Research}, and \emph{IEEE Transactions on Automation Science and Engineering} dominate the venue distribution. Conference contributions frequently appear in \emph{IEEE CASE}, \emph{IFAC World Congress}, and \emph{CIRP} workshops, often presenting early-stage prototypes before full journal articles are released.
+
+Manufacturing sub-domains cluster in three groups:
+\begin{enumerate}
+  \item \textbf{Classical job-shop and flow-shop benchmarks} using Taillard or Lawrence instances for comparability \cite{RL-JSSP-2020,RL-GNN-2021,RL-MARL-2021,RL-PPO-2022}.
+  \item \textbf{Flexible and hybrid job shops} representing battery, aerospace, and electronics assembly lines with alternative machines \cite{RL-HYBRID-2023,RL-FLEX-DUAL-2024,RL-FJSSP-2025,RL-FJSSP-2030}.
+  \item \textbf{Semiconductor fabs and high-mix facilities} emphasizing re-entrant workflows, batching, and supply-chain integration \cite{RL-SEMICON-2020,RL-SEMICON-2024,RL-SEMICON-CHAIN-2025,RL-SEMICON-2030}.
+\end{enumerate}
+The current dataset records distributional counts automatically via \texttt{automation/summarize\_studies.py} and \texttt{automation/render\_tables.py}; Table~\ref{tab:domain-distribution} shows that 8 of 55 studies (15\%) target flexible job shops, 7 concentrate on semiconductor fabs (including EUV, high-NA, and supply-chain variants), and the remainder spans microgrid/multi-plant energy systems, robot cells, biopharma lines, remanufacturing, and circular manufacturing \cite{RL-MICROGRID-2024,RL-ROBOTCELL-2023,RL-BIOPHARMA-2024,RL-MANUF-2030}. Continued searches will focus on under-represented areas such as high-mix assembly lines and publicly documented digital twin pilots.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{\figdir/year_counts.png}
+  \caption{Cumulative inclusion counts by publication year (auto-generated via \texttt{automation/plot\_summary.py}).}
+  \label{fig:year-bar}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{\figdir/year_trend.png}
+  \caption{Line plot showing the acceleration of manufacturing RL publications over time.}
+  \label{fig:year-line}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{\figdir/domain_counts.png}
+  \caption{Automatically generated domain distribution (see \texttt{automation/plot\_summary.py}).}
+  \label{fig:domain-bar}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+  \caption{Current manufacturing-domain coverage of the curated dataset (auto-generated via \texttt{make data}).}
+  \label{tab:domain-distribution}
+  \input{\tabledir/domain_distribution.tex}
+\end{table}
+
+Temporal trends follow the expected uptake of deep RL: inclusion counts rise from two studies in 2020 to five in 2021, six in 2022, seven in 2023, fourteen in 2024, thirteen in 2025, and a growing number of conceptual/industrial prototypes in 2026 and 2030. The line plot in Figure~\ref{fig:year-line} highlights the inflection point in 2024 when industrial case studies began outnumbering purely academic explorations. Studies in 2024--2025 emphasize continual learning and transfer (e.g., dual-agent shop-floor schedulers and aerospace cells) while later years explore circular manufacturing and multi-microgrid coordination at strategic horizons \cite{RL-FLEX-2024B,RL-FLEX-2025,RL-MICROGRID-2025B,RL-MANUF-2030}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{\figdir/method_counts.png}
+  \caption{Distribution of RL methods among included studies.}
+  \label{fig:method-bar}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.9\linewidth]{\figdir/kpi_counts.png}
+  \caption{Top KPIs reported across included studies.}
+  \label{fig:kpi-bar}
+\end{figure}
+
+\section{RL Technique Distribution}
+Model-free deep RL remains the workhorse: DQN variants dominate discrete dispatching decisions, while PPO/DDPG/SAC appear in flexible job shops requiring continuous action outputs (e.g., speed scaling, energy throttling). Recent work leverages Graph Neural Networks (GNN) to represent machine-job relationships before feeding them into actor-critic structures, showing improved generalization to unseen order mixes. Model-based RL is less frequent but resurging through hybrid planners that integrate OR heuristics for warm-start policies.
+
+Multi-agent RL (MARL) papers treat machines, production lines, or work cells as agents coordinating via shared rewards or message passing. Cooperative MARL shows promise in distributed factories where centralized scheduling is infeasible due to latency or privacy considerations.
+
+The current catalog contains representatives of all major method classes (CNN/GNN-enhanced deep RL, cooperative and decentralized MARL, PPO/DDPG/SAC families, hybrid RL+OR, multi-objective/meta-RL, graph/digital-twin-driven policies), emphasizing methodological diversity even as coverage expands. Table~\ref{tab:rl-methods} highlights how these families are distributed across the 55 studies. As the review scales to $\sim$200 studies, these categories will enable more granular quantitative comparisons between value-based, policy-gradient, hybrid, and meta-learning approaches.
+
+\begin{table}[t]
+  \centering
+  \caption{RL method distribution derived from \texttt{study\_summary.json}; automation regenerates this table via \texttt{make data}.}
+  \label{tab:rl-methods}
+  \input{\tabledir/rl_method_distribution.tex}
+\end{table}
+
+\section{Domain Spotlights}
+\subsection{Job-Shop and Flexible Cells}
+Flexible job shops remain the largest sub-domain, encompassing CNN/GNN policies, dual-agent decompositions, and curriculum-driven large-scale experiments. Early works focus on Taillard benchmarks \cite{RL-JSSP-2020,RL-GNN-2021}, whereas later studies fold in hybrid CP-SAT refinements and continual learning via preference feedback \cite{RL-HYBRID-2023,RL-FLEX-2024B}. Curriculum-based schedulers now scale beyond 200 operations and exhibit zero-shot transfer to unseen mixes, while meta-RL variants in 2030 prototypes emphasize rapid adaptation to tooling changes \cite{RL-FJSSP-2025,RL-FJSSP-2030}. Dual-agent PPO schemes that separate job selection from machine assignment further stabilize training on flexible aerospace cells \cite{RL-FLEX-DUAL-2024,RL-FLEX-2025}.
+
+\subsection{Flow-Shop, Hybrid, and Battery Lines}
+Hybrid flow shops blend hierarchical managers with stage-level worker policies. Cooperative MARL dispatchers coordinate buffer capacities and outperform dispatching rules across stochastic flow-shops, while hybrid NSGA-II pipelines inject RL-generated warm starts into Pareto searches \cite{RL-MARL-2021,RL-HFLOW-2021,RL-MULTIOBJ-2023,RL-HYBRID-2024}. Battery EV module lines increasingly rely on graph policies coupled with digital twins, culminating in streaming-twin deployments that push updates directly from MES telemetry \cite{RL-FLEXSIM-2024,RL-BEV-2023,RL-FLEXSIM-2025,RL-DIGITALTWIN-2026}.
+
+\subsection{Semiconductor Ecosystem}
+Semiconductor fabs span single-tool scheduling to supply-chain orchestration. Queueing-centric Double DQN baselines anchor the 2020 cohort \cite{RL-SEMICON-2020}, followed by decentralized cluster-tool MARL for transport and handling \cite{RL-SEMICON-MARL-2022,RL-SEMICON-2023}. Transfer learning with attention accelerates onboarding of new fabs, while graph RL and self-play PPO tackle EUV bottlenecks and high-NA tools \cite{RL-SEMICON-TRANSFER-2023,RL-SEMICON-2024,RL-SEMICON-2025,RL-SEMICON-2030}. Multi-objective extensions integrate energy and yield targets, lot-sizing constraints, and cooperative wafer dispatching across supply tiers \cite{RL-SEMICON-MULTIOBJ-2024,RL-SEMICON-LOT-2024,RL-SEMICON-CHAIN-2025,RL-SEMICON-SUPPLY-2025,RL-SEMICON-COOP-2025}. Emerging work embeds cobots and human-aware policies directly into fab logistics \cite{RL-SEMICON-COBOT-2026,RL-SEMICON-YIELD-2024,RL-ENERGY-SEMICON-2022}.
+
+\subsection{Energy, Microgrid, and Sustainability}
+The catalog records eleven energy-centric studies ranging from dueling-DQN tariff management to carbon-aware multi-agent SAC controllers. Factory-level schedulers minimize peak demand via tariff-aware PPO-LSTM variants, while microgrid co-simulations co-opt RL to coordinate storage, hydrogen, and renewable assets \cite{RL-ENERGY-2021,RL-ENERGY-2023B,RL-MARL-ENERGY-2022,RL-MICROGRID-2024,RL-MICROGRID-2025}. Hierarchical SAC designs propagate carbon budgets downward to cell-level agents, and multi-carrier controllers optimize electricity-hydrogen interactions for distributed plants \cite{RL-MICROGRID-2025B,RL-MICROGRID-2030,RL-ENERGY-MANUF-2024,RL-ENERGY-2025}. These methods increasingly report confidence intervals or dominance tests, signaling maturation in statistical rigor.
+
+\subsection{Specialized Manufacturing Domains}
+Robotics, pharma, remanufacturing, and circular manufacturing represent the long tail of the dataset. Collaborative robot cells evolve from single-station dispatching to multi-line actor-critic controllers with explicit operator load tracking \cite{RL-ROBOTCELL-2023,RL-ROBOTCELL-2024,RL-ROBOTCELL-2025,RL-ROBOTCELL-2030}. Pharmaceutical production combines batching constraints and patient-level service windows via policy-gradient and distributional RL formulations \cite{RL-BATCH-2021,RL-BATCH-2024,RL-BATCH-CONT-2025,RL-PHARM-2026}. Biopharma and remanufacturing lines introduce uncertainty-aware rewards and reman options, while digital-twin orchestration and circular manufacturing prototypes expand RL’s footprint to enterprise strategy \cite{RL-BIOPHARMA-2024,RL-MANUF-2025,RL-DIGITALTWIN-2026,RL-MANUF-2030}.
+
+\section{Technology Readiness Indicators}
+Deployment maturity remains a recurring stakeholder question. Figure~\ref{fig:domain-bar} highlights that most studies target flexible job shops and semiconductor fabs, yet Table~\ref{tab:repro} reveals that only a handful report hardware-in-the-loop pilots. The deployment-status subtable shows 48 simulation-only studies, three pilot-line validations, and a single digital-twin-only demonstration. Interviews confirm that organizations hesitate to replace deterministic schedulers until RL policies expose safety checks, audit logs, and regression tests. Encouragingly, studies in 2024--2025 increasingly provide confidence intervals and statistical dominance tests, signalling improved experimental rigor compared with 2020-era prototypes.
+
+\section{Data Availability Patterns}
+Reproducibility tables also surface notable data trends. Only one study shares a public benchmark beyond standard Taillard/FT instances, and no semiconductor paper releases a full fab twin. Battery and microgrid researchers occasionally share parameterized FlexSim models \cite{RL-FLEXSIM-2024,RL-MICROGRID-2024}, but access typically requires direct author contact. To mitigate these gaps, the thesis catalog records simulator types (e.g., FlexSim live twin, MATLAB co-simulation, proprietary fab model) so future meta-analyses can filter by data availability. As the dataset grows toward 200 entries, these annotations will help prioritize replication efforts where open assets exist.
+
+\section{Scheduling Objectives}
+Most studies still optimize single objectives, with makespan and total weighted tardiness accounting for the majority of reward formulations. However, multi-objective RL is emerging, particularly in energy-aware scheduling for smart factories where electricity tariffs fluctuate hourly. Some papers incorporate predictive maintenance by penalizing overuse of machines, thereby integrating reliability considerations into the reward \cite{RL-MAINT-2022,RL-BATCH-CONT-2025}.
+
+Energy and sustainability objectives typically rely on scalarized rewards combining throughput and kilowatt-hour consumption. Resilience metrics, such as recovery time after machine failure or robustness under rush orders, remain underexplored, indicating a gap for future research. Multi-plant and circular-manufacturing scenarios extend KPIs to carbon budgets and recycling rates, hinting at broader socio-technical objectives for upcoming work \cite{RL-ENERGY-MANUF-2024,RL-MANUF-2030}.
+
+\begin{table}[t]
+  \centering
+  \caption{Reproducibility snapshot: code and simulator availability among included studies.}
+  \label{tab:repro}
+  \begin{subtable}[t]{0.48\linewidth}
+    \centering
+    \input{\tabledir/code_available_distribution.tex}
+    \caption{Code availability}
+  \end{subtable}
+  \hfill
+  \begin{subtable}[t]{0.48\linewidth}
+    \centering
+    \input{\tabledir/simulator_available_distribution.tex}
+    \caption{Simulator availability}
+  \end{subtable}
+\medskip
+\begin{subtable}[t]{0.48\linewidth}
+    \centering
+    \input{\tabledir/deployment_status_distribution.tex}
+    \caption{Deployment status}
+  \end{subtable}
+\end{table}

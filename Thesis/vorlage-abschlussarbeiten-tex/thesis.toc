@@ -1,0 +1,128 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research Questions}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Scope and Assumptions}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Contributions}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Industrial Scope and Constraints}{2}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Industry Interviews and Practitioner Pain Points}{2}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Terminology and Definitions}{2}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Thesis Structure}{3}{section.1.8}%
+\contentsline {chapter}{\numberline {2}Background}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Manufacturing Scheduling Fundamentals}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Reinforcement Learning Primer}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Evaluation Metrics}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Digital Twins and Data Infrastructure}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Benchmark Instances and Datasets}{6}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Operations Research Synergies}{6}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Human Factors and Safety Considerations}{6}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Methodology}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}PRISMA Workflow}{8}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Information Sources}{8}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Eligibility Criteria}{8}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}PRISMA Reporting}{8}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Data Extraction}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Multi-Agent Process}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Manufacturing-Focused Screening Details}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Data Quality Assurance and Tooling}{10}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Search String Construction and Validation}{11}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Risk of Bias and Quality Assessment}{11}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Qualitative Coding of Findings}{11}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Data Refresh Cadence}{11}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Experimental Protocols and Evaluation Practices}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Simulation Setup Patterns}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Training Pipelines}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Baseline Selection}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Statistical Validation and Uncertainty}{13}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Benchmarking Limitations}{13}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Toolchain and Automation}{14}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Repository Layout}{14}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Automation Scripts}{14}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Line and Bar Plot Generation}{15}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Validation and Logging}{15}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Reproducible Builds}{15}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Extensibility}{15}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Collaboration Workflow}{16}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Limitations and Future Tooling}{16}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Literature Landscape}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Descriptive Statistics}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}RL Technique Distribution}{18}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Domain Spotlights}{18}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Job-Shop and Flexible Cells}{18}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Flow-Shop, Hybrid, and Battery Lines}{19}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Semiconductor Ecosystem}{19}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Energy, Microgrid, and Sustainability}{19}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Specialized Manufacturing Domains}{20}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Technology Readiness Indicators}{20}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Data Availability Patterns}{21}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Scheduling Objectives}{21}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Industrial Case Studies}{26}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Flexible Job Shops and Aerospace Cells}{26}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Flow Shops, Battery Lines, and Hybrid Plants}{26}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Semiconductor Manufacturing and Supply Chains}{27}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Energy-Aware and Microgrid-Integrated Factories}{27}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Regulated Industries: Pharma, Biopharma, and Remanufacturing}{28}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Circular Manufacturing and Long-Horizon Planning}{28}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Cross-Domain Lessons}{28}{section.7.7}%
+\contentsline {chapter}{\numberline {8}Comparative Analysis}{30}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Job-Shop and Flexible Manufacturing Cells}{30}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Flow-Shop, Hybrid, and Aerospace Lines}{30}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Semiconductor and High-Mix Electronics}{31}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Energy, Microgrid, and Sustainability-Oriented Scheduling}{31}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Specialized Cells: Robotics, Pharma, and Human-Centric Lines}{32}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Interpretability and Human-in-the-Loop Governance}{32}{section.8.6}%
+\contentsline {chapter}{\numberline {9}Quantitative Meta-Analysis}{33}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Makespan and Tardiness Improvements}{33}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Energy and Carbon Reductions}{33}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Statistical Rigor}{33}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Sensitivity to Reward Design}{34}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Deployment Readiness Scorecard}{34}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Data Availability Metrics}{34}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Implications}{35}{section.9.7}%
+\contentsline {chapter}{\numberline {10}Roadmap to a 200-Study Corpus}{36}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Target Domains and Venues}{36}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Search Automation Enhancements}{36}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Inclusion of Non-English Sources}{36}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Data Harmonization}{36}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Timeline and Milestones}{37}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Community Engagement}{37}{section.10.6}%
+\contentsline {chapter}{\numberline {11}Slidev Communication Layer}{38}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Design Principles}{38}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Data Synchronization}{38}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Speaker Notes and Q\&A Preparation}{38}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Distribution Workflow}{38}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Future Enhancements}{39}{section.11.5}%
+\contentsline {chapter}{\numberline {12}Adoption Roadmap and Organizational Readiness}{40}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Business Case Development}{40}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Data and Infrastructure Readiness}{40}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Change Management and Workforce Enablement}{41}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Governance and Risk Controls}{41}{section.12.4}%
+\contentsline {section}{\numberline {12.5}KPI Design and Continuous Improvement}{41}{section.12.5}%
+\contentsline {section}{\numberline {12.6}Scaling Beyond Pilots}{41}{section.12.6}%
+\contentsline {section}{\numberline {12.7}Return-on-Investment Tracking}{42}{section.12.7}%
+\contentsline {chapter}{\numberline {13}Ethical, Legal, and Societal Considerations}{43}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Worker Impact and Skill Transformation}{43}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Safety and Reliability}{43}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Data Privacy and Intellectual Property}{43}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Environmental Responsibility}{43}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Regulatory Landscape}{44}{section.13.5}%
+\contentsline {section}{\numberline {13.6}Future Directions}{44}{section.13.6}%
+\contentsline {section}{\numberline {13.7}Global Supply-Chain Fairness}{44}{section.13.7}%
+\contentsline {chapter}{\numberline {14}Discussion}{45}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Synthesis of Findings}{45}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Gaps and Challenges}{45}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Implications for Small and Medium Enterprises}{46}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Limitations}{46}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Future Work}{46}{section.14.5}%
+\contentsline {chapter}{\numberline {15}Conclusion}{48}{chapter.15}%
+\contentsline {chapter}{\numberline {A}PRISMA Documentation}{49}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Search Strategies}{50}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Data Extraction Templates}{52}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Study Catalog Overview}{54}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Interview Protocol}{56}{appendix.E}%
+\contentsline {chapter}{\numberline {F}Glossary of Terms}{57}{appendix.F}%
+\contentsline {chapter}{\numberline {G}Computation Environment}{58}{appendix.G}%
+\contentsline {chapter}{\numberline {H}Key Performance Indicator Glossary}{59}{appendix.H}%
+\contentsline {chapter}{\numberline {I}Hyperparameter Reference}{60}{appendix.I}%
+\contentsline {chapter}{\nonumberline Bibliography}{61}{chapter*.20}%

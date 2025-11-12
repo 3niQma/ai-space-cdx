@@ -1,0 +1,27 @@
+\chapter{Roadmap to a 200-Study Corpus}
+\label{ch:roadmap}
+
+The current review covers 55 studies. Expanding toward the 200-study target will unlock more robust quantitative insights and reveal underexplored manufacturing segments. This chapter outlines a roadmap for the next data-collection waves.
+
+\section{Target Domains and Venues}
+Priority domains include high-mix electronics, medical device assembly, food processing, and textile manufacturing—areas with limited automation coverage yet sizable economic impact. Conference venues such as IEEE CASE, IFAC World Congress, CIRP CMS, and INFORMS Manufacturing and Service Operations increasingly feature RL scheduling work; monitoring these proceedings quarterly will prevent missed inclusions. Industrial journals (e.g., \emph{Journal of Manufacturing Systems}, \emph{Computers \& Industrial Engineering}) should be swept biannually to capture post-conference extensions.
+
+\section{Search Automation Enhancements}
+The current search strategy relies on curated queries. Future iterations will incorporate embedding-based document retrieval to uncover papers whose terminology diverges from traditional ``job shop'' phrasing (e.g., ``adaptive takt balancing,'' ``wafer logistic orchestration''). Automated alerting can be implemented using RSS feeds and API hooks from Scopus or Crossref, funneling new abstracts into the Screening Agent’s queue. De-duplication will require fuzzy matching on titles, DOIs, and arXiv identifiers to handle preprint-to-journal transitions.
+
+\section{Inclusion of Non-English Sources}
+Most existing studies are in English, but manufacturing research also appears in German, Chinese, Korean, and Japanese journals. Collaborating with native speakers or using machine translation (with careful validation) can broaden coverage, especially for semiconductor and automotive domains. Metadata fields should therefore track original language and translation notes to maintain transparency.
+
+\section{Data Harmonization}
+As the corpus grows, harmonizing metadata becomes more challenging. The roadmap recommends introducing controlled vocabularies for KPIs (e.g., mapping ``total flow time'' and ``flowtime'' to a single label), equipment types, and deployment statuses. Automated quality checks can flag entries lacking KPI units or mixing energy and throughput metrics in the same field. These investments ensure new studies integrate seamlessly with existing tables and plots.
+
+\section{Timeline and Milestones}
+\begin{enumerate}
+  \item \textbf{Quarter 1:} Expand semiconductor and energy-aware coverage by ingesting 20 recent papers from 2025--2026 conferences.
+  \item \textbf{Quarter 2:} Focus on regulated industries (pharma, aerospace) and collect qualitative deployment notes through expert interviews.
+  \item \textbf{Quarter 3:} Target underrepresented domains (textiles, food processing) and document why certain sectors lack RL studies.
+  \item \textbf{Quarter 4:} Consolidate findings into refreshed tables/figures and publish an addendum summarizing year-over-year changes.
+\end{enumerate}
+
+\section{Community Engagement}
+Finally, the roadmap encourages open collaboration. Publishing anonymized metadata, sharing automation scripts, and presenting progress at manufacturing forums can attract contributors who submit new studies or validate entries. Establishing a public issue tracker for missing papers and data-quality questions will keep the corpus trustworthy as it scales.

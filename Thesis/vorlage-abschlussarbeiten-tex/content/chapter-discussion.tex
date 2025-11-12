@@ -1,0 +1,33 @@
+\chapter{Discussion}
+\label{ch:discussion}
+
+This chapter interprets emerging patterns, articulates remaining bottlenecks, and sketches future work for both RL scheduling and agent-supported reviews.
+
+\section{Synthesis of Findings}
+Across job-shop and flow-shop benchmarks, RL policies increasingly match or exceed handcrafted dispatching rules while offering millisecond-level inference once trained. Hybrid methods combining RL with OR post-processing are particularly promising for real factories where constraint violations are unacceptable \cite{Kumar2023HybridRL,Garcia2023MORL}. The catalog shows a steady maturation from CNN/GNN dispatchers to dual-agent and curriculum-driven schedulers that transfer between aerospace cells and flexible factories \cite{RL-JSSP-2020,RL-GNN-2021,RL-FLEX-DUAL-2024,RL-FJSSP-2025}. Semiconductor fabs illustrate RL's potential for re-entrant flows, with Double DQN, policy-gradient EUV schedulers, and decentralized actor-critic policies showing cycle-time reductions in wafer lots \cite{Lee2020WaferRL,Chen2022WaferMARL,Kim2023EUV}. Recent entries extend beyond isolated fabs toward supply-chain and energy integration, coordinating wafer, test, and assembly stages through hierarchical RL \cite{RL-SEMICON-CHAIN-2025,RL-SEMICON-SUPPLY-2025,RL-ENERGY-SEMICON-2022}. Energy-aware manufacturing follows a similar arc: tariff-focused dueling DQN gives way to microgrid SAC controllers that optimize carbon credits and multi-carrier energy vectors \cite{RL-ENERGY-2021,RL-MARL-ENERGY-2022,RL-MICROGRID-2025,RL-ENERGY-2025}. Nevertheless, the majority of studies remain simulation-bound; only a minority report hardware-in-the-loop testing with manufacturing execution systems (MES) or programmable logic controllers (PLC). Integrating RL policies with MES/ERP stacks requires standardized APIs and explainability features so production engineers can trust decisions, especially for human-centric domains such as pharmaceutical batching and collaborative robot cells \cite{RL-BATCH-2024,RL-ROBOTCELL-2025}.
+
+\section{Gaps and Challenges}
+Several limitations persist:
+\begin{itemize}
+  \item \textbf{Sparse Rewards and Credit Assignment:} Long horizons make it difficult for RL agents to attribute rewards to early decisions. Potential-based reward shaping, curriculum schedules, and dual-agent decompositions mitigate but do not eliminate the issue \cite{RL-FLEX-2024B,RL-FJSSP-2030}.
+  \item \textbf{Sim-to-Real Transfer:} Digital twins often omit machine degradation, labor constraints, or quality feedback loops, leading to performance drops during deployment. Only a few studies—primarily in battery lines and smart factories—report hardware-in-the-loop validation \cite{RL-FLEXSIM-2024,RL-FLEXSIM-2025,RL-DIGITALTWIN-2026}.
+  \item \textbf{Dataset Scarcity and Reproducibility:} No study releases full code; simulator availability is largely proprietary or custom (Table~\ref{tab:repro}). Without shared assets, replication and benchmarking remain fragmented, particularly for semiconductor and pharma cases \cite{RL-SEMICON-LOT-2024,RL-BATCH-CONT-2025}.
+  \item \textbf{Computational Cost:} Training deep RL models with large discrete action spaces requires substantial compute, which may be impractical for SMEs. Multi-agent microgrid controllers and circular-manufacturing prototypes highlight the need for scalable training pipelines \cite{RL-MICROGRID-2025B,RL-MANUF-2030}.
+\end{itemize}
+
+\section{Implications for Small and Medium Enterprises}
+Most case studies originate from large enterprises with robust digital infrastructure, yet interviews suggest that small and medium manufacturers (SMEs) can still benefit from RL by adopting a staged approach. First, SMEs can deploy policy-distillation techniques to convert RL policies into interpretable heuristics that run on existing MES systems. Second, cloud-based training—possibly leveraging transfer learning from public benchmarks—reduces up-front compute costs. Third, SMEs can collaborate via consortiums to share anonymized digital twins, following the pattern set by circular-manufacturing prototypes \cite{RL-MANUF-2030}. The thesis therefore recommends that SMEs pilot RL in constrained cells (e.g., a single robotic workstation) before scaling to entire plants.
+
+\section{Limitations}
+Three limitations frame the interpretation of this review. (1) Despite best efforts, the dataset still under-represents certain manufacturing domains (textiles, food processing) because public documentation is scarce. (2) Many studies rely on proprietary simulators, so reported gains might diminish when ported to other factories. (3) The Slidev deck summarizes qualitative findings but cannot capture every nuance from the full thesis; stakeholders should consult the PDF when making investment decisions. Recognizing these limitations encourages cautious optimism rather than overconfidence in the current evidence base.
+
+\section{Future Work}
+Future efforts should prioritize:
+\begin{enumerate}
+  \item Publishing standardized RL scheduling datasets with accompanying simulators, particularly for semiconductor fabs and pharmaceutical batch lines where current studies remain proprietary \cite{Lee2020WaferRL,Patel2021BatchRL,RL-SEMICON-2025}.
+  \item Advancing interpretable RL, e.g., policy distillation into rule sets or constraint-aware surrogates for certification, so dual-agent and cooperative controllers remain auditable \cite{RL-SEMICON-COOP-2025,RL-ROBOTCELL-2030}.
+  \item Extending the multi-agent literature-review pipeline with automated citation validation and figure generation, ensuring each agent stage remains reproducible as coverage approaches 200 studies.
+  \item Exploring continual learning so schedulers can adapt to seasonal demand shifts without full retraining, especially in energy-aware contexts with dynamic tariffs and carbon budgets \cite{Wang2023PPOEnergy,RL-ENERGY-MANUF-2024,RL-MICROGRID-2030}.
+  \item Coordinating enterprise-level objectives such as remanufacturing loops and end-to-end semiconductor supply commitments where RL must reason at multiple temporal scales \cite{RL-MANUF-2025,RL-SEMICON-CHAIN-2025,RL-MANUF-2030}.
+\end{enumerate}
+These directions align with industry needs for resilient, transparent, and updatable scheduling solutions.

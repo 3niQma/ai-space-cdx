@@ -1,0 +1,47 @@
+\chapter{Toolchain and Automation}
+\label{ch:toolchain}
+
+Bridging a 200-paper literature review with reproducible artifacts requires more than note taking. This chapter documents the software toolchain that keeps datasets, figures, and narratives aligned. The workflow blends Python automation, LaTeX templates, and Slidev integration so that every regeneration produces consistent outputs without manual copy-and-paste.
+
+\section{Repository Layout}
+The repository separates raw automation assets from publication-facing material. The \texttt{\detokenize{automation/}} directory contains Python utilities for summarizing studies, rendering LaTeX tables, plotting descriptive charts, and drawing the PRISMA diagram. Processed data lives under \texttt{\detokenize{data/processed/}}, while intermediate PRISMA logs reside in \texttt{\detokenize{data/prisma/}}. The thesis template (\texttt{\detokenize{vorlage-abschlussarbeiten-tex/}}) imports tables and plots directly, avoiding duplicated files. Slidev content sits in \texttt{\detokenize{slidev/}}, sharing the same processed data so that the slides can be regenerated immediately after the thesis updates.
+
+\section{Automation Scripts}
+Four scripts drive most regenerations:
+\begin{enumerate}
+  \item \textbf{\texttt{\detokenize{automation/summarize_studies.py}}} aggregates counts by year, domain, RL method, KPI, and reproducibility indicators. It validates that each study entry provides a manufacturing domain and RL method, raising descriptive errors otherwise.
+  \item \textbf{\texttt{\detokenize{automation/render_tables.py}}} transforms the summary JSON into LaTeX tables (domain distribution, method distribution, code availability, simulator availability, deployment status). Each table is versioned, so diffs highlight when new studies change distributional statistics.
+  \item \textbf{\texttt{\detokenize{automation/plot_summary.py}}} produces the bar and line plots referenced in Chapters~\ref{ch:landscape} and~\ref{ch:casestudies}. The script enforces a consistent color palette and typography to match the thesis template.
+  \item \textbf{\texttt{\detokenize{automation/prisma_flow.py}}} consumes the PRISMA counts CSV and uses matplotlib to redraw the standardized PRISMA flowchart. Whenever counts change, the figure is rebuilt automatically.
+\end{enumerate}
+These scripts are orchestrated via the \texttt{make data} target defined in the root \texttt{Makefile}, ensuring a single command updates all derived artifacts.
+
+\section{Line and Bar Plot Generation}
+Visualization is central to communicating coverage. The plotting script now produces both bar charts (domain, method, KPI, deployment status) and a line chart that traces cumulative inclusions by publication year. The line plot helps readers see acceleration in semiconductor and energy-aware studies after 2023, while the bar charts reveal domain imbalances that guide future searches. All charts are saved under \texttt{\detokenize{vorlage-abschlussarbeiten-tex/figures/}} and embedded with descriptive captions that reference their automation provenance.
+
+\section{Validation and Logging}
+Every automation run appends a JSON record to \texttt{\detokenize{automation/logs/agent_pipeline.jsonl}}. Each entry captures the timestamp, agent or script, and actions performed (files touched or created). This audit trail proved invaluable when reconciling conflicting edits from different contributors. Schema validation occurs at multiple levels: CSV headers are checked, categorical values (e.g., manufacturing domains) must belong to a controlled vocabulary, and KPI fields cannot be empty for accepted studies. Failures halt the pipeline, forcing cleanup before figures are regenerated.
+
+\section{Reproducible Builds}
+The entire toolchain is reproducible from scratch:
+\begin{enumerate}
+  \item Run \texttt{make data} to regenerate processed summaries, tables, and plots.
+  \item Run \texttt{make thesis} to compile the LaTeX project using \texttt{latexmk}.
+  \item Run \texttt{make slidev} to rebuild the presentation (Node.js dependencies are installed automatically if missing).
+\end{enumerate}
+Because plots and tables are derived from the same JSON summary, there is no risk of references drifting apart. Git history provides additional assurance: every regeneration produces a clear diff showing how statistics changed. This approach aligns with modern expectations for data-driven literature reviews, where stakeholders frequently request updated figures as the corpus grows.
+
+\section{Extensibility}
+The toolchain was designed for extension. Potential enhancements include:
+\begin{itemize}
+  \item Adding natural-language generation modules that draft paragraph skeletons directly from study metadata.
+  \item Integrating automated citation checks that ensure each referenced study appears in the screening log.
+  \item Exporting Core Web Vitals (e.g., processing time per script) to monitor automation performance as the dataset expands toward 200 studies.
+\end{itemize}
+These ideas are documented so future contributors can extend the tooling without reverse-engineering the existing workflow.
+
+\section{Collaboration Workflow}
+Multiple collaborators can work safely by branching at both the Git and data layers. Narrative edits occur on feature branches, while data updates happen through pull requests that include regenerated tables/figures. Continuous integration hooks run \texttt{make data} to verify deterministic outputs; if plots change unexpectedly, reviewers inspect the processed JSON to ensure the difference reflects real data rather than formatting drift. Weekly stand-ups review the automation log to track outstanding tasks (e.g., missing KPIs). This lightweight governance structure keeps subject-matter experts, data engineers, and presentation writers aligned without heavy tooling.
+
+\section{Limitations and Future Tooling}
+Despite its advantages, the toolchain has limitations. Regenerating the entire thesis can take several minutes on modest hardware, and matplotlib’s static charts do not capture interactive drill-downs. Future work could introduce caching layers so unchanged tables are skipped, or adopt Altair/Vega-Lite for responsive visualizations exported to both PDF and Slidev. Another opportunity is to containerize the environment, bundling Python, LaTeX, and Node.js dependencies into a reproducible image that teammates can run locally or in CI without lengthy setup.

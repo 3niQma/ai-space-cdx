@@ -1,0 +1,14 @@
+{
+  "name": "rl-scheduling-slidev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export --format pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.48.9",
+    "@slidev/theme-default": "^0.48.9"
+  }
+}

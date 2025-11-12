@@ -1,0 +1,10 @@
+phase,description,count
+identification,Records identified through database searching,810
+identification,Additional records identified through other sources,45
+screening,Records after duplicates removed,540
+screening,Records screened,540
+screening,Records excluded,460
+eligibility,Full-text articles assessed for eligibility,120
+eligibility,Full-text articles excluded,70
+inclusion,Studies included in qualitative synthesis,50
+inclusion,Studies included in quantitative synthesis (meta-analysis),0

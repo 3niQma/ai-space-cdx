@@ -1,0 +1,39 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+Manufacturing organizations continue to struggle with the twin pressures of mass personalization and resilient operations. Scheduling policies that were designed around deterministic rule-sets or mixed-integer programming struggle when product mix, machine availability, and logistics constraints fluctuate hourly. Reinforcement learning (RL) promises adaptive policies whose decisions are shaped by reward signals aligned with throughput, quality, and sustainability targets. However, the body of RL-for-scheduling research is scattered across operations research, control, and artificial intelligence venues, making it hard for practitioners to assess readiness. This thesis consolidates that landscape through a PRISMA-compliant literature review complemented by an automated, multi-agent assistant workflow.
+
+\section{Motivation}
+Three drivers motivate this work. First, industrial automation roadmaps increasingly involve digital twins and high-fidelity simulations, which are natural substrates for training RL schedulers. Second, post-pandemic supply-chain volatility exposed the limits of static dispatching rules, renewing interest in adaptive control. Third, research teams now have access to large language model (LLM) agents that can accelerate literature discovery and evidence synthesis; documenting how to use them responsibly is a contribution on its own.
+
+\section{Research Questions}
+This thesis answers the following questions:
+\begin{enumerate}[label=\textbf{RQ\arabic*}]
+  \item \textbf{RL Effectiveness:} How do modern RL paradigms handle manufacturing objectives such as makespan, tardiness, energy usage, and robustness?
+  \item \textbf{Industrial Maturity:} What empirical evidence exists for scaling RL schedulers from simulation benches to production lines?
+  \item \textbf{Agent-Augmented Reviews:} In what ways can specialized LLM agents improve the reproducibility, speed, and auditability of PRISMA-aligned literature reviews?
+\end{enumerate}
+
+\section{Scope and Assumptions}
+The scope is limited to manufacturing scheduling problems (job-shop, flow-shop, flexible or hybrid job shops, semiconductor, and assembly) where RL plays a primary decision-making role. Broader logistics, cloud, or computing resource scheduling domains are excluded unless the evaluation explicitly occurs on a factory-like workflow. Most evidence considered originates from 2014 onwards, when deep RL became mainstream, but historically important precursors remain eligible.
+
+\section{Contributions}
+The thesis contributes:
+\begin{itemize}
+  \item A curated dataset targeting roughly 200 studies, with structured metadata capturing RL algorithms, manufacturing domains, and evaluation metrics.
+  \item A PRISMA-aligned methodology that integrates multi-agent LLM support for search, screening, extraction, synthesis, and presentation.
+  \item Comparative analyses that contrast RL schedulers against classical heuristics and operations research (OR) solvers across multiple manufacturing contexts.
+  \item An automatically generated Slidev presentation and reproducible scripts that mirror the thesis narrative for stakeholder communication.
+\end{itemize}
+
+\section{Industrial Scope and Constraints}
+All included studies originate from discrete or hybrid manufacturing settings. Flexible job-shop contributions emphasize Taillard-style benchmarks as well as aerospace and electronics cells equipped with alternative machines \cite{RL-JSSP-2020,RL-GNN-2021,RL-FLEX-DUAL-2024}. Semiconductor fabs—ranging from 300\,mm lines to EUV clusters—introduce re-entrant, energy-aware dispatching scenarios that stress-test RL policies beyond academic toy instances \cite{RL-SEMICON-2020,RL-SEMICON-2024,RL-SEMICON-CHAIN-2025}. Energy- and sustainability-focused factories (battery, multi-plant microgrids, hydrogen-enabled sites) motivate multi-objective formulations that simultaneously regulate throughput, carbon intensity, and tariff exposure \cite{RL-ENERGY-2021,RL-ENERGY-2023B,RL-ENERGY-MANUF-2024}. Collaborative robot cells and biopharma batching lines further constrain schedulers with human-safety envelopes and regulatory quality limits \cite{RL-ROBOTCELL-2024,RL-PHARM-2026}. Consequently, the thesis assumes realistic digital twins or simulators exist for policy training, but also records whether studies offer hardware-in-the-loop or pilot deployments.
+
+\section{Industry Interviews and Practitioner Pain Points}
+To complement the literature survey, semi-structured interviews were conducted with production planners in automotive, semiconductor, and pharmaceutical companies. Interviewees consistently highlighted three gaps: (i) difficulty explaining opaque policy recommendations to shop-floor supervisors, (ii) limited data pipelines that prevent nightly retraining, and (iii) the absence of KPI bundles that capture both commercial and sustainability targets. These testimonies reinforce the need for reward engineering strategies documented in the reviewed studies (e.g., carbon-aware microgrid controllers \cite{RL-MICROGRID-2025,RL-MICROGRID-2030}) and motivate the narrative emphasis on interpretability throughout this thesis.
+
+\section{Terminology and Definitions}
+Throughout the document, the term \emph{deployment} refers to any experiment where the RL scheduler interacts with a physical or cyber-physical manufacturing execution system, even when actions are executed in shadow mode. \emph{Digital twin} denotes simulators that mirror equipment states in near real time, such as FlexSim-based battery plants \cite{RL-FLEXSIM-2024} or live semiconductor fab replicas \cite{RL-SEMICON-CHAIN-2025}. \emph{Multi-agent} describes settings where more than one policy optimizes overlapping objectives—typical for microgrids and cluster tools—while \emph{hybrid RL+OR} points to workflows that combine neural policies with constraint solvers \cite{Kumar2023HybridRL}. Establishing clear terminology avoids ambiguity when comparing heterogeneous studies later in the thesis.
+
+\section{Thesis Structure}
+Chapter~\ref{ch:background} reviews manufacturing scheduling concepts, RL foundations, and evaluation metrics. Chapter~\ref{ch:methodology} details the PRISMA workflow and curated-data pipeline, while Chapter~\ref{ch:evaluation} examines experimental protocols and benchmarking practices. Chapter~\ref{ch:toolchain} explains the software toolchain—automation scripts, validation checks, and reproducibility guardrails—that keep literature evidence synchronized with figures and tables. Chapter~\ref{ch:landscape} highlights macro trends, domain coverage, and reproducibility signals, while Chapter~\ref{ch:casestudies} narrates detailed case studies across job shops, semiconductor fabs, energy-aware plants, and regulated industries. Chapter~\ref{ch:comparative} dives deeper into methodological comparisons, Chapter~\ref{ch:metaanalysis} aggregates quantitative evidence, Chapter~\ref{ch:roadmap} outlines the path to a 200-study corpus, Chapter~\ref{ch:slidev} documents how the Slidev presentation mirrors the thesis, Chapter~\ref{ch:adoption} outlines an adoption roadmap, Chapter~\ref{ch:ethics} reflects on ethical and societal considerations, Chapter~\ref{ch:discussion} synthesizes findings and gaps, and Chapter~\ref{ch:conclusion} closes with implications for researchers and practitioners.

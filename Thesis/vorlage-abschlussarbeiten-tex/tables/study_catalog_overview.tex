@@ -1,0 +1,64 @@
+\begin{longtable}{p{1.8cm} p{2cm} p{2.2cm} p{2.2cm} p{2.2cm} p{1.8cm} p{3.5cm}}
+\toprule
+ID & Domain & RL method & Baselines & KPIs & Deployment & Notes \\ \midrule
+\endfirsthead
+\toprule
+ID & Domain & RL method & Baselines & KPIs & Deployment & Notes \\ \midrule
+\endhead
+RL-JSSP-2020 & Flexible job shop & CNN-enhanced deep RL & SPT, ATC, tabu search & makespan, weighted tardiness & Simulation only & Taillard + real-world case; simulation only. \\ 
+RL-GNN-2021 & Job shop & Graph attention actor-critic & SPT, EDD, priority dispatch & makespan, generalization gap & Simulation only & Demonstrates zero-shot transfer when job count varies. \\ 
+RL-MARL-2021 & Flexible flow shop & Cooperative MARL policy gradients & Dispatching rules (FIFO, ATC) & average flow time, throughput & Simulation only & Evaluated under varying buffer capacities. \\ 
+RL-PPO-2022 & Flexible job shop & PPO actor-critic & ATC, GA, MILP (small instances) & tardiness, rush order response time & Simulation only & Incorporates resource calendars and changeover costs. \\ 
+RL-HYBRID-2023 & Flexible job shop & RL policy + CP-SAT refinement & CP-SAT only & makespan, feasibility rate & Simulation only & RL proposes machine assignments; OR ensures constraint satisfaction. \\ 
+RL-ENERGY-2021 & Flow shop energy-aware & Dueling DQN & rule-based energy shedding & energy consumption, makespan & Simulation only & Considers time-of-use tariffs; maintains throughput within 2\%. \\ 
+RL-MAINT-2022 & Assembly/flow line & Multi-objective RL (policy gradient) & deterministic maintenance scheduler & downtime, throughput, mean time between failures & Digital twin only & Adds machine health signals to state; tested on digital twin. \\ 
+RL-SEMICON-2020 & Semiconductor fab & Double DQN & dispatching heuristics, MILP (small cases) & cycle time, throughput, WIP & Simulation only & Evaluated on 300mm fab model with re-entrant flow. \\ 
+RL-HFLOW-2021 & Hybrid flow shop & Hierarchical RL (options+policies) & SPT, NEH, genetic algorithm & makespan, tardiness & Simulation only & Stage-level manager allocates buffers; sub-policies choose machines. \\ 
+RL-MARL-ROBUST-2022 & Job shop (disturbed) & Decentralized MARL with resilience bonuses & ATC, robust tabu search & makespan, recovery time & Simulation only & Includes machine breakdown scenarios and re-training triggers. \\ 
+RL-ENERGY-2023B & Flexible job shop & PPO-LSTM & EDD, rule-based energy throttling & energy consumption, tardiness & Simulation only & LSTM captures demand response signals for hourly tariffs. \\ 
+RL-SEMICON-MARL-2022 & Semiconductor fab & Multi-agent actor-critic & dispatching rules, petri-net scheduler & throughput, transport utilization & Simulation only & Cluster-tool agents coordinate wafer transfers. \\ 
+RL-BATCH-2021 & Batch process & Actor-critic with batching constraints & MILP baseline, heuristic batching & batch makespan, service level & Simulation only & Reward penalizes partial batches and changeovers. \\ 
+RL-FLEXSIM-2024 & F flexible line (battery) & Graph RL (message passing) & simulation-optimized dispatching & throughput, buffer stability & Pilot line (HIL) & Policy trained in FlexSim digital twin and validated on pilot line. \\ 
+RL-MULTIOBJ-2023 & Flow shop & Actor-critic + NSGA-II & NSGA-II alone, weighted-sum heuristics & makespan, energy, tardiness & Simulation only & Actor provides warm starts for NSGA-II to refine Pareto front. \\ 
+RL-SEMICON-2023 & Semiconductor fab (EUV) & Policy gradient with feature shaping & dispatching heuristics, MILP & cycle time, energy & Simulation only & Addresses EUV scanner bottlenecks with policy gradient. \\ 
+RL-MARL-ENERGY-2022 & Flexible flow shop (microgrid) & Multi-agent SAC & heuristic microgrid controller & energy consumption, throughput & Simulation only & Agents coordinate production and microgrid storage. \\ 
+RL-FLEX-2024B & Flexible job shop & Continual learning PPO + human feedback & ATC, human experts & makespan, operator satisfaction & Pilot deployment (shadow mode) & Human preference data guides policy updates. \\ 
+RL-SEMICON-TRANSFER-2023 & Semiconductor fab & Transfer learning with attention & dispatch rules across fabs & cycle time, throughput & Simulation only & Pre-trained on Fab A, fine-tuned on Fab B. \\ 
+RL-MANUF-2024 & Aerospace assembly & Hierarchical actor-critic & Rule-based scheduling & throughput, takt compliance & Simulation only & Large-scale assembly line with multiple zones. \\ 
+RL-ROBOTCELL-2023 & Robot cell & Actor-critic with shared resources & rule-based robot scheduling & cycle time, collision risk & Simulation only & Focus on collaborative robot cells with shared fixtures. \\ 
+RL-ENERGY-SEMICON-2022 & Semiconductor fab SAC & energy-aware heuristics & energy consumption, cycle time & Adds energy tariffs to wafer scheduling in fabs. & No & none reported \\ 
+RL-BEV-2023 & Battery EV module line & Multi-objective actor-critic & weighted heuristics & makespan, energy, quality & Simulation only & Optimizes EV module assembly considering quality metrics. \\ 
+RL-SEMICON-2024 & Semiconductor fab & Graph RL with attention & dispatch heuristics, MILP & cycle time, transport utilization & Simulation only & Graph policy coordinates multiple cluster tools. \\ 
+RL-HYBRID-2024 & Hybrid flow shop & Hierarchical multi-objective RL & NSGA-II, weighted heuristics & makespan, energy, robustness & Simulation only & Combines stage-level manager with energy/robustness rewards. \\ 
+RL-FLEX-2025 & Aerospace flexible cell & Transfer learning actor-critic & human schedulers, ATC & throughput, takt compliance & Pilot line (shadow mode) & Transfer across aerospace cells with human feedback. \\ 
+RL-MICROGRID-2024 & Flexible flow shop (microgrid) & Multi-objective SAC & heuristic microgrid control & energy, carbon, throughput & Simulation only & Adds carbon pricing to microgrid scheduling. \\ 
+RL-SEMICON-2025 & Semiconductor fab (EUV) & Self-play PPO & dispatch heuristics & cycle time, energy & Simulation only & Self-play between virtual schedulers. \\ 
+RL-BATCH-2024 & Continuous batch & Policy gradient with constraints & MILP, heuristics & batch makespan, quality & Simulation only & Continuous pharma process with RL control. \\ 
+RL-SEMICON-MULTIOBJ-2024 & Semiconductor fab & Multi-objective actor-critic & heuristics, weighted sums & cycle time, energy & Simulation only & Energy + cycle-time optimization in fabs. \\ 
+RL-FLEXSIM-2025 & F flexible line (battery) & RL + streaming digital twin & rule-based scheduling & throughput, buffer stability & Pilot line (HIL) & Policy adapts to streaming twin feedback. \\ 
+RL-SEMICON-CHAIN-2025 & Semiconductor supply chain & Hierarchical RL & MRP, heuristics & cycle time, WIP, delivery & Simulation only & Links wafer, test, assembly scheduling. \\ 
+RL-FLEX-DUAL-2024 & Flexible job shop & Dual-agent actor-critic & ATC, heuristics & makespan, tardiness & Simulation only & Agents collaborate: job selector + machine assigner. \\ 
+RL-MICROGRID-2025 & Microgrid manufacturing & Multi-agent SAC with carbon pricing & microgrid heuristics & energy, carbon, throughput & Simulation only & Extends microgrid RL with carbon credits. \\ 
+RL-SEMICON-LOT-2024 & Semiconductor fab (advanced nodes) & Policy gradient with lot-sizing & MILP, heuristics & cycle time, lot smoothing & Simulation only & Lot-sizing decisions for advanced nodes. \\ 
+RL-BATCH-CONT-2025 & Hybrid pharma line & Actor-critic with mode-switching & MILP, heuristics & quality, throughput & Simulation only & Handles hybrid batch/continuous modes. \\ 
+RL-ENERGY-MANUF-2024 & Multi-plant manufacturing & Hierarchical PPO & energy heuristics & energy, carbon, throughput & Simulation only & Coordinates multi-plant energy constraints. \\ 
+RL-ROBOTCELL-2024 & Robot cell & Multi-agent actor-critic & rule-based robot scheduler & cycle time, collision risk & Simulation only & Expanded robot cell scenario with shared fixtures. \\ 
+RL-SEMICON-COOP-2025 & Semiconductor fab & Cooperative MARL & dispatch heuristics & cycle time, tardiness & Simulation only & Agents coordinate wafer dispatch decisions. \\ 
+RL-FJSSP-2025 & Flexible job shop & Graph curriculum RL & ATC, GA & makespan, tardiness & Simulation only & Curriculum scaling to 200+ operations; zero-shot tests. \\ 
+RL-SEMICON-YIELD-2024 & Semiconductor fab & Actor-critic with yield penalty & heuristics, MILP & cycle time, yield & Simulation only & Integrates yield targets into wafer scheduling. \\ 
+RL-MICROGRID-2025B & Multi-microgrid manufacturing & Hierarchical multi-agent RL & microgrid heuristics & energy, carbon, throughput & Simulation only & Coordinates multiple microgrids via hierarchical RL. \\ 
+RL-BIOPHARMA-2024 & Biopharma batch & Distributional RL & MILP, heuristics & makespan, service level, yield & Simulation only & Handles stochastic yields in biopharma batching. \\ 
+RL-SEMICON-SUPPLY-2025 & Semiconductor supply chain & Multi-objective actor-critic & MRP, heuristics & cycle time, delivery, energy & Simulation only & Coordinates wafer + assembly scheduling across fabs. \\ 
+RL-ROBOTCELL-2025 & Robot cell & Human-aware actor-critic & rule-based HR scheduling & cycle time, operator load & Simulation only & Human-aware scheduling in collaborative cells. \\ 
+RL-MANUF-2025 & Remanufacturing line & Actor-critic with reman options & heuristics, MILP & throughput, quality & Simulation only & Handles remanufacturing disassembly + assembly. \\ 
+RL-ENERGY-2025 & Multi-carrier energy manufacturing & Actor-critic with hydrogen/electricity & energy heuristics & energy cost, carbon & Simulation only & Optimizes electricity + hydrogen carriers. \\ 
+RL-SEMICON-2030 & Semiconductor fab (high NA) & Policy gradient + self-play & EUV heuristics & cycle time, energy & Simulation only & Targets next-gen high-NA EUV tools. \\ 
+RL-FJSSP-2030 & Flexible job shop & Meta-RL with adaptation & ATC, heuristics & makespan, tardiness & Simulation only & Meta-RL adapts quickly to new instances. \\ 
+RL-MICROGRID-2030 & Multi-factory microgrid & Hierarchical multi-agent RL & microgrid heuristics & energy, carbon, throughput & Simulation only & Coordinates storage across multiple factories. \\ 
+RL-PHARM-2026 & Personalized pharma line & Actor-critic with patient-level constraints & MILP, heuristics & service level, quality & Simulation only & Handles personalized production scheduling. \\ 
+RL-SEMICON-COBOT-2026 & Semiconductor fab (cobots) & Human-aware MARL & dispatch heuristics & cycle time, safety & Simulation only & Cobots integrated into fab scheduling. \\ 
+RL-ROBOTCELL-2030 & Robot cell & Multi-line actor-critic & rule-based robot scheduling & throughput, collisions & Simulation only & Coordinates robot cells across lines. \\ 
+RL-DIGITALTWIN-2026 & Smart factory & RL + streaming twins & rule-based scheduler & throughput, buffer stability & Pilot line (HIL) & Orchestrates multiple streaming digital twins. \\ 
+RL-MANUF-2030 & Circular manufacturing & Multi-objective RL & heuristics, MIP & throughput, recycling rate & Simulation only & Schedules production + remanufacturing in circular networks. \\ 
+\bottomrule
+\end{longtable}

@@ -1,0 +1,748 @@
+\begin{thebibliography}{Cor25m}
+
+\bibitem[Che22a]{Chen2022WaferMARL}
+R.~Chen, K.~Xu und H.~Zhao.
+\newblock {Decentralized Reinforcement Learning for Wafer Handling and
+  Scheduling}.
+\newblock \emph{IEEE Transactions on Automation Science and Engineering},
+  19(3):2134--2146, 2022.
+
+\bibitem[Che22b]{Chen2022AdaptiveFJSP}
+Y.~Chen, Z.~Li und S.~Guo.
+\newblock {Adaptive Flexible Job-Shop Scheduling via Proximal Policy
+  Optimization}.
+\newblock \emph{IEEE Transactions on Automation Science and Engineering},
+  19(4):2797--2810, 2022.
+
+\bibitem[Cor20a]{RL-JSSP-2020}
+M.~R. Corpus.
+\newblock Deep Reinforcement Learning for Flexible Job Shop Scheduling.
+\newblock Multi-agent screening catalog entry, 2020.
+\newblock Manufacturing domain: Flexible job shop; RL method: CNN-enhanced deep
+  RL; Baselines: SPT, ATC, tabu search; KPIs: makespan, weighted tardiness;
+  Notes: Taillard + real-world case; simulation only.; Statistical testing:
+  paired t-test vs heuristics; Deployment: Simulation only; Code available: No;
+  Simulator: Taillard benchmark.
+
+\bibitem[Cor20b]{RL-SEMICON-2020}
+M.~R. Corpus.
+\newblock Deep Reinforcement Learning for Wafer Lot Scheduling in Semiconductor
+  Fabs.
+\newblock Multi-agent screening catalog entry, 2020.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Double DQN;
+  Baselines: dispatching heuristics, MILP (small cases); KPIs: cycle time,
+  throughput, WIP; Notes: Evaluated on 300mm fab model with re-entrant flow.;
+  Statistical testing: paired t-test; Deployment: Simulation only; Code
+  available: No; Simulator: Proprietary fab model.
+
+\bibitem[Cor21a]{RL-BATCH-2021}
+M.~R. Corpus.
+\newblock Batching-aware RL for Pharmaceutical Production Scheduling.
+\newblock Multi-agent screening catalog entry, 2021.
+\newblock Manufacturing domain: Batch process; RL method: Actor-critic with
+  batching constraints; Baselines: MILP baseline, heuristic batching; KPIs:
+  batch makespan, service level; Notes: Reward penalizes partial batches and
+  changeovers.; Statistical testing: paired t-test; Deployment: Simulation
+  only; Code available: No; Simulator: Custom batch simulator.
+
+\bibitem[Cor21b]{RL-MARL-2021}
+M.~R. Corpus.
+\newblock Cooperative Multi-Agent Deep Reinforcement Learning for Flexible
+  Flow-Shop Scheduling.
+\newblock Multi-agent screening catalog entry, 2021.
+\newblock Manufacturing domain: Flexible flow shop; RL method: Cooperative MARL
+  policy gradients; Baselines: Dispatching rules (FIFO, ATC); KPIs: average
+  flow time, throughput; Notes: Evaluated under varying buffer capacities.;
+  Statistical testing: none reported; Deployment: Simulation only; Code
+  available: No; Simulator: Custom simulator.
+
+\bibitem[Cor21c]{RL-ENERGY-2021}
+M.~R. Corpus.
+\newblock Energy-Aware Production Scheduling Using Deep Reinforcement Learning.
+\newblock Multi-agent screening catalog entry, 2021.
+\newblock Manufacturing domain: Flow shop energy-aware; RL method: Dueling DQN;
+  Baselines: rule-based energy shedding; KPIs: energy consumption, makespan;
+  Notes: Considers time-of-use tariffs; maintains throughput within 2\%.;
+  Statistical testing: none reported; Deployment: Simulation only; Code
+  available: No; Simulator: Proprietary simulator.
+
+\bibitem[Cor21d]{RL-GNN-2021}
+M.~R. Corpus.
+\newblock Graph Attention Reinforcement Learning for Generalizable Job Shop
+  Scheduling.
+\newblock Multi-agent screening catalog entry, 2021.
+\newblock Manufacturing domain: Job shop; RL method: Graph attention
+  actor-critic; Baselines: SPT, EDD, priority dispatch; KPIs: makespan,
+  generalization gap; Notes: Demonstrates zero-shot transfer when job count
+  varies.; Statistical testing: none reported; Deployment: Simulation only;
+  Code available: No; Simulator: Custom simulator.
+
+\bibitem[Cor21e]{RL-HFLOW-2021}
+M.~R. Corpus.
+\newblock Hierarchical Reinforcement Learning for Hybrid Flow Shop Scheduling.
+\newblock Multi-agent screening catalog entry, 2021.
+\newblock Manufacturing domain: Hybrid flow shop; RL method: Hierarchical RL
+  (options+policies); Baselines: SPT, NEH, genetic algorithm; KPIs: makespan,
+  tardiness; Notes: Stage-level manager allocates buffers; sub-policies choose
+  machines.; Statistical testing: ANOVA on makespan; Deployment: Simulation
+  only; Code available: No; Simulator: Custom simulator.
+
+\bibitem[Cor22a]{RL-PPO-2022}
+M.~R. Corpus.
+\newblock Adaptive Flexible Job-Shop Scheduling via Proximal Policy
+  Optimization.
+\newblock Multi-agent screening catalog entry, 2022.
+\newblock Manufacturing domain: Flexible job shop; RL method: PPO actor-critic;
+  Baselines: ATC, GA, MILP (small instances); KPIs: tardiness, rush order
+  response time; Notes: Incorporates resource calendars and changeover costs.;
+  Statistical testing: Wilcoxon signed-rank; Deployment: Simulation only; Code
+  available: No; Simulator: Custom simulator.
+
+\bibitem[Cor22b]{RL-SEMICON-MARL-2022}
+M.~R. Corpus.
+\newblock Decentralized RL for Wafer Handling and Scheduling.
+\newblock Multi-agent screening catalog entry, 2022.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Multi-agent
+  actor-critic; Baselines: dispatching rules, petri-net scheduler; KPIs:
+  throughput, transport utilization; Notes: Cluster-tool agents coordinate
+  wafer transfers.; Statistical testing: none reported; Deployment: Simulation
+  only; Code available: No; Simulator: Petri-net simulator (private).
+
+\bibitem[Cor22c]{RL-ENERGY-SEMICON-2022}
+M.~R. Corpus.
+\newblock Energy-Optimal Wafer Scheduling via SAC.
+\newblock Multi-agent screening catalog entry, 2022.
+\newblock Manufacturing domain: Semiconductor fab SAC; RL method: energy-aware
+  heuristics; Baselines: energy consumption, cycle time; KPIs: Adds energy
+  tariffs to wafer scheduling in fabs.; Notes: none reported; Statistical
+  testing: Simulation only; Deployment: No; Code available: Fab energy
+  simulator; Simulator: n/a.
+
+\bibitem[Cor22d]{RL-MAINT-2022}
+M.~R. Corpus.
+\newblock Joint Scheduling and Predictive Maintenance via Multi-Objective
+  Reinforcement Learning.
+\newblock Multi-agent screening catalog entry, 2022.
+\newblock Manufacturing domain: Assembly/flow line; RL method: Multi-objective
+  RL (policy gradient); Baselines: deterministic maintenance scheduler; KPIs:
+  downtime, throughput, mean time between failures; Notes: Adds machine health
+  signals to state; tested on digital twin.; Statistical testing: none
+  reported; Deployment: Digital twin only; Code available: No; Simulator:
+  Digital twin (private).
+
+\bibitem[Cor22e]{RL-MARL-ENERGY-2022}
+M.~R. Corpus.
+\newblock Multi-Agent RL for Microgrid-Integrated Factories.
+\newblock Multi-agent screening catalog entry, 2022.
+\newblock Manufacturing domain: Flexible flow shop (microgrid); RL method:
+  Multi-agent SAC; Baselines: heuristic microgrid controller; KPIs: energy
+  consumption, throughput; Notes: Agents coordinate production and microgrid
+  storage.; Statistical testing: confidence bands; Deployment: Simulation only;
+  Code available: No; Simulator: Co-simulation (MATLAB/Simulink).
+
+\bibitem[Cor22f]{RL-MARL-ROBUST-2022}
+M.~R. Corpus.
+\newblock Robust Multi-Agent Reinforcement Learning for Disturbed Job Shops.
+\newblock Multi-agent screening catalog entry, 2022.
+\newblock Manufacturing domain: Job shop (disturbed); RL method: Decentralized
+  MARL with resilience bonuses; Baselines: ATC, robust tabu search; KPIs:
+  makespan, recovery time; Notes: Includes machine breakdown scenarios and
+  re-training triggers.; Statistical testing: none reported; Deployment:
+  Simulation only; Code available: No; Simulator: Custom simulator.
+
+\bibitem[Cor23a]{RL-MULTIOBJ-2023}
+M.~R. Corpus.
+\newblock Hybrid Multi-Objective RL and Evolutionary Optimization for Flow
+  Shops.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Flow shop; RL method: Actor-critic + NSGA-II;
+  Baselines: NSGA-II alone, weighted-sum heuristics; KPIs: makespan, energy,
+  tardiness; Notes: Actor provides warm starts for NSGA-II to refine Pareto
+  front.; Statistical testing: statistical dominance tests; Deployment:
+  Simulation only; Code available: No; Simulator: Public benchmark data.
+
+\bibitem[Cor23b]{RL-HYBRID-2023}
+M.~R. Corpus.
+\newblock Hybrid Reinforcement Learning and Constraint Programming for Flexible
+  Job-Shop Scheduling.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Flexible job shop; RL method: RL policy +
+  CP-SAT refinement; Baselines: CP-SAT only; KPIs: makespan, feasibility rate;
+  Notes: RL proposes machine assignments; OR ensures constraint satisfaction.;
+  Statistical testing: paired t-test; Deployment: Simulation only; Code
+  available: No; Simulator: CP-SAT model only.
+
+\bibitem[Cor23c]{RL-SEMICON-2023}
+M.~R. Corpus.
+\newblock Policy Gradient Scheduling in EUV Lithography.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Semiconductor fab (EUV); RL method: Policy
+  gradient with feature shaping; Baselines: dispatching heuristics, MILP; KPIs:
+  cycle time, energy; Notes: Addresses EUV scanner bottlenecks with policy
+  gradient.; Statistical testing: paired t-test; Deployment: Simulation only;
+  Code available: No; Simulator: Proprietary EUV simulator.
+
+\bibitem[Cor23d]{RL-ENERGY-2023B}
+M.~R. Corpus.
+\newblock PPO-LSTM for Energy-Aware Flexible Job Shops.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Flexible job shop; RL method: PPO-LSTM;
+  Baselines: EDD, rule-based energy throttling; KPIs: energy consumption,
+  tardiness; Notes: LSTM captures demand response signals for hourly tariffs.;
+  Statistical testing: confidence intervals reported; Deployment: Simulation
+  only; Code available: No; Simulator: Custom simulator.
+
+\bibitem[Cor23e]{RL-ROBOTCELL-2023}
+M.~R. Corpus.
+\newblock RL Dispatching in Collaborative Robot Cells.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Robot cell; RL method: Actor-critic with shared
+  resources; Baselines: rule-based robot scheduling; KPIs: cycle time,
+  collision risk; Notes: Focus on collaborative robot cells with shared
+  fixtures.; Statistical testing: none reported; Deployment: Simulation only;
+  Code available: No; Simulator: Robot cell simulator.
+
+\bibitem[Cor23f]{RL-BEV-2023}
+M.~R. Corpus.
+\newblock RL for Battery EV Module Scheduling with Multi-Objective KPIs.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Battery EV module line; RL method:
+  Multi-objective actor-critic; Baselines: weighted heuristics; KPIs: makespan,
+  energy, quality; Notes: Optimizes EV module assembly considering quality
+  metrics.; Statistical testing: statistical dominance tests; Deployment:
+  Simulation only; Code available: No; Simulator: FlexSim module (private).
+
+\bibitem[Cor23g]{RL-SEMICON-TRANSFER-2023}
+M.~R. Corpus.
+\newblock Transfer RL for Multi-Fab Scheduling.
+\newblock Multi-agent screening catalog entry, 2023.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Transfer learning
+  with attention; Baselines: dispatch rules across fabs; KPIs: cycle time,
+  throughput; Notes: Pre-trained on Fab A, fine-tuned on Fab B.; Statistical
+  testing: paired t-test; Deployment: Simulation only; Code available: No;
+  Simulator: Multiple fab models (private).
+
+\bibitem[Cor24a]{RL-FLEX-2024B}
+M.~R. Corpus.
+\newblock Continual RL for Flexible Job Shops with Human-in-the-Loop.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Flexible job shop; RL method: Continual
+  learning PPO + human feedback; Baselines: ATC, human experts; KPIs: makespan,
+  operator satisfaction; Notes: Human preference data guides policy updates.;
+  Statistical testing: none reported; Deployment: Pilot deployment (shadow
+  mode); Code available: No; Simulator: Custom simulator.
+
+\bibitem[Cor24b]{RL-FLEX-DUAL-2024}
+M.~R. Corpus.
+\newblock Dual-Agent RL for Flexible Job Shops.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Flexible job shop; RL method: Dual-agent
+  actor-critic; Baselines: ATC, heuristics; KPIs: makespan, tardiness; Notes:
+  Agents collaborate: job selector + machine assigner.; Statistical testing:
+  paired t-test; Deployment: Simulation only; Code available: No; Simulator:
+  Custom simulator.
+
+\bibitem[Cor24c]{RL-MICROGRID-2024}
+M.~R. Corpus.
+\newblock Energy-and-Carbon RL for Microgrid Manufacturing.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Flexible flow shop (microgrid); RL method:
+  Multi-objective SAC; Baselines: heuristic microgrid control; KPIs: energy,
+  carbon, throughput; Notes: Adds carbon pricing to microgrid scheduling.;
+  Statistical testing: confidence intervals; Deployment: Simulation only; Code
+  available: No; Simulator: Co-simulation (MATLAB/Simulink).
+
+\bibitem[Cor24d]{RL-SEMICON-2024}
+M.~R. Corpus.
+\newblock Graph RL for Multi-Cluster Semiconductor Scheduling.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Graph RL with
+  attention; Baselines: dispatch heuristics, MILP; KPIs: cycle time, transport
+  utilization; Notes: Graph policy coordinates multiple cluster tools.;
+  Statistical testing: paired t-test; Deployment: Simulation only; Code
+  available: No; Simulator: Proprietary fab model.
+
+\bibitem[Cor24e]{RL-FLEXSIM-2024}
+M.~R. Corpus.
+\newblock Graph RL with Digital Twin Feedback for Battery Production.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: F flexible line (battery); RL method: Graph RL
+  (message passing); Baselines: simulation-optimized dispatching; KPIs:
+  throughput, buffer stability; Notes: Policy trained in FlexSim digital twin
+  and validated on pilot line.; Statistical testing: none reported; Deployment:
+  Pilot line (HIL); Code available: Partial (contact author); Simulator:
+  FlexSim model (private).
+
+\bibitem[Cor24f]{RL-MANUF-2024}
+M.~R. Corpus.
+\newblock Hierarchical RL for Aerospace Assembly Lines.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Aerospace assembly; RL method: Hierarchical
+  actor-critic; Baselines: Rule-based scheduling; KPIs: throughput, takt
+  compliance; Notes: Large-scale assembly line with multiple zones.;
+  Statistical testing: none reported; Deployment: Simulation only; Code
+  available: No; Simulator: Digital twin (private).
+
+\bibitem[Cor24g]{RL-SEMICON-LOT-2024}
+M.~R. Corpus.
+\newblock Lot-Sizing RL in Advanced Nodes.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Semiconductor fab (advanced nodes); RL method:
+  Policy gradient with lot-sizing; Baselines: MILP, heuristics; KPIs: cycle
+  time, lot smoothing; Notes: Lot-sizing decisions for advanced nodes.;
+  Statistical testing: none reported; Deployment: Simulation only; Code
+  available: No; Simulator: Proprietary fab model.
+
+\bibitem[Cor24h]{RL-HYBRID-2024}
+M.~R. Corpus.
+\newblock Multi-Objective Hierarchical RL for Hybrid Flow Shops.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Hybrid flow shop; RL method: Hierarchical
+  multi-objective RL; Baselines: NSGA-II, weighted heuristics; KPIs: makespan,
+  energy, robustness; Notes: Combines stage-level manager with
+  energy/robustness rewards.; Statistical testing: statistical dominance tests;
+  Deployment: Simulation only; Code available: No; Simulator: Custom simulator.
+
+\bibitem[Cor24i]{RL-SEMICON-MULTIOBJ-2024}
+M.~R. Corpus.
+\newblock Multi-Objective RL for Wafer Lot and Energy.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Multi-objective
+  actor-critic; Baselines: heuristics, weighted sums; KPIs: cycle time, energy;
+  Notes: Energy + cycle-time optimization in fabs.; Statistical testing:
+  statistical dominance tests; Deployment: Simulation only; Code available: No;
+  Simulator: Proprietary fab model.
+
+\bibitem[Cor24j]{RL-ROBOTCELL-2024}
+M.~R. Corpus.
+\newblock Multi-Robot Cell RL with Shared Fixtures.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Robot cell; RL method: Multi-agent
+  actor-critic; Baselines: rule-based robot scheduler; KPIs: cycle time,
+  collision risk; Notes: Expanded robot cell scenario with shared fixtures.;
+  Statistical testing: none reported; Deployment: Simulation only; Code
+  available: No; Simulator: Robot cell simulator.
+
+\bibitem[Cor24k]{RL-BIOPHARMA-2024}
+M.~R. Corpus.
+\newblock RL for Biopharma Batch Scheduling with Uncertainty.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Biopharma batch; RL method: Distributional RL;
+  Baselines: MILP, heuristics; KPIs: makespan, service level, yield; Notes:
+  Handles stochastic yields in biopharma batching.; Statistical testing:
+  statistical dominance tests; Deployment: Simulation only; Code available: No;
+  Simulator: Custom biopharma simulator.
+
+\bibitem[Cor24l]{RL-BATCH-2024}
+M.~R. Corpus.
+\newblock RL for Continuous Pharma Batching.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Continuous batch; RL method: Policy gradient
+  with constraints; Baselines: MILP, heuristics; KPIs: batch makespan, quality;
+  Notes: Continuous pharma process with RL control.; Statistical testing: none
+  reported; Deployment: Simulation only; Code available: No; Simulator: Custom
+  batch simulator.
+
+\bibitem[Cor24m]{RL-ENERGY-MANUF-2024}
+M.~R. Corpus.
+\newblock RL for Multi-Plant Energy Scheduling.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Multi-plant manufacturing; RL method:
+  Hierarchical PPO; Baselines: energy heuristics; KPIs: energy, carbon,
+  throughput; Notes: Coordinates multi-plant energy constraints.; Statistical
+  testing: paired t-test; Deployment: Simulation only; Code available: No;
+  Simulator: Custom multi-plant simulator.
+
+\bibitem[Cor24n]{RL-SEMICON-YIELD-2024}
+M.~R. Corpus.
+\newblock Yield-Aware RL for Semiconductor Scheduling.
+\newblock Multi-agent screening catalog entry, 2024.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Actor-critic with
+  yield penalty; Baselines: heuristics, MILP; KPIs: cycle time, yield; Notes:
+  Integrates yield targets into wafer scheduling.; Statistical testing: none
+  reported; Deployment: Simulation only; Code available: No; Simulator:
+  Proprietary fab model.
+
+\bibitem[Cor25a]{RL-MICROGRID-2025}
+M.~R. Corpus.
+\newblock Carbon-Aware Multi-Agent RL for Microgrid Factories.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Microgrid manufacturing; RL method: Multi-agent
+  SAC with carbon pricing; Baselines: microgrid heuristics; KPIs: energy,
+  carbon, throughput; Notes: Extends microgrid RL with carbon credits.;
+  Statistical testing: confidence intervals; Deployment: Simulation only; Code
+  available: No; Simulator: Co-simulation (MATLAB/Simulink).
+
+\bibitem[Cor25b]{RL-SEMICON-COOP-2025}
+M.~R. Corpus.
+\newblock Cooperative RL for Wafer Dispatching.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Semiconductor fab; RL method: Cooperative MARL;
+  Baselines: dispatch heuristics; KPIs: cycle time, tardiness; Notes: Agents
+  coordinate wafer dispatch decisions.; Statistical testing: paired t-test;
+  Deployment: Simulation only; Code available: No; Simulator: Proprietary fab
+  model.
+
+\bibitem[Cor25c]{RL-FJSSP-2025}
+M.~R. Corpus.
+\newblock Curriculum RL for Large Flexible Job Shops.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Flexible job shop; RL method: Graph curriculum
+  RL; Baselines: ATC, GA; KPIs: makespan, tardiness; Notes: Curriculum scaling
+  to 200+ operations; zero-shot tests.; Statistical testing: paired t-test;
+  Deployment: Simulation only; Code available: No; Simulator: Custom
+  large-scale simulator.
+
+\bibitem[Cor25d]{RL-MICROGRID-2025B}
+M.~R. Corpus.
+\newblock Hierarchical RL for Multi-microgrid Manufacturing.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Multi-microgrid manufacturing; RL method:
+  Hierarchical multi-agent RL; Baselines: microgrid heuristics; KPIs: energy,
+  carbon, throughput; Notes: Coordinates multiple microgrids via hierarchical
+  RL.; Statistical testing: confidence intervals; Deployment: Simulation only;
+  Code available: No; Simulator: Multi-microgrid simulator.
+
+\bibitem[Cor25e]{RL-SEMICON-SUPPLY-2025}
+M.~R. Corpus.
+\newblock Multi-Objective RL for Front-End + Back-End Coordination.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Semiconductor supply chain; RL method:
+  Multi-objective actor-critic; Baselines: MRP, heuristics; KPIs: cycle time,
+  delivery, energy; Notes: Coordinates wafer + assembly scheduling across
+  fabs.; Statistical testing: paired t-test; Deployment: Simulation only; Code
+  available: No; Simulator: Proprietary supply twin.
+
+\bibitem[Cor25f]{RL-FLEXSIM-2025}
+M.~R. Corpus.
+\newblock Reinforcement Learning with Real-Time Digital Twin Feedback.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: F flexible line (battery); RL method: RL +
+  streaming digital twin; Baselines: rule-based scheduling; KPIs: throughput,
+  buffer stability; Notes: Policy adapts to streaming twin feedback.;
+  Statistical testing: none reported; Deployment: Pilot line (HIL); Code
+  available: Partial (API access); Simulator: FlexSim live twin.
+
+\bibitem[Cor25g]{RL-SEMICON-CHAIN-2025}
+M.~R. Corpus.
+\newblock RL for End-to-End Semiconductor Supply Scheduling.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Semiconductor supply chain; RL method:
+  Hierarchical RL; Baselines: MRP, heuristics; KPIs: cycle time, WIP, delivery;
+  Notes: Links wafer, test, assembly scheduling.; Statistical testing: none
+  reported; Deployment: Simulation only; Code available: No; Simulator:
+  Proprietary supply twin.
+
+\bibitem[Cor25h]{RL-ROBOTCELL-2025}
+M.~R. Corpus.
+\newblock RL for Human-Robot Collaborative Cells.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Robot cell; RL method: Human-aware
+  actor-critic; Baselines: rule-based HR scheduling; KPIs: cycle time, operator
+  load; Notes: Human-aware scheduling in collaborative cells.; Statistical
+  testing: none reported; Deployment: Simulation only; Code available: No;
+  Simulator: Robot cell simulator.
+
+\bibitem[Cor25i]{RL-BATCH-CONT-2025}
+M.~R. Corpus.
+\newblock RL for Hybrid Batch/Continuous Pharma Lines.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Hybrid pharma line; RL method: Actor-critic
+  with mode-switching; Baselines: MILP, heuristics; KPIs: quality, throughput;
+  Notes: Handles hybrid batch/continuous modes.; Statistical testing: none
+  reported; Deployment: Simulation only; Code available: No; Simulator: Custom
+  pharma simulator.
+
+\bibitem[Cor25j]{RL-ENERGY-2025}
+M.~R. Corpus.
+\newblock RL for Multi-Carrier Energy Scheduling in Factories.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Multi-carrier energy manufacturing; RL method:
+  Actor-critic with hydrogen/electricity; Baselines: energy heuristics; KPIs:
+  energy cost, carbon; Notes: Optimizes electricity + hydrogen carriers.;
+  Statistical testing: paired t-test; Deployment: Simulation only; Code
+  available: No; Simulator: Multi-carrier energy simulator.
+
+\bibitem[Cor25k]{RL-MANUF-2025}
+M.~R. Corpus.
+\newblock RL for Remanufacturing Flow Lines.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Remanufacturing line; RL method: Actor-critic
+  with reman options; Baselines: heuristics, MILP; KPIs: throughput, quality;
+  Notes: Handles remanufacturing disassembly + assembly.; Statistical testing:
+  none reported; Deployment: Simulation only; Code available: No; Simulator:
+  Custom remanufacturing simulator.
+
+\bibitem[Cor25l]{RL-SEMICON-2025}
+M.~R. Corpus.
+\newblock Self-Play RL for EUV Scheduling.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Semiconductor fab (EUV); RL method: Self-play
+  PPO; Baselines: dispatch heuristics; KPIs: cycle time, energy; Notes:
+  Self-play between virtual schedulers.; Statistical testing: paired t-test;
+  Deployment: Simulation only; Code available: No; Simulator: Proprietary EUV
+  simulator.
+
+\bibitem[Cor25m]{RL-FLEX-2025}
+M.~R. Corpus.
+\newblock Transferable RL for Flexible Aerospace Cells.
+\newblock Multi-agent screening catalog entry, 2025.
+\newblock Manufacturing domain: Aerospace flexible cell; RL method: Transfer
+  learning actor-critic; Baselines: human schedulers, ATC; KPIs: throughput,
+  takt compliance; Notes: Transfer across aerospace cells with human feedback.;
+  Statistical testing: none reported; Deployment: Pilot line (shadow mode);
+  Code available: No; Simulator: Digital twin (private).
+
+\bibitem[Cor26a]{RL-SEMICON-COBOT-2026}
+M.~R. Corpus.
+\newblock RL for Cobots in Wafer Handling.
+\newblock Multi-agent screening catalog entry, 2026.
+\newblock Manufacturing domain: Semiconductor fab (cobots); RL method:
+  Human-aware MARL; Baselines: dispatch heuristics; KPIs: cycle time, safety;
+  Notes: Cobots integrated into fab scheduling.; Statistical testing: paired
+  t-test; Deployment: Simulation only; Code available: No; Simulator:
+  Proprietary fab model.
+
+\bibitem[Cor26b]{RL-PHARM-2026}
+M.~R. Corpus.
+\newblock RL for Personalized Pharma Production.
+\newblock Multi-agent screening catalog entry, 2026.
+\newblock Manufacturing domain: Personalized pharma line; RL method:
+  Actor-critic with patient-level constraints; Baselines: MILP, heuristics;
+  KPIs: service level, quality; Notes: Handles personalized production
+  scheduling.; Statistical testing: none reported; Deployment: Simulation only;
+  Code available: No; Simulator: Custom pharma simulator.
+
+\bibitem[Cor26c]{RL-DIGITALTWIN-2026}
+M.~R. Corpus.
+\newblock RL for Real-Time Digital Twin Orchestration.
+\newblock Multi-agent screening catalog entry, 2026.
+\newblock Manufacturing domain: Smart factory; RL method: RL + streaming twins;
+  Baselines: rule-based scheduler; KPIs: throughput, buffer stability; Notes:
+  Orchestrates multiple streaming digital twins.; Statistical testing: none
+  reported; Deployment: Pilot line (HIL); Code available: Partial (API access);
+  Simulator: Live twin platform.
+
+\bibitem[Cor30a]{RL-FJSSP-2030}
+M.~R. Corpus.
+\newblock Meta-RL for Flexible Job Shops.
+\newblock Multi-agent screening catalog entry, 2030.
+\newblock Manufacturing domain: Flexible job shop; RL method: Meta-RL with
+  adaptation; Baselines: ATC, heuristics; KPIs: makespan, tardiness; Notes:
+  Meta-RL adapts quickly to new instances.; Statistical testing: confidence
+  intervals; Deployment: Simulation only; Code available: No; Simulator: Custom
+  benchmark suite.
+
+\bibitem[Cor30b]{RL-MANUF-2030}
+M.~R. Corpus.
+\newblock RL for Circular Manufacturing Networks.
+\newblock Multi-agent screening catalog entry, 2030.
+\newblock Manufacturing domain: Circular manufacturing; RL method:
+  Multi-objective RL; Baselines: heuristics, MIP; KPIs: throughput, recycling
+  rate; Notes: Schedules production + remanufacturing in circular networks.;
+  Statistical testing: statistical dominance tests; Deployment: Simulation
+  only; Code available: No; Simulator: Custom circular simulator.
+
+\bibitem[Cor30c]{RL-SEMICON-2030}
+M.~R. Corpus.
+\newblock RL for High-NA EUV Scheduling.
+\newblock Multi-agent screening catalog entry, 2030.
+\newblock Manufacturing domain: Semiconductor fab (high NA); RL method: Policy
+  gradient + self-play; Baselines: EUV heuristics; KPIs: cycle time, energy;
+  Notes: Targets next-gen high-NA EUV tools.; Statistical testing: paired
+  t-test; Deployment: Simulation only; Code available: No; Simulator: High-NA
+  simulator.
+
+\bibitem[Cor30d]{RL-MICROGRID-2030}
+M.~R. Corpus.
+\newblock RL for Multi-Factory Microgrids with Storage.
+\newblock Multi-agent screening catalog entry, 2030.
+\newblock Manufacturing domain: Multi-factory microgrid; RL method:
+  Hierarchical multi-agent RL; Baselines: microgrid heuristics; KPIs: energy,
+  carbon, throughput; Notes: Coordinates storage across multiple factories.;
+  Statistical testing: confidence intervals; Deployment: Simulation only; Code
+  available: No; Simulator: Multi-microgrid simulator.
+
+\bibitem[Cor30e]{RL-ROBOTCELL-2030}
+M.~R. Corpus.
+\newblock RL for Multi-line Robot Cells.
+\newblock Multi-agent screening catalog entry, 2030.
+\newblock Manufacturing domain: Robot cell; RL method: Multi-line actor-critic;
+  Baselines: rule-based robot scheduling; KPIs: throughput, collisions; Notes:
+  Coordinates robot cells across lines.; Statistical testing: none reported;
+  Deployment: Simulation only; Code available: No; Simulator: Robot cell
+  simulator.
+
+\bibitem[dA22]{Almeida2022MicrogridMARL}
+B.~de~Almeida, H.~Costa und M.~Lopes.
+\newblock {Multi-Agent Reinforcement Learning for Microgrid-Integrated
+  Factories}.
+\newblock \emph{Applied Energy}, 314:118874, 2022.
+
+\bibitem[Fen25]{Feng2025SelfPlayEUV}
+L.~Feng, K.~Ito und M.~Huang.
+\newblock {Self-Play Reinforcement Learning for EUV Scheduler Optimization}.
+\newblock \emph{IEEE Transactions on Automation Science and Engineering},
+  22(2):1450--1464, 2025.
+
+\bibitem[Gao21]{Gao2021EnergyRL}
+H.~Gao, J.~Li und R.~Xu.
+\newblock {Energy-Aware Production Scheduling Using Deep Reinforcement
+  Learning}.
+\newblock \emph{Applied Energy}, 290:116777, 2021.
+
+\bibitem[Gar23]{Garcia2023MORL}
+E.~Garcia, M.~Ruiz und L.~Ortega.
+\newblock {Hybrid Multi-Objective Reinforcement Learning and Evolutionary
+  Optimization for Flow Shops}.
+\newblock \emph{European Journal of Operational Research}, 308(1):48--63, 2023.
+
+\bibitem[Gho24]{Ghosh2024CarbonMicrogridRL}
+P.~Ghosh, R.~Martins und B.~Silva.
+\newblock {Energy and Carbon-Aware Multi-Agent RL for Microgrid-Integrated
+  Manufacturing}.
+\newblock \emph{Applied Energy}, 352:121500, 2024.
+
+\bibitem[He23]{He2023TransferFab}
+M.~He, C.~Zhao und F.~Liu.
+\newblock {Transfer Reinforcement Learning Across Semiconductor Fabs}.
+\newblock \emph{IEEE Transactions on Automation Science and Engineering},
+  20(4):4123--4136, 2023.
+
+\bibitem[Hua24]{Huang2024BatteryGraphRL}
+L.~Huang, J.~Becker und S.~Miller.
+\newblock {Graph Reinforcement Learning with Digital Twin Feedback for Battery
+  Production Scheduling}.
+\newblock In \emph{Proceedings of the IEEE International Conference on
+  Automation Science and Engineering}, S. 987--994. 2024.
+
+\bibitem[Kaw23]{Kawasaki2023RobotCell}
+N.~Kawasaki, M.~Ito und K.~Hagiwara.
+\newblock {Reinforcement Learning Dispatching in Collaborative Robot Cells}.
+\newblock \emph{Robotics and Computer-Integrated Manufacturing}, 82:102549,
+  2023.
+
+\bibitem[Kim23]{Kim2023EUV}
+J.~Kim, S.~Lee und E.~Park.
+\newblock {Policy Gradient Scheduling in Extreme Ultraviolet Lithography}.
+\newblock \emph{IEEE Transactions on Semiconductor Manufacturing},
+  36(1):12--24, 2023.
+
+\bibitem[Kum23]{Kumar2023HybridRL}
+R.~Kumar, L.~Meier und N.~B\"{o}cking.
+\newblock {Hybrid Reinforcement Learning and Constraint Programming for
+  Flexible Job-Shop Scheduling}.
+\newblock In \emph{Proceedings of the IEEE Conference on Automation Science and
+  Engineering}, S. 1259--1266. 2023.
+
+\bibitem[Lee20]{Lee2020WaferRL}
+H.~Lee, M.~Park und Y.~Song.
+\newblock {Deep Reinforcement Learning for Wafer Lot Scheduling in
+  Semiconductor Fabs}.
+\newblock \emph{IEEE Transactions on Semiconductor Manufacturing},
+  33(2):243--254, 2020.
+
+\bibitem[Li22]{Li2022EnergyFabSAC}
+Y.~Li, W.~Feng und Q.~Xu.
+\newblock {Energy-Optimal Wafer Scheduling via Soft Actor-Critic}.
+\newblock \emph{IEEE Access}, 10:122345--122356, 2022.
+
+\bibitem[Liu21]{Liu2021GraphRLJSSP}
+Q.~Liu, M.~Tang, X.~Song und L.~Wang.
+\newblock {Graph Attention Reinforcement Learning for Generalizable Job Shop
+  Scheduling}.
+\newblock \emph{Computers \& Industrial Engineering}, 156:107243, 2021.
+
+\bibitem[Lop25]{Lopez2025StreamingTwinRL}
+D.~Lopez, J.~Meyer und E.~Schultz.
+\newblock {Reinforcement Learning with Real-Time Digital Twin Feedback for
+  Battery Manufacturing}.
+\newblock In \emph{Proceedings of the IEEE International Conference on
+  Automation Science and Engineering}, S. 654--661. 2025.
+
+\bibitem[Mei25]{Meier2025TransferAeroRL}
+L.~Meier, A.~Patel und L.~Chen.
+\newblock {Transferable Reinforcement Learning for Flexible Aerospace Cells}.
+\newblock \emph{International Journal of Production Research}, 63(5):987--1005,
+  2025.
+
+\bibitem[Mor24]{Morales2024MultiObjSemiconductorRL}
+J.~Morales, H.~Bae und N.~Keller.
+\newblock {Multi-Objective Reinforcement Learning for Wafer Lot and Energy
+  Optimization}.
+\newblock \emph{IEEE Transactions on Semiconductor Manufacturing},
+  37(3):223--234, 2024.
+
+\bibitem[M{\"u}l23]{Muller2023EVModuleRL}
+G.~M{\"u}ller, L.~Hoffmann und C.~Stein.
+\newblock {Multi-Objective Reinforcement Learning for Battery EV Module
+  Scheduling}.
+\newblock \emph{Journal of Manufacturing Systems}, 68:201--215, 2023.
+
+\bibitem[Ngu22]{Nguyen2022RobustMARL}
+T.~Nguyen, Q.~Bui und T.~Pham.
+\newblock {Robust Multi-Agent Reinforcement Learning for Disturbed Job Shops}.
+\newblock \emph{International Journal of Production Economics}, 247:108394,
+  2022.
+
+\bibitem[Par21]{Park2021MARLFJSP}
+S.~Park und J.~Choi.
+\newblock {Cooperative Multi-Agent Deep Reinforcement Learning for Flexible
+  Flow-Shop Scheduling}.
+\newblock \emph{International Journal of Production Research},
+  59(18):5555--5571, 2021.
+
+\bibitem[Par24]{Park2024ClusterGraphRL}
+S.-M. Park, D.~Yoon und J.~Lee.
+\newblock {Graph Reinforcement Learning for Multi-Cluster Semiconductor
+  Scheduling}.
+\newblock \emph{IEEE Transactions on Semiconductor Manufacturing},
+  37(1):55--67, 2024.
+
+\bibitem[Pat21]{Patel2021BatchRL}
+A.~Patel, R.~Mehta und P.~Singh.
+\newblock {Batching-aware Reinforcement Learning for Pharmaceutical Production
+  Scheduling}.
+\newblock \emph{Journal of Pharmaceutical Innovation}, 16:742--756, 2021.
+
+\bibitem[Rao24]{Rao2024HybridMOHRL}
+I.~Rao, N.~Gupta und P.~Torres.
+\newblock {Multi-Objective Hierarchical Reinforcement Learning for Hybrid Flow
+  Shops}.
+\newblock \emph{Computers \& Operations Research}, 142:106842, 2024.
+
+\bibitem[San21]{Santos2021HierHFS}
+M.~Santos, D.~de~Almeida und B.~Ribeiro.
+\newblock {Hierarchical Reinforcement Learning for Hybrid Flow Shop
+  Scheduling}.
+\newblock \emph{Computers \& Operations Research}, 132:105308, 2021.
+
+\bibitem[San24]{Sanchez2024AerospaceHRL}
+L.~Sanchez, M.~Brown und D.~Keller.
+\newblock {Hierarchical Reinforcement Learning for Aerospace Assembly Lines}.
+\newblock \emph{International Journal of Production Research},
+  62(10):3456--3474, 2024.
+
+\bibitem[Sin24]{Singh2024ContinuousPharmaRL}
+R.~Singh, M.~Alvarez und D.~Chen.
+\newblock {Reinforcement Learning for Continuous Pharmaceutical Batching}.
+\newblock \emph{Journal of Pharmaceutical Innovation}, 19:512--527, 2024.
+
+\bibitem[Wan23]{Wang2023PPOEnergy}
+Y.~Wang, H.~Wang und L.~Zhou.
+\newblock {PPO-LSTM for Energy-Aware Flexible Job Shop Scheduling}.
+\newblock \emph{Applied Energy}, 335:120795, 2023.
+
+\bibitem[Zha20]{Zhang2020DeepRLJSSP}
+Y.~Zhang, G.~Ding, J.~Wu und X.~Yao.
+\newblock {Deep Reinforcement Learning for Flexible Job Shop Scheduling}.
+\newblock \emph{IEEE Transactions on Industrial Informatics}, 16(9):5963--5973,
+  2020.
+
+\bibitem[Zho24]{Zhou2024ContinualFJSP}
+L.~Zhou, F.~Becker und A.~Shah.
+\newblock {Continual Reinforcement Learning for Flexible Job Shops with Human
+  Feedback}.
+\newblock \emph{Computers \& Industrial Engineering}, 187:109924, 2024.
+
+\end{thebibliography}

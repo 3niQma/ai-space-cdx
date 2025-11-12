@@ -1,0 +1,49 @@
+\chapter{Background}
+\label{ch:background}
+
+This chapter summarizes manufacturing scheduling concepts, RL fundamentals, and evaluation metrics that will recur throughout the literature review.
+
+\section{Manufacturing Scheduling Fundamentals}
+Manufacturing scheduling problems describe how jobs (orders) traverse machines under technological and resource constraints. Canonical variants include:
+\begin{itemize}
+  \item \textbf{Job-Shop Scheduling Problem (JSSP):} Each job follows a specific machine sequence. The solution assigns start times to each operation such that no machine processes two jobs simultaneously.
+  \item \textbf{Flow-Shop and Hybrid Flow-Shop:} Jobs share a common processing sequence; hybrid variants allow parallel machines per stage, introducing machine-selection decisions.
+  \item \textbf{Flexible Job-Shop (FJSSP):} Extends JSSP by allowing alternative machines for each operation, increasing combinatorial complexity but matching flexible manufacturing systems.
+  \item \textbf{Semiconductor and Assembly Lines:} Characterized by re-entrant flows, batching constraints, and sequence-dependent setups, often requiring stochastic modeling of tool availability.
+\end{itemize}
+Typical objectives include makespan minimization, total weighted tardiness, throughput maximization, energy usage reduction, and robustness to disruptions (machine failures, rush orders). Multi-objective formulations either scalarize objectives via weighted sums or treat them within Pareto frameworks. Recent industry case studies highlight how these abstractions manifest: flexible aerospace cells run dual-agent schedulers to manage tooling alternatives \cite{RL-FLEX-DUAL-2024,RL-FLEX-2025}, semiconductor fabs juggle lot batching and energy tariffs while respecting reticle cleaning windows \cite{RL-SEMICON-2023,RL-SEMICON-LOT-2024}, and microgrid-integrated factories co-opt scheduling to regulate power draw \cite{RL-MARL-ENERGY-2022,RL-MICROGRID-2024}. These examples ground the background concepts in real manufacturing motifs rather than purely academic benchmarks.
+
+\section{Reinforcement Learning Primer}
+An RL problem is formalized as a Markov Decision Process (MDP) defined by states, actions, transition probabilities, and rewards. In scheduling, states encode shop-floor status (machine queues, remaining processing times, due dates), actions denote dispatching decisions (select job-machine pairs, adjust processing modes), and rewards capture immediate improvements in KPIs (negative tardiness, energy penalties).
+
+Key RL families relevant to scheduling are:
+\begin{description}
+  \item[Model-free value-based] methods such as Q-learning and Deep Q-Networks (DQN) that learn action-value estimators. They often discretize actions (e.g., pick-next-job) and rely on experience replay to stabilize learning.
+  \item[Policy gradient and actor-critic] algorithms (e.g., Proximal Policy Optimization (PPO), Deep Deterministic Policy Gradient (DDPG), Soft Actor-Critic (SAC)) suitable for continuous dispatching decisions or hybrid action spaces.
+  \item[Model-based RL] variants that learn or exploit simulators/digital twins to plan multiple steps ahead, sometimes integrating Monte Carlo Tree Search or simulation-based lookahead.
+  \item[Hierarchical and multi-agent RL] structures that coordinate cell-level and line-level scheduling or decompose the shop into cooperative agents.
+\end{description}
+Feature engineering ranges from handcrafted schedule descriptors (queue lengths, slack) to representation learning with graph neural networks capturing precedence graphs and machine connectivity. Manufacturing studies increasingly embed domain priors: graph attention layers for cluster tools \cite{RL-SEMICON-2024}, curriculum encoders that expand the job graph gradually \cite{RL-FJSSP-2025}, and multi-agent critics that exchange carbon price messages during microgrid coordination \cite{RL-MICROGRID-2025,RL-ENERGY-2025}. When no public simulator exists, authors rely on high-fidelity digital twins and replay buffers derived from historical MES logs to populate the state/action space \cite{RL-FLEXSIM-2024,RL-DIGITALTWIN-2026}.
+
+\section{Evaluation Metrics}
+The literature reports a variety of metrics, often depending on customer contracts and sustainability targets:
+\begin{itemize}
+  \item \textbf{Makespan ($C_{\max}$):} Completion time of the final job, commonly used to benchmark heuristics.
+  \item \textbf{Total (Weighted) Tardiness:} Sum of lateness penalties; weighted versions reflect priority orders.
+  \item \textbf{Throughput / Output Rate:} Jobs completed per horizon, relevant for flow lines and battery plants.
+  \item \textbf{Energy and Carbon Indicators:} Kilowatt-hours or CO$_2$ per job, crucial for green manufacturing.
+  \item \textbf{Stability and Robustness:} Variance of KPIs under disturbances, number of schedule modifications required, or resilience indices.
+\end{itemize}
+Benchmarking typically uses public instances (Taillard, FT06, Kacem) or proprietary digital twins. Statistical tests (paired $t$-tests, Wilcoxon signed-rank) assess significance when comparing RL to classical heuristics.
+
+\section{Digital Twins and Data Infrastructure}
+Digital twins form the backbone of many RL scheduling experiments. Battery factories mirror physical assets in FlexSim or AnyLogic, streaming shop-floor telemetry to update RL states in near real time \cite{RL-FLEXSIM-2025,RL-DIGITALTWIN-2026}. Semiconductor fabs generally operate proprietary simulators that encode re-entrant flows and tool maintenance calendars; transfer-learning approaches rely on aligned data schemas so policies can migrate across fabs without relearning from scratch \cite{RL-SEMICON-TRANSFER-2023,RL-SEMICON-CHAIN-2025}. Microgrid-integrated plants co-simulate production events with MATLAB/Simulink energy models to expose the reward function to tariff forecasts and storage behavior \cite{RL-MARL-ENERGY-2022,RL-MICROGRID-2025B}. Capturing metadata about twin fidelity, update frequency, and latency is therefore a prerequisite for evaluating whether a reported RL policy could be replicated.
+
+\section{Benchmark Instances and Datasets}
+To compare methods, researchers rely on both public benchmarks and bespoke industrial datasets. Taillard, FT06, and Kacem instances remain the de facto test bed for new job-shop agents, enabling ablation studies before moving to confidential factory data \cite{RL-JSSP-2020,RL-PPO-2022}. Flexible job-shop and aerospace cells report larger private instances, but some authors release aggregated performance tables to encourage secondary analysis \cite{RL-HYBRID-2023,RL-FLEX-2024B}. Semiconductor and pharma papers often publish only summary statistics; the study catalog recorded whether code or simulators are available and flags that no surveyed paper released a full fab twin \cite{RL-SEMICON-2025,RL-BATCH-CONT-2025}. The absence of open datasets motivates the automation pipeline described later, which stores harmonized metadata (domain, RL method, baselines, KPIs) for every inclusion so future researchers can replicate descriptive analyses even without raw simulators.
+
+\section{Operations Research Synergies}
+Classical operations research (OR) algorithms remain the yardstick for industrial scheduling. Mixed-integer programming, constraint programming, and metaheuristics such as tabu search still dominate production environments whenever horizon sizes remain tractable. Hybrid RL+OR approaches therefore combine the pattern-recognition strength of neural policies with the feasibility guarantees of OR backends. Examples include CP-SAT refinement layers that enforce precedence, batching, or labor constraints after the RL policy proposes a candidate assignment \cite{Kumar2023HybridRL,RL-HYBRID-2023}, as well as NSGA-II post-processing that reshapes Pareto fronts learned by actor-critic agents \cite{Garcia2023MORL,RL-HYBRID-2024}. These hybrids introduce richer supervision signals: feasibility feedback helps the actor learn constraint-aware embeddings, while OR solvers benefit from warm starts that reduce solve times. Understanding when and how to combine RL with OR is vital for practitioners who must respect regulatory or safety constraints.
+
+\section{Human Factors and Safety Considerations}
+Manufacturing scheduling rarely occurs in isolation from human operators. Collaborative robot cells, manual assembly stations, and pharma clean rooms impose safety envelopes that RL schedulers must respect. Studies in robotic cells incorporate human occupancy into the state representation and penalize actions that increase operator workload or violate ergonomic thresholds \cite{RL-ROBOTCELL-2023,RL-ROBOTCELL-2025}. Pharmaceutical settings encode batch release approvals, cleaning validations, and patient-level service commitments \cite{RL-BATCH-2024,RL-PHARM-2026}. These examples highlight two design imperatives: (i) reward functions must explicitly capture human-centered KPIs—otherwise policies might exploit unsafe shortcuts—and (ii) policy explanations must be intelligible to line supervisors. Later chapters revisit how interpretability techniques (saliency on queue embeddings, rule extraction) are emerging to fill this gap.

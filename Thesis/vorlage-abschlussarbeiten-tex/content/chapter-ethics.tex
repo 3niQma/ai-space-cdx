@@ -1,0 +1,31 @@
+\chapter{Ethical, Legal, and Societal Considerations}
+\label{ch:ethics}
+
+Manufacturing RL deployments intersect with ethics, safety, labor, and regulatory compliance. This chapter examines those dimensions so that the technical achievements described earlier translate into responsible practice.
+
+\section{Worker Impact and Skill Transformation}
+RL schedulers change how planners, dispatchers, and operators spend their time. Rather than manually sequencing jobs, staff increasingly validate policy recommendations, investigate anomalies, and curate training data. Organizations must invest in upskilling programs—covering data literacy, RL basics, and human-machine teaming—to ensure workers remain empowered. Interviews revealed that transparent dashboards and override mechanisms reduce anxiety: when operators understand why a policy recommended a certain action, they feel more confident executing it or escalating concerns.
+
+\section{Safety and Reliability}
+Safety regulators expect deterministic behavior, yet RL policies are inherently probabilistic. To reconcile this tension, many studies employ hybrid architectures in which RL proposes candidate actions but rule-based guards enforce hard constraints \cite{Kumar2023HybridRL,RL-HYBRID-2023}. Pharmaceutical and semiconductor contexts additionally require validation protocols documenting every change to the scheduling algorithm. The thesis recommends maintaining an auditable chain-of-custody for training data, code commits, and deployment artifacts so investigators can reconstruct system state after incidents.
+
+\section{Data Privacy and Intellectual Property}
+Factory data often contains trade secrets (e.g., process recipes, throughput targets). When collaborating with external partners or cloud providers, manufacturers must enforce strict data-governance policies: encrypt data in transit, anonymize sensitive identifiers, and limit access to pre-approved personnel. Federated-learning approaches are emerging, allowing plants to learn shared policies without exchanging raw data—a promising direction for semiconductor consortia and automotive suppliers.
+
+\section{Environmental Responsibility}
+Although RL can reduce energy consumption and emissions \cite{RL-MARL-ENERGY-2022,RL-ENERGY-2025}, training large models also consumes compute. Adoption plans should account for the carbon footprint of training workloads and prioritize efficient architectures. Techniques such as transfer learning, model compression, and offline reinforcement learning reduce compute requirements while preserving performance. Manufacturers pursuing sustainability certifications can document both the energy savings achieved in operations and the mitigation strategies applied to model training.
+
+\section{Regulatory Landscape}
+Regulators increasingly scrutinize AI systems in safety-critical domains. European proposals for AI Act compliance, for example, categorize manufacturing control systems as ``high risk,'' requiring transparency, risk management, and human oversight. The roadmap in Chapter~\ref{ch:adoption} aligns with these expectations by advocating for shadow mode testing, policy versioning, and audit logging. Organizations operating across jurisdictions should monitor evolving guidelines from OSHA, FDA, and international standards bodies to ensure RL deployments remain compliant.
+
+\section{Future Directions}
+Ethical considerations will evolve alongside technology. Future research should explore:
+\begin{itemize}
+  \item Co-designing reward functions with worker councils to capture qualitative notions of fairness.
+  \item Embedding explainability modules that translate policy decisions into natural-language rationales.
+  \item Developing simulation benchmarks that stress-test RL under ethical scenarios (e.g., prioritizing urgent medical orders over routine work).
+\end{itemize}
+By foregrounding these topics, the manufacturing community can embrace RL innovations without compromising worker welfare or public trust.
+
+\section{Global Supply-Chain Fairness}
+RL-driven scheduling increasingly spans multiple countries and supplier tiers. Decisions about which fab or contract manufacturer receives priority affect regional employment and revenue distribution. Transparency requirements—such as documenting why certain plants were favored during constrained capacity—help mitigate perceptions of bias. Organizations can further embed fairness by adding ``regional equity'' terms to rewards or by rotating slack capacity among qualified sites. Regulatory scrutiny around reshoring and trade compliance will likely intensify, making it essential to audit RL decisions for unintended geopolitical impacts.

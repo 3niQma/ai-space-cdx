@@ -1,0 +1,7 @@
+source,query,filters,export_date,hit_count
+Scopus,"TITLE-ABS-KEY (""reinforcement learning"" AND ""job shop scheduling"")","2014-2024, journal+conference",2025-11-02,124
+IEEE Xplore,"(""reinforcement learning"" NEAR/3 scheduling) AND (""flow shop"" OR ""flexible job shop"")","2014-2024, subject: manufacturing",2025-11-03,68
+Web of Science,"TS=((""multi-agent reinforcement learning"" AND scheduling AND manufacturing))","2014-2024, SCI-Expanded",2025-11-03,57
+ACM DL,"[[All: ""manufacturing scheduling"" AND ""deep reinforcement learning""]]","2014-2024, proceedings",2025-11-04,36
+arXiv,"cat:cs.AI AND (""manufacturing scheduling"" OR ""job shop"") AND ""reinforcement learning""","2019-2024",2025-11-04,41
+ScienceDirect,"(""reinforcement learning"" AND ""manufacturing scheduling"") AND (""semiconductor"" OR ""batch"")","2014-2024, journals",2025-11-05,52

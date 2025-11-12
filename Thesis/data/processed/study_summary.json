@@ -1,0 +1,683 @@
+{
+  "total_studies": 55,
+  "by_year": [
+    {
+      "label": "2020",
+      "count": 2
+    },
+    {
+      "label": "2021",
+      "count": 5
+    },
+    {
+      "label": "2022",
+      "count": 6
+    },
+    {
+      "label": "2023",
+      "count": 7
+    },
+    {
+      "label": "2024",
+      "count": 14
+    },
+    {
+      "label": "2025",
+      "count": 13
+    },
+    {
+      "label": "2026",
+      "count": 3
+    },
+    {
+      "label": "2030",
+      "count": 5
+    }
+  ],
+  "by_domain": [
+    {
+      "label": "Aerospace assembly",
+      "count": 1
+    },
+    {
+      "label": "Aerospace flexible cell",
+      "count": 1
+    },
+    {
+      "label": "Assembly/flow line",
+      "count": 1
+    },
+    {
+      "label": "Batch process",
+      "count": 1
+    },
+    {
+      "label": "Battery EV module line",
+      "count": 1
+    },
+    {
+      "label": "Biopharma batch",
+      "count": 1
+    },
+    {
+      "label": "Circular manufacturing",
+      "count": 1
+    },
+    {
+      "label": "Continuous batch",
+      "count": 1
+    },
+    {
+      "label": "F flexible line (battery)",
+      "count": 2
+    },
+    {
+      "label": "Flexible flow shop",
+      "count": 1
+    },
+    {
+      "label": "Flexible flow shop (microgrid)",
+      "count": 2
+    },
+    {
+      "label": "Flexible job shop",
+      "count": 8
+    },
+    {
+      "label": "Flow shop",
+      "count": 1
+    },
+    {
+      "label": "Flow shop energy-aware",
+      "count": 1
+    },
+    {
+      "label": "Hybrid flow shop",
+      "count": 2
+    },
+    {
+      "label": "Hybrid pharma line",
+      "count": 1
+    },
+    {
+      "label": "Job shop",
+      "count": 1
+    },
+    {
+      "label": "Job shop (disturbed)",
+      "count": 1
+    },
+    {
+      "label": "Microgrid manufacturing",
+      "count": 1
+    },
+    {
+      "label": "Multi-carrier energy manufacturing",
+      "count": 1
+    },
+    {
+      "label": "Multi-factory microgrid",
+      "count": 1
+    },
+    {
+      "label": "Multi-microgrid manufacturing",
+      "count": 1
+    },
+    {
+      "label": "Multi-plant manufacturing",
+      "count": 1
+    },
+    {
+      "label": "Personalized pharma line",
+      "count": 1
+    },
+    {
+      "label": "Remanufacturing line",
+      "count": 1
+    },
+    {
+      "label": "Robot cell",
+      "count": 4
+    },
+    {
+      "label": "Semiconductor fab",
+      "count": 7
+    },
+    {
+      "label": "Semiconductor fab (EUV)",
+      "count": 2
+    },
+    {
+      "label": "Semiconductor fab (advanced nodes)",
+      "count": 1
+    },
+    {
+      "label": "Semiconductor fab (cobots)",
+      "count": 1
+    },
+    {
+      "label": "Semiconductor fab (high NA)",
+      "count": 1
+    },
+    {
+      "label": "Semiconductor fab SAC",
+      "count": 1
+    },
+    {
+      "label": "Semiconductor supply chain",
+      "count": 2
+    },
+    {
+      "label": "Smart factory",
+      "count": 1
+    }
+  ],
+  "by_method": [
+    {
+      "label": "Actor-critic + NSGA-II",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with batching constraints",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with hydrogen/electricity",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with mode-switching",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with patient-level constraints",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with reman options",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with shared resources",
+      "count": 1
+    },
+    {
+      "label": "Actor-critic with yield penalty",
+      "count": 1
+    },
+    {
+      "label": "CNN-enhanced deep RL",
+      "count": 1
+    },
+    {
+      "label": "Continual learning PPO + human feedback",
+      "count": 1
+    },
+    {
+      "label": "Cooperative MARL",
+      "count": 1
+    },
+    {
+      "label": "Cooperative MARL policy gradients",
+      "count": 1
+    },
+    {
+      "label": "Decentralized MARL with resilience bonuses",
+      "count": 1
+    },
+    {
+      "label": "Distributional RL",
+      "count": 1
+    },
+    {
+      "label": "Double DQN",
+      "count": 1
+    },
+    {
+      "label": "Dual-agent actor-critic",
+      "count": 1
+    },
+    {
+      "label": "Dueling DQN",
+      "count": 1
+    },
+    {
+      "label": "Graph RL (message passing)",
+      "count": 1
+    },
+    {
+      "label": "Graph RL with attention",
+      "count": 1
+    },
+    {
+      "label": "Graph attention actor-critic",
+      "count": 1
+    },
+    {
+      "label": "Graph curriculum RL",
+      "count": 1
+    },
+    {
+      "label": "Hierarchical PPO",
+      "count": 1
+    },
+    {
+      "label": "Hierarchical RL",
+      "count": 1
+    },
+    {
+      "label": "Hierarchical RL (options+policies)",
+      "count": 1
+    },
+    {
+      "label": "Hierarchical actor-critic",
+      "count": 1
+    },
+    {
+      "label": "Hierarchical multi-agent RL",
+      "count": 2
+    },
+    {
+      "label": "Hierarchical multi-objective RL",
+      "count": 1
+    },
+    {
+      "label": "Human-aware MARL",
+      "count": 1
+    },
+    {
+      "label": "Human-aware actor-critic",
+      "count": 1
+    },
+    {
+      "label": "Meta-RL with adaptation",
+      "count": 1
+    },
+    {
+      "label": "Multi-agent SAC",
+      "count": 1
+    },
+    {
+      "label": "Multi-agent SAC with carbon pricing",
+      "count": 1
+    },
+    {
+      "label": "Multi-agent actor-critic",
+      "count": 2
+    },
+    {
+      "label": "Multi-line actor-critic",
+      "count": 1
+    },
+    {
+      "label": "Multi-objective RL",
+      "count": 1
+    },
+    {
+      "label": "Multi-objective RL (policy gradient)",
+      "count": 1
+    },
+    {
+      "label": "Multi-objective SAC",
+      "count": 1
+    },
+    {
+      "label": "Multi-objective actor-critic",
+      "count": 3
+    },
+    {
+      "label": "PPO actor-critic",
+      "count": 1
+    },
+    {
+      "label": "PPO-LSTM",
+      "count": 1
+    },
+    {
+      "label": "Policy gradient + self-play",
+      "count": 1
+    },
+    {
+      "label": "Policy gradient with constraints",
+      "count": 1
+    },
+    {
+      "label": "Policy gradient with feature shaping",
+      "count": 1
+    },
+    {
+      "label": "Policy gradient with lot-sizing",
+      "count": 1
+    },
+    {
+      "label": "RL + streaming digital twin",
+      "count": 1
+    },
+    {
+      "label": "RL + streaming twins",
+      "count": 1
+    },
+    {
+      "label": "RL policy + CP-SAT refinement",
+      "count": 1
+    },
+    {
+      "label": "Self-play PPO",
+      "count": 1
+    },
+    {
+      "label": "Transfer learning actor-critic",
+      "count": 1
+    },
+    {
+      "label": "Transfer learning with attention",
+      "count": 1
+    },
+    {
+      "label": "energy-aware heuristics",
+      "count": 1
+    }
+  ],
+  "by_kpi": [
+    {
+      "label": "Adds energy tariffs to wafer scheduling in fabs.",
+      "count": 1
+    },
+    {
+      "label": "WIP",
+      "count": 2
+    },
+    {
+      "label": "average flow time",
+      "count": 1
+    },
+    {
+      "label": "batch makespan",
+      "count": 2
+    },
+    {
+      "label": "buffer stability",
+      "count": 3
+    },
+    {
+      "label": "carbon",
+      "count": 6
+    },
+    {
+      "label": "collision risk",
+      "count": 2
+    },
+    {
+      "label": "collisions",
+      "count": 1
+    },
+    {
+      "label": "cycle time",
+      "count": 16
+    },
+    {
+      "label": "delivery",
+      "count": 2
+    },
+    {
+      "label": "downtime",
+      "count": 1
+    },
+    {
+      "label": "energy",
+      "count": 13
+    },
+    {
+      "label": "energy consumption",
+      "count": 3
+    },
+    {
+      "label": "energy cost",
+      "count": 1
+    },
+    {
+      "label": "feasibility rate",
+      "count": 1
+    },
+    {
+      "label": "generalization gap",
+      "count": 1
+    },
+    {
+      "label": "lot smoothing",
+      "count": 1
+    },
+    {
+      "label": "makespan",
+      "count": 14
+    },
+    {
+      "label": "mean time between failures",
+      "count": 1
+    },
+    {
+      "label": "operator load",
+      "count": 1
+    },
+    {
+      "label": "operator satisfaction",
+      "count": 1
+    },
+    {
+      "label": "quality",
+      "count": 5
+    },
+    {
+      "label": "recovery time",
+      "count": 1
+    },
+    {
+      "label": "recycling rate",
+      "count": 1
+    },
+    {
+      "label": "robustness",
+      "count": 1
+    },
+    {
+      "label": "rush order response time",
+      "count": 1
+    },
+    {
+      "label": "safety",
+      "count": 1
+    },
+    {
+      "label": "service level",
+      "count": 3
+    },
+    {
+      "label": "takt compliance",
+      "count": 2
+    },
+    {
+      "label": "tardiness",
+      "count": 8
+    },
+    {
+      "label": "throughput",
+      "count": 20
+    },
+    {
+      "label": "transport utilization",
+      "count": 2
+    },
+    {
+      "label": "weighted tardiness",
+      "count": 1
+    },
+    {
+      "label": "yield",
+      "count": 2
+    }
+  ],
+  "reproducibility": {
+    "code_available": [
+      {
+        "label": "Fab energy simulator",
+        "count": 1
+      },
+      {
+        "label": "No",
+        "count": 51
+      },
+      {
+        "label": "Partial (API access)",
+        "count": 2
+      },
+      {
+        "label": "Partial (contact author)",
+        "count": 1
+      }
+    ],
+    "simulator_available": [
+      {
+        "label": "CP-SAT model only",
+        "count": 1
+      },
+      {
+        "label": "Co-simulation (MATLAB/Simulink)",
+        "count": 3
+      },
+      {
+        "label": "Custom batch simulator",
+        "count": 2
+      },
+      {
+        "label": "Custom benchmark suite",
+        "count": 1
+      },
+      {
+        "label": "Custom biopharma simulator",
+        "count": 1
+      },
+      {
+        "label": "Custom circular simulator",
+        "count": 1
+      },
+      {
+        "label": "Custom large-scale simulator",
+        "count": 1
+      },
+      {
+        "label": "Custom multi-plant simulator",
+        "count": 1
+      },
+      {
+        "label": "Custom pharma simulator",
+        "count": 2
+      },
+      {
+        "label": "Custom remanufacturing simulator",
+        "count": 1
+      },
+      {
+        "label": "Custom simulator",
+        "count": 9
+      },
+      {
+        "label": "Digital twin (private)",
+        "count": 3
+      },
+      {
+        "label": "FlexSim live twin",
+        "count": 1
+      },
+      {
+        "label": "FlexSim model (private)",
+        "count": 1
+      },
+      {
+        "label": "FlexSim module (private)",
+        "count": 1
+      },
+      {
+        "label": "High-NA simulator",
+        "count": 1
+      },
+      {
+        "label": "Live twin platform",
+        "count": 1
+      },
+      {
+        "label": "Multi-carrier energy simulator",
+        "count": 1
+      },
+      {
+        "label": "Multi-microgrid simulator",
+        "count": 2
+      },
+      {
+        "label": "Multiple fab models (private)",
+        "count": 1
+      },
+      {
+        "label": "Petri-net simulator (private)",
+        "count": 1
+      },
+      {
+        "label": "Proprietary EUV simulator",
+        "count": 2
+      },
+      {
+        "label": "Proprietary fab model",
+        "count": 7
+      },
+      {
+        "label": "Proprietary simulator",
+        "count": 1
+      },
+      {
+        "label": "Proprietary supply twin",
+        "count": 2
+      },
+      {
+        "label": "Public benchmark data",
+        "count": 1
+      },
+      {
+        "label": "Robot cell simulator",
+        "count": 4
+      },
+      {
+        "label": "Taillard benchmark",
+        "count": 1
+      },
+      {
+        "label": "Unknown",
+        "count": 1
+      }
+    ],
+    "deployment_status": [
+      {
+        "label": "Digital twin only",
+        "count": 1
+      },
+      {
+        "label": "No",
+        "count": 1
+      },
+      {
+        "label": "Pilot deployment (shadow mode)",
+        "count": 1
+      },
+      {
+        "label": "Pilot line (HIL)",
+        "count": 3
+      },
+      {
+        "label": "Pilot line (shadow mode)",
+        "count": 1
+      },
+      {
+        "label": "Simulation only",
+        "count": 48
+      }
+    ]
+  }
+}

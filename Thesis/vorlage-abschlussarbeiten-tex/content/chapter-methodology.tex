@@ -1,0 +1,70 @@
+\chapter{Methodology}
+\label{ch:methodology}
+
+The review follows the PRISMA 2020 guidelines with explicit logging of each decision. Automation scripts ensure traceability and reduce manual transcription errors.
+
+\section{PRISMA Workflow}
+\subsection{Information Sources}
+The Search Agent covers Scopus, Web of Science, IEEE Xplore, ACM Digital Library, and arXiv. Each database uses tailored Boolean queries combining RL terms (\texttt{"reinforcement learning"}, \texttt{"actor-critic"}, \texttt{"deep Q network"}) with manufacturing scheduling synonyms (\texttt{"job shop"}, \texttt{"flow shop"}, \texttt{"semiconductor fab"}, \texttt{"production scheduling"}). Searches are restricted to publications from 2014 onward, but earlier seminal works are added through backward snowballing.
+
+\subsection{Eligibility Criteria}
+\begin{itemize}
+  \item \textbf{Inclusion:} Studies using RL as the primary decision mechanism for manufacturing scheduling, evaluated via simulation or physical lines. Peer-reviewed journals, conferences, and high-impact preprints qualify.
+  \item \textbf{Exclusion:} Logistics-only scheduling, cloud/computing resource allocation, methods without an RL component, or papers lacking sufficient methodological detail.
+  \item \textbf{Screening Process:} Deduplication occurs before title/abstract screening. Full-text assessment verifies RL formulations, manufacturing context, and KPIs. Reasons for exclusion are codified (e.g., Non-RL, Non-manufacturing, Insufficient evaluation) and recorded in \texttt{\detokenize{data/prisma/screening_log.csv}}.
+\end{itemize}
+
+\subsection{PRISMA Reporting}
+Counts for each phase (identification, screening, eligibility, inclusion) populate \texttt{\detokenize{data/prisma/flow_counts.csv}}. The appendix reproduces the PRISMA diagram and the full screening log to support independent verification. The automation script \texttt{automation/prisma\_flow.py} converts the CSV counts into a chart stored at \texttt{figures/prisma\_flow.pdf}, enabling rapid regeneration when numbers change (Figure~\ref{fig:prisma-flow}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\linewidth]{\figdir/prisma_flow}
+  \caption{Automatically generated PRISMA summary from \texttt{data/prisma/flow\_counts.csv}.}
+  \label{fig:prisma-flow}
+\end{figure}
+
+\section{Data Extraction}
+Accepted studies are assigned unique \texttt{paper\_id} identifiers and captured in \texttt{data/processed/study\_catalog.csv}. Key fields include:
+\begin{description}
+  \item[Metadata:] title, year, venue, country/region, type (journal, conference, preprint).
+  \item[Manufacturing context:] job-shop, flow-shop, FJSSP, hybrid, semiconductor, assembly, or other (with description).
+  \item[RL algorithm:] DQN, PPO, SAC, DDPG, multi-agent variants, model-based approaches, or hybrids.
+  \item[Baselines and KPIs:] heuristics (SPT, EDD, ATC), OR solvers (MILP, CP), KPIs (makespan, tardiness, throughput, energy, cost).
+  \item[Evidence strength:] simulation only vs. pilot deployment, statistical testing, ablation studies.
+\end{description}
+Data extraction uses structured templates and Python notebooks (to be implemented) that validate column completeness and produce visualizations.
+
+After each batch of entries, the script \texttt{automation/summarize\_studies.py} generates \texttt{data/processed/study\_summary.json}, which captures counts by year, manufacturing domain, RL method, and KPI. \texttt{automation/render\_tables.py} consumes that JSON to update LaTeX tables referenced throughout Chapter~\ref{ch:landscape}. These aggregates ensure that Slidev visuals remain synchronized with the thesis narrative. The root \texttt{Makefile} exposes a convenience target (\texttt{make data}) that runs the summarizer, table renderer, and \texttt{automation/prisma\_flow.py} so regenerated tables and figures stay consistent.
+
+\section{Multi-Agent Process}
+To ensure reproducibility, each literature-review stage is mapped to a specialized LLM agent:
+\begin{enumerate}
+  \item \textbf{Search Agent:} Maintains keyword ontologies and logs queries to \texttt{data/prisma/search\_log.csv}.
+  \item \textbf{Screening Agent:} Applies eligibility criteria, records decisions and exclusion reasons, and updates PRISMA counts.
+  \item \textbf{Extraction Agent:} Populates structured datasets and flags missing attributes for manual follow-up.
+  \item \textbf{Synthesis Agent:} Generates narrative summaries, figure descriptions, and comparative insights stored as Markdown notes.
+  \item \textbf{Critic Agent:} Performs quality checks, ensuring every citation is traceable to screening logs and data tables.
+  \item \textbf{Presentation Agent:} Synchronizes the Slidev deck with thesis highlights using shared data artifacts.
+\end{enumerate}
+The orchestration script (\texttt{automation/agent\_pipeline.py}) simulates agent progression offline and logs each run to \texttt{automation/logs/}. Human researchers can replace placeholders with actual LLM calls or manual reviews, while keeping the audit trail intact.
+
+\section{Manufacturing-Focused Screening Details}
+Manufacturing-only filters required additional manual checks beyond keyword searches. During title/abstract screening, the Screening Agent flags ambiguous studies (e.g., data-center scheduling) for human review. Inclusion proceeds only if the evaluation demonstrably occurs on a factory-like workflow with physical machines or digital twins. For example, energy-aware dispatchers for microgrids were accepted only when coupled with production-line simulators \cite{RL-MARL-ENERGY-2022,RL-MICROGRID-2025}, while pure grid-control papers were excluded. Semiconductor supply-chain works entered the corpus only when lot scheduling remained central rather than purely inventory optimization \cite{RL-SEMICON-CHAIN-2025,RL-SEMICON-SUPPLY-2025}. These decisions, along with justifications, are logged in \texttt{data/prisma/screening\_log.csv} so readers can trace why 55 records remained from the 120 full-text assessments.
+
+\section{Data Quality Assurance and Tooling}
+Every extracted record runs through schema validation to ensure mandatory fields are populated. Anomalies—such as missing KPIs or unclear baselines—trigger follow-up tasks that cite the relevant paper identifier. When contradictions arise (e.g., a study claiming real-world deployment but lacking evidence), the Critic Agent flags the entry for manual adjudication. This process surfaced inconsistencies in reported deployment status for digital twin pilots and ensured that the final dataset distinguishes between simulation-only results and hardware-in-the-loop experiments \cite{RL-FLEXSIM-2024,RL-DIGITALTWIN-2026}.
+
+Automation scripts underpin reproducibility. \texttt{automation/agent\_pipeline.py} takes \texttt{automation/config/agents.json} as input and materializes placeholder outputs for each agent, while \texttt{make data} refreshes study summaries, LaTeX tables, KPI figures, and the PRISMA diagram. Slidev synchronization reuses the same processed data: the Presentation Agent ingests \texttt{data/processed/synthesis\_notes.md} to update bullet points and figure references, ensuring that slide narratives evolve with the thesis. Versioned logs in \texttt{automation/logs/agent\_pipeline.jsonl} document every regeneration run with timestamps and agent descriptions, allowing external reviewers to reconstruct the precise workflow that produced the current PDF.
+
+\section{Search String Construction and Validation}
+Each database required tuned search strings balancing recall and precision. Initial queries combined canonical RL terms (\texttt{"reinforcement learning"}, \texttt{"actor-critic"}, \texttt{"policy gradient"}) with manufacturing keywords (``job shop,'' ``wafer fab,'' ``microgrid factory''). Pilot pulls revealed excessive noise from cloud computing and data-center scheduling, so three mitigation steps were added: (i) include physical-production qualifiers (``machine,'' ``line,'' ``robot cell''), (ii) exclude service scheduling terms (``task offloading,'' ``container orchestration''), and (iii) use adjacency operators in databases that support them. Every query variation is logged in \texttt{\detokenize{data/prisma/search_log.csv}} together with export timestamps and hit counts, enabling auditors to rerun the same searches if needed.
+
+\section{Risk of Bias and Quality Assessment}
+Beyond PRISMA counts, each included study was scored on reporting completeness, experimental transparency, and deployment evidence. Criteria mirrored those used in systematic engineering reviews: (a) Are baselines described sufficiently to permit reproduction? (b) Is statistical testing reported for key KPIs? (c) Does the study share code, simulator access, or digital-twin details? These items map directly to columns in \texttt{\detokenize{data/processed/study_catalog.csv}}, making it straightforward to filter for high-evidence studies when drafting the discussion in Chapter~\ref{ch:discussion}. Studies with missing information triggered follow-up annotations in \texttt{\detokenize{data/processed/qa_report.md}}, which also captures PRISMA decisions and to-do items for the next data refresh.
+
+\section{Qualitative Coding of Findings}
+Quantitative tables only tell part of the story, so thematic coding was performed on synthesis notes. Using a lightweight tagging scheme (``reward shaping,'' ``digital twin fidelity,'' ``interpretable policy''), narrative fragments were assigned to one or more themes. The tags are stored in \texttt{\detokenize{data/processed/synthesis_notes.md}} and feed directly into Chapters~\ref{ch:landscape} and~\ref{ch:casestudies}. This approach ensures that anecdotal evidence—such as operator acceptance in collaborative cells—sits alongside KPI comparisons when drawing conclusions.
+
+\section{Data Refresh Cadence}
+The dataset is designed to evolve. Weekly automation runs execute \texttt{make data}, regenerate charts, and reconcile any manual edits in the CSV files. During intense writing phases, a ``snapshot'' commit freezes \texttt{\detokenize{data/prisma/screening_log.csv}} and \texttt{\detokenize{data/processed/study_catalog.csv}} so analyses remain stable while narrative sections are edited. Once updates conclude, a new snapshot is taken and the Slidev deck is rebuilt to keep stakeholders synchronized. This rhythm proved critical when semiconductor studies surged in early 2025; within two days the new entries flowed into Chapter~\ref{ch:comparative} and the presentation deck.

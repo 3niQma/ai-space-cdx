@@ -1,0 +1,45 @@
+\chapter{Adoption Roadmap and Organizational Readiness}
+\label{ch:adoption}
+
+Deploying RL schedulers is not purely a technical exercise; it requires strategic alignment, change management, and governance. This chapter synthesizes lessons learned from interviewed factories and published deployments to propose an adoption roadmap from pilot ideation to scaled rollout.
+
+\section{Business Case Development}
+Successful programs begin with a well-defined business case that translates KPIs into financial or strategic outcomes. Flexible job-shop pilots, for example, framed their objectives around overtime reduction and rush-order responsiveness \cite{RL-FLEX-DUAL-2024,RL-FLEX-2025}. Semiconductor fabs justified investments by quantifying cycle-time improvements in wafer-equivalents per day \cite{RL-SEMICON-2024}. Energy-aware factories emphasized avoided demand charges and carbon-credit monetization \cite{RL-MARL-ENERGY-2022,RL-ENERGY-2025}. The roadmap recommends starting with a one-page charter capturing (i) baseline KPIs, (ii) target improvements, (iii) data prerequisites, and (iv) decision rights for go/no-go milestones. This artifact anchors stakeholder expectations and expedites procurement approvals.
+
+\section{Data and Infrastructure Readiness}
+RL schedulers rely on accurate, timely data. Plants should inventory existing sensors, MES integrations, historian systems, and digital twins before coding a single policy. Interviewed factories often underestimated the effort required to stream clean queue states; manual data-entry backlogs or inconsistent part IDs frequently derailed early experiments. Recommended steps include:
+\begin{enumerate}
+  \item Establishing a single source of truth for routing data (BOMs, precedence graphs, setup matrices).
+  \item Instrumenting bottleneck machines with reliable availability signals to avoid stale state representations.
+  \item Defining data-retention windows so experience replay buffers capture enough variation (at least several weeks of operation).
+  \item Implementing simulation-synchronization APIs so digital twins ingest the same events as the live MES.
+\end{enumerate}
+Factories without digital twins can still pilot RL using synthetic data or scaled-down cells, but they must plan for eventual twin development if they intend to deploy policies at scale.
+
+\section{Change Management and Workforce Enablement}
+No adoption succeeds without bringing planners, supervisors, and operators along for the journey. Interviewees favored transparent playbooks that specify when humans can override RL recommendations, how overrides are logged, and how the agent learns from them. Training sessions combine classroom explanations of RL concepts with live demos on real shop data. Some organizations designate “RL champions” within each production area to collect feedback and escalate issues. Others run brown-bag sessions where planners compare handcrafted schedules against RL outputs, discussing discrepancies. These rituals build trust and surface edge cases—such as maintenance windows or safety lockouts—that algorithms might otherwise miss.
+
+\section{Governance and Risk Controls}
+Governance frameworks ensure RL deployments remain safe and compliant. Recommended controls include:
+\begin{itemize}
+  \item \textbf{Shadow deployments:} Run the RL policy in parallel with the existing scheduler for several weeks, comparing KPIs and logging divergences.
+  \item \textbf{Policy versioning:} Tag every trained policy with metadata (dataset snapshot, hyperparameters, code hash) so rollbacks are possible.
+  \item \textbf{Guardrail enforcement:} Keep constraint solvers or rule-based filters in the loop to block infeasible or unsafe actions.
+  \item \textbf{Audit logging:} Store state/action pairs and explanation snippets for each decision; many pharma and semiconductor plants treat these logs as part of their validation packages \cite{RL-BATCH-2024,RL-SEMICON-CHAIN-2025}.
+\end{itemize}
+Regulated industries may also require formal validation protocols (IQ/OQ/PQ) before releasing RL-based schedulers into production.
+
+\section{KPI Design and Continuous Improvement}
+Adoption does not end at go-live. Continuous improvement loops measure how RL policies perform under changing product mixes, market conditions, and sustainability targets. Battery factories, for instance, recalibrate reward weights quarterly to reflect seasonal demand shifts \cite{RL-FLEXSIM-2025}. Microgrid-integrated plants rebalance carbon penalties whenever regulatory limits change \cite{RL-MICROGRID-2025B}. The roadmap recommends quarterly KPI reviews that examine (i) observed vs. expected performance, (ii) qualitative operator feedback, (iii) data-quality incidents, and (iv) backlog of feature requests (e.g., new constraints, new tooling). These reviews feed into retraining cycles governed by MLOps-like release processes.
+
+\section{Scaling Beyond Pilots}
+Once pilots prove value, organizations must decide how to scale. Common strategies include:
+\begin{enumerate}
+  \item \textbf{Template replication:} Clone a successful policy to similar cells and fine-tune locally (effective for multi-line robot cells \cite{RL-ROBOTCELL-2024}).
+  \item \textbf{Hierarchical rollout:} Deploy RL at cell level first, then coordinate cells using a higher-level policy—useful for semiconductor clusters and circular-manufacturing networks \cite{RL-SEMICON-2025,RL-MANUF-2030}.
+  \item \textbf{Center of excellence:} Establish a cross-functional team responsible for data governance, model retraining, and support. This team maintains the automation toolchain described in Chapter~\ref{ch:toolchain}.
+\end{enumerate}
+Whichever path is chosen, communication remains critical; stakeholders need clear messaging about what RL can and cannot do, particularly when disruptions (machine failures, supply shocks) test the system’s robustness.
+
+\section{Return-on-Investment Tracking}
+To sustain executive support, organizations quantify ROI using both financial and operational metrics. Common levers include overtime reduction, scrap avoidance, energy savings, and faster new-product introductions. Battery plants compare capital deferral (fewer additional lines needed) against the cost of digital-twin maintenance. Semiconductor fabs compute wafer-out gains minus engineering time spent validating policies. The recommended approach is to define an ``RL balance sheet'' that logs benefits and costs quarterly, linking each to observable KPIs from the thesis dataset. This sheet feeds budgeting cycles and communicates tangible value to finance teams.

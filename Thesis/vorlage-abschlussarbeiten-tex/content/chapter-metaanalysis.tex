@@ -1,0 +1,42 @@
+\chapter{Quantitative Meta-Analysis}
+\label{ch:metaanalysis}
+
+The preceding chapters highlighted qualitative patterns; this chapter aggregates quantitative evidence to benchmark RL schedulers against classical baselines across KPIs. Although heterogeneous reporting prevents a formal meta-analysis with effect sizes, consistent trends emerge when studies are grouped by domain and objective.
+
+\section{Makespan and Tardiness Improvements}
+Table~\ref{tab:makespan} summarizes reported makespan or tardiness gains relative to classical heuristics. Flexible job shops show the most consistent improvements (5--12\,\%), driven by graph encoders and curriculum learning \cite{RL-JSSP-2020,RL-GNN-2021,RL-FLEX-2024B}. Semiconductor fabs report slightly smaller averages (3--8\,\%) because dispatching heuristics are already finely tuned \cite{RL-SEMICON-2020,RL-SEMICON-2024}. Flow-shop studies display wider variance; cooperative MARL excels under high utilization but offers marginal benefits when buffers are slack \cite{RL-MARL-2021}. These trends suggest that RL delivers the strongest value in highly constrained environments where human-designed rules struggle to balance competing priorities.
+
+\begin{table}[t]
+  \centering
+  \caption{Representative makespan/tardiness improvements reported in the literature.}
+  \label{tab:makespan}
+  \begin{tabular}{p{3.5cm} p{4.5cm} p{3cm} p{3cm}}
+    \toprule
+    Domain & Representative studies & Baseline & Improvement range \\
+    \midrule
+    Flexible job shop & \cite{RL-JSSP-2020,RL-GNN-2021,RL-FLEX-DUAL-2024} & ATC, tabu search, MILP & 5--12\,\% lower makespan / tardiness \\
+    Hybrid flow shop & \cite{RL-MARL-2021,Rao2024HybridMOHRL} & NEH, GA, dispatching rules & 3--10\,\% lower flow time; more sensitive to buffer size \\
+    Semiconductor fab & \cite{RL-SEMICON-2020,RL-SEMICON-2024,RL-SEMICON-2025} & Rule-based dispatchers, MILP (small cases) & 3--8\,\% lower cycle time \\
+    Robot/assembly cells & \cite{RL-ROBOTCELL-2023,RL-ROBOTCELL-2025} & Manual sequencing, heuristics & 6--9\,\% lower changeover time \\
+    Pharmaceutical batching & \cite{RL-BATCH-2021,RL-BATCH-2024} & Heuristic batching, MILP & 4--7\,\% lower tardiness; improved service level \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Energy and Carbon Reductions}
+Energy-aware studies report two KPI families: absolute kilowatt-hour savings and demand-charge avoidance. Dueling-DQN schedulers for flow shops reduced energy use by roughly 8\,\% while keeping makespan within 2\,\% of the baseline \cite{RL-ENERGY-2021}. Microgrid-integrated factories achieved 10--15\,\% carbon reductions thanks to coordinated SAC agents that shift loads toward renewable availability \cite{RL-MARL-ENERGY-2022,RL-MICROGRID-2025}. Semiconductor fabs incorporating energy tariffs saw modest (2--4\,\%) savings because cycle-time targets dominated reward weighting \cite{RL-ENERGY-SEMICON-2022}. These values help decision-makers trade off sustainability goals against throughput.
+
+\section{Statistical Rigor}
+Figure~\ref{fig:kpi-bar} already shows KPI diversity, but statistical rigor varies. Roughly half of the included studies report hypothesis tests (paired $t$, Wilcoxon, ANOVA) or confidence intervals. Energy-aware papers increasingly use dominance tests to compare Pareto fronts \cite{Garcia2023MORL,RL-MULTIOBJ-2023}. Semiconductor publications often provide standard deviations but stop short of formal tests, citing proprietary simulators as a barrier to replication \cite{RL-SEMICON-2024}. Capturing these details in the dataset helps readers filter for high-evidence studies when planning industrial pilots.
+
+\section{Sensitivity to Reward Design}
+Reward shaping strongly influences convergence. Comparative experiments show that sparse rewards (penalizing tardiness only at the end) lead to unstable policies, whereas incremental penalties (per-operation tardiness, energy surcharges) stabilize training \cite{RL-FLEX-2024B,RL-ENERGY-2023B}. Hybrid RL+OR systems mitigate reward brittleness by delegating hard constraints to solvers; when the RL policy proposes infeasible assignments, the solver corrects them and furnishes counterexamples for retraining \cite{Kumar2023HybridRL}. Practitioners should therefore budget time for reward-tuning workshops involving planners, energy managers, and quality engineers.
+
+\section{Deployment Readiness Scorecard}
+Drawing on the adoption interviews, a qualitative scorecard was developed to rate each study across five readiness dimensions: data availability, interpretability, governance artifacts, KPI breadth, and deployment evidence. Only four studies scored ``high'' readiness (battery digital twin pilots \cite{RL-FLEXSIM-2025}, aerospace transfer learning \cite{RL-FLEX-2025}, microgrid SAC deployments \cite{RL-MICROGRID-2025}, and digital-twin orchestration platforms \cite{RL-DIGITALTWIN-2026}). Most scored ``medium'' because they lacked public code or governance documentation. This scorecard provides a starting point for organizations evaluating literature relevance to their context.
+
+\section{Data Availability Metrics}
+The dataset also tracks whether studies release code or simulators. Only six papers provide partial simulator access (typically FlexSim exports under NDA) and none release full fab models. About a dozen share pseudocode or GitHub repositories, usually for job-shop benchmarks. Energy-aware studies occasionally publish demand and tariff traces, enabling independent validation of savings claims \cite{RL-ENERGY-2021,RL-ENERGY-2025}. Capturing these metadata points allows future researchers to filter for reproducible work and prioritize collaboration with authors who offer artifacts. It also helps industry teams estimate onboarding effort: projects without code often require four to six weeks of reverse engineering before experimentation can begin.
+
+\section{Implications}
+The quantitative synthesis confirms that RL delivers measurable benefits, especially in complex, tightly constrained environments. However, gains hinge on high-fidelity simulators, carefully tuned rewards, and hybrid architectures that keep OR solvers in the loop. Energy and carbon improvements demonstrate RL’s potential as a sustainability lever, but only when tariffs and emissions targets are encoded explicitly. Finally, statistical rigor and reproducibility remain uneven; expanding public benchmarks and encouraging standardized reporting would accelerate the field’s maturation.

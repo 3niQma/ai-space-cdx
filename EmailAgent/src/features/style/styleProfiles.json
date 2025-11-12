@@ -1,0 +1,186 @@
+{
+  "generatedAt": "2025-11-08T20:25:01.079Z",
+  "emailSampleSize": 6249,
+  "categories": {
+    "students": {
+      "totalEmails": 844,
+      "avgWords": 14.37,
+      "avgSentenceLength": 6.46,
+      "informalPronounRate": 0.02,
+      "formalPronounRate": 0.11,
+      "emojiRate": 0,
+      "exclamationRate": 0.03,
+      "topGreetings": [],
+      "topClosings": [
+        {
+          "text": "Best regards,",
+          "count": 11
+        },
+        {
+          "text": "Kind regards,",
+          "count": 6
+        },
+        {
+          "text": "Vielen und beste Grüße",
+          "count": 2
+        },
+        {
+          "text": "LG",
+          "count": 1
+        },
+        {
+          "text": "All the best for the preparation, best regards,",
+          "count": 1
+        }
+      ],
+      "topSignatures": [
+        {
+          "text": "Noah",
+          "count": 14
+        },
+        {
+          "text": "Meet_noah_klarmann <http://cutt.ly/meet_noah_klarmann",
+          "count": 12
+        },
+        {
+          "text": "„Klarmann, Noah“ (noah.klarmann@th-rosenheim.de) hat Sie zu Folgendem eingeladen: seine(n) bzw. ihre(n) „Urlaub (klno)“ Kalender anzeigen.",
+          "count": 8
+        },
+        {
+          "text": "Http://cutt.ly/meet_noah_klarmann",
+          "count": 4
+        },
+        {
+          "text": "Noah Klarmann",
+          "count": 3
+        }
+      ],
+      "exemplarSubjects": [
+        "Ma: Sreeeharsha",
+        "Übung 2 Prods",
+        "Ma:  Sonawane",
+        "Mentor: Noel <[EMAIL_136]>",
+        "Update: Jay"
+      ]
+    },
+    "colleagues": {
+      "totalEmails": 55,
+      "avgWords": 35.16,
+      "avgSentenceLength": 6.22,
+      "informalPronounRate": 0.76,
+      "formalPronounRate": 0.05,
+      "emojiRate": 0.07,
+      "exclamationRate": 0.31,
+      "topGreetings": [],
+      "topClosings": [
+        {
+          "text": "LG",
+          "count": 1
+        },
+        {
+          "text": "With kind regards,",
+          "count": 1
+        }
+      ],
+      "topSignatures": [
+        {
+          "text": "Noah",
+          "count": 5
+        },
+        {
+          "text": "Http://cutt.ly/meet_noah_klarmann",
+          "count": 1
+        },
+        {
+          "text": "Anbei das Notebook für das Assignment. Oder hier ein Link: https://rowihub.noahklarmann.de/hub/user-redirect/lab/tree/url_04/ulrl_04-01_assignment.ipynb",
+          "count": 1
+        }
+      ],
+      "exemplarSubjects": [
+        "Mentorengespräch",
+        "AW: Homework_05-05_not_released",
+        "ProgDataScience/WI-B4, ProgDataScience/WI-B3",
+        "Mentorengespräch",
+        "Mentorengespräch"
+      ]
+    },
+    "industry": {
+      "totalEmails": 5350,
+      "avgWords": 261.41,
+      "avgSentenceLength": 7.98,
+      "informalPronounRate": 0.74,
+      "formalPronounRate": 1.72,
+      "emojiRate": 0.15,
+      "exclamationRate": 1.75,
+      "topGreetings": [
+        {
+          "text": "Hallo",
+          "count": 36
+        },
+        {
+          "text": "Hi",
+          "count": 21
+        },
+        {
+          "text": "Hallo Klarmann",
+          "count": 7
+        },
+        {
+          "text": "Liebe",
+          "count": 6
+        }
+      ],
+      "topClosings": [
+        {
+          "text": "Best regards,",
+          "count": 192
+        },
+        {
+          "text": "Kind regards,",
+          "count": 87
+        },
+        {
+          "text": "Best regards",
+          "count": 22
+        },
+        {
+          "text": "Vielen und beste Grüße",
+          "count": 14
+        },
+        {
+          "text": "Vielen und viele Grüße",
+          "count": 13
+        }
+      ],
+      "topSignatures": [
+        {
+          "text": "Noah Klarmann",
+          "count": 32
+        },
+        {
+          "text": "Noah",
+          "count": 30
+        },
+        {
+          "text": "Thank you, Noah",
+          "count": 15
+        },
+        {
+          "text": "Ort: http://cutt.ly/meet_noah_klarmann",
+          "count": 15
+        },
+        {
+          "text": "Klarmann, Noah  hat Ihresanfrage an weitere Personen weitergeleitet.",
+          "count": 14
+        }
+      ],
+      "exemplarSubjects": [
+        "AW: Verteiler",
+        "Data on Fridays",
+        "Mentorengespräche | Mentoring",
+        "WG: A IQ-Ready: D5.10 template",
+        "AW: Bilder"
+      ]
+    }
+  }
+}

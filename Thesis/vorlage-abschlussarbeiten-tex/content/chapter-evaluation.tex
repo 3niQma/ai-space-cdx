@@ -1,0 +1,35 @@
+\chapter{Experimental Protocols and Evaluation Practices}
+\label{ch:evaluation}
+
+Methodological rigor varies widely across RL-for-scheduling studies. This chapter distills best practices for experimental setup, hyperparameter tuning, and reporting so that future work can be compared on a common footing.
+
+\section{Simulation Setup Patterns}
+Most studies rely on discrete-event simulators (DES) to emulate shop-floor dynamics. Job-shop papers typically use Taillard or Kacem instances embedded in custom DES implementations, while battery and microgrid projects rely on FlexSim or AnyLogic. Semiconductor works employ proprietary high-fidelity twins, sometimes augmented with Petri-net transport models \cite{RL-SEMICON-MARL-2022}. Recommended practices include:
+\begin{itemize}
+  \item Documenting routing data (operation sequences, setup matrices) and machine capabilities.
+  \item Logging stochastic events (machine failures, rush orders) with reproducible random seeds.
+  \item Synchronizing simulation clocks with MES timestamps when coupling digital twins to live systems.
+\end{itemize}
+Maintaining configuration files under version control enables replaying experiments as new policies are developed.
+
+\section{Training Pipelines}
+Training deep RL schedulers typically follows four steps: (1) collect initial trajectories using heuristics or random policies, (2) train policies with curriculum or transfer learning to stabilize convergence, (3) fine-tune using domain-specific rewards, and (4) evaluate under hold-out scenarios. PPO variants dominate flexible job shops and energy-aware factories \cite{RL-PPO-2022,RL-ENERGY-2023B}, whereas SAC/MARL architectures prevail in microgrids and multi-cluster fabs \cite{RL-MARL-ENERGY-2022,RL-SEMICON-2025}. Best practices include:
+\begin{enumerate}
+  \item Monitoring reward and KPI curves simultaneously to detect reward hacking.
+  \item Using entropy regularization or action masking to prevent infeasible dispatches.
+  \item Capturing compute metrics (episodes, wall-clock hours) so organizations can budget infrastructure needs.
+\end{enumerate}
+
+\section{Baseline Selection}
+Comparative validity depends on strong baselines. Most studies benchmark against ATC, FIFO, and MILP/CP solvers for small instances. Hybrid flow shops often add GA or NEH heuristics, while energy-aware papers include rule-based demand-response programs. The review recommends that future work:
+\begin{itemize}
+  \item Explains baseline parameter tuning to avoid strawman comparisons.
+  \item Includes ablations removing individual state features or reward terms to show their contribution.
+  \item Reports computational effort for both RL and baselines (e.g., solve time, inference latency).
+\end{itemize}
+
+\section{Statistical Validation and Uncertainty}
+Uncertainty quantification remains a weakness. Only 25 of the 55 studies report confidence intervals or statistical tests. Energy-aware projects lead the way with dominance tests on Pareto fronts \cite{Garcia2023MORL,RL-MULTIOBJ-2023}, while flexible job-shop papers increasingly use Wilcoxon signed-rank tests when comparing makespan distributions \cite{RL-PPO-2022}. The thesis encourages researchers to adopt standardized reporting templates: list the number of independent seeds, provide box plots or violin plots, and disclose whether episodes share random seeds with baselines.
+
+\section{Benchmarking Limitations}
+Despite progress, several limitations persist: (i) simulators are rarely public, hindering replication; (ii) KPIs differ across publications, complicating aggregation; (iii) some works focus on single KPI improvements without considering energy or robustness; and (iv) hyperparameters are sometimes omitted. Chapter~\ref{ch:toolchain} addresses these gaps by logging metadata in \texttt{\detokenize{data/processed/study_catalog.csv}}, but broader community adoption is needed. Open benchmark suites—similar to MLPerf for machine learning—could accelerate progress by standardizing metrics, data formats, and submission rules.
