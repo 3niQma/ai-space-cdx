@@ -1,0 +1,23 @@
+./TemplateLatex/vorlage-abschlussarbeiten-tex/vorlage-abschlussarbeiten-tex/thesis.pdf
+./TemplateLatex/vorlage-abschlussarbeiten-tex/vorlage-abschlussarbeiten-tex/richtlinien_bama.pdf
+./TemplateLatex/vorlage-abschlussarbeiten-tex/vorlage-abschlussarbeiten-tex/figures/logo-th-rosenheim-2019_master_quer_2c-eps-converted-to.pdf
+./TemplateLatex/vorlage-abschlussarbeiten-tex/vorlage-abschlussarbeiten-tex/figures/handorig.pdf
+./TemplateLatex/vorlage-abschlussarbeiten-tex/vorlage-abschlussarbeiten-tex/figures/handaug.pdf
+./PapersAdditional/Learning_to_schedule_job_shop_problems_representation_and_policy_learning_using_2021.pdf
+./PapersAdditional/Learning_to_Dispatch_for_Job_Shop_Scheduling_via_Deep_Reinforcement_Learning_2020.pdf
+./PapersAdditional/Flexible_Job_Shop_Scheduling_via_Dual_Attention_Network_Based_Reinforcement_Lear_2023.pdf
+./PapersAdditional/tassel2020_arxiv.pdf
+./PapersAdditional/mao2016_deeprm.pdf
+./PapersAdditional/songwen2022_tii_fjsp.pdf
+./ReviewPaper/s10845-022-01915-2.pdf
+./ReviewPaper/Deep reinforcement learning in production systems a systematic literature review.pdf
+./ReviewPaper/Panzer 2021 - Deep Reinforcement Learning In Production Planning And Control A Systematic Literature Review - CPSL2021.pdf
+./ReviewPaper/A_Review_of_Reinforcement_Learning_Based_Intelligent_Optimization_for_Manufacturing_Scheduling.pdf
+./ReviewPaper/algorithms-17-00343-1.pdf
+./ReviewPaper/algorithms-17-00343.pdf
+./thesis/thesis.pdf
+./thesis/richtlinien_bama.pdf
+./thesis/figures/logo-th-rosenheim-2019_master_quer_2c-eps-converted-to.pdf
+./thesis/figures/handorig.pdf
+./thesis/figures/handaug.pdf
+./BestPracticeGuide/Leitfaden-literaturbasierte-Masterarbeiten_USE_230323.pdf

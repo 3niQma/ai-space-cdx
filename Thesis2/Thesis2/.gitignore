@@ -1,0 +1,12 @@
+# Optional ignores for this thesis workspace
+thesis/thesis.pdf
+thesis/*.aux
+thesis/*.log
+thesis/*.fdb_latexmk
+thesis/*.fls
+thesis/*.bbl
+thesis/*.blg
+thesis/*.lof
+thesis/*.lot
+thesis/*.lol
+PapersAdditional/*
