@@ -1,0 +1,13 @@
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\numberline {1}English Language Settings}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Wichtige Hinweise}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Abbildungen und Tabellen}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Seitenumbrüche}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Schriftart}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Druck}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Dokument Richtlinien}{4}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Diverse Beispiele}{4}{section.2.6}%
+\contentsline {chapter}{\numberline {A}Erstes Kapitel des Anhangs}{6}{appendix.A}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{7}{chapter*.10}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

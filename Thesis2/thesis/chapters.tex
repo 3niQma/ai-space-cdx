@@ -1,0 +1,129 @@
+\chapter{Introduction}
+\label{c:introduction}
+Provide the motivation for reinforcement learning (RL) in scheduling, outline objectives and research questions, and summarize contributions and scope. Link to the systematic review protocol for transparency.
+\section{Context and Motivation}
+\section{Objectives and Research Questions}
+\section{Contributions and Thesis Structure}
+
+\chapter{Background}
+\label{c:background}
+Summarize scheduling fundamentals and RL essentials to set common ground.
+\section{Scheduling Fundamentals}
+Job shop, flow shop, flexible job shop, parallel machine, hybrid flow shop; deterministic vs.\ stochastic vs.\ dynamic arrivals; constraints (due dates, setup times, resource calendars).
+\section{Reinforcement Learning Essentials}
+MDPs, policies, value-based vs.\ policy-gradient vs.\ model-based RL; on-policy vs.\ off-policy; exploration strategies; multi-objective settings.
+\section{Benchmarks and Metrics}
+Makespan, tardiness, flow time, energy; OR baselines (dispatching rules, MILP/CP, metaheuristics); RL evaluation norms.
+\paragraph{Planned figure} Taxonomy of scheduling problem classes.
+\paragraph{Planned table} Metrics and baseline families used in RL scheduling studies.
+
+\chapter{Methodology}
+\label{c:methodology}
+Describe the systematic literature review protocol and data-extraction process.
+\section{Search Strategy}
+Databases: IEEE Xplore, ACM Digital Library, Scopus, Web of Science, Google Scholar (for snowballing). Time window: 2016--2025. Search strings (examples, adapted per indexer): \texttt{(\"reinforcement learning\" OR \"deep reinforcement learning\" OR DQN OR PPO OR SAC) AND (scheduling OR \"job shop\" OR \"flow shop\" OR \"production scheduling\" OR \"dispatching\" OR \"production planning\" OR \"cloud scheduling\" OR \"edge scheduling\")}. Apply backward/forward snowballing on key papers and the provided surveys.
+Screening follows PRISMA-style phases: deduplicate, title/abstract screen, full-text eligibility, inclusion.
+\section{Inclusion and Exclusion Criteria}
+\begin{itemize}
+    \item \textbf{Inclusion}: peer-reviewed conference/journal papers (2016--2025) applying RL/DRL to scheduling, dispatching, production planning/control, cloud/edge scheduling; reports quantitative results against baselines.
+    \item \textbf{Exclusion}: non-RL approaches, purely conceptual with no evaluation, non-English, inaccessible full text, duplicates.
+\end{itemize}
+\section{Quality Assessment}
+Baseline strength, reproducibility (code/data), statistical validity (multiple seeds, confidence intervals), clarity of environment/problem specification, constraint handling.
+\section{Data Extraction Schema}
+Problem type, environment, state/action/reward, algorithm, baselines, metrics, constraints, generalization tests, code availability.
+\paragraph{Planned figure} PRISMA flow diagram for study selection.
+\paragraph{Planned table} Data-extraction codebook.
+
+
+\chapter{Methodology (Draft Text)}
+\label{c:methodology-draft}
+This placeholder will be replaced by the full protocol once screening counts are known. To include: finalized search strings per database, PRISMA counts (identification/screening/eligibility/inclusion), justification for the 2016--2025 window, and the data-extraction schema aligned to the literature matrix columns. Add a PRISMA diagram and a summary table of quality assessment criteria (baseline strength, reproducibility, statistical validity, constraint handling).
+
+\chapter{RL Methods for Scheduling: Taxonomy}
+\label{c:taxonomy}
+Organize the landscape of RL approaches tailored to scheduling.
+\section{Value-Based Methods}
+DQN/DDQN/Dueling, distributional variants; action masking for constraints.
+\section{Policy-Gradient and Actor-Critic Methods}
+A2C/A3C, PPO, SAC, deterministic policy gradients.
+\section{Model-Based and Simulation-Augmented RL}
+World models, lookahead, Dyna-style, differentiable simulators.
+\section{Meta-RL, Transfer, and Curriculum Learning}
+\section{State, Action, Reward Design Patterns}
+Graph/state encodings, machine/job-centric actions, reward shaping for due dates/setups; constraint handling (penalties, masking, Lagrangian).
+\noindent \textit{Progress note:} Initial extraction shows strong use of graph encodings (disjunctive graphs, GNN dual-attention) and action masking for feasibility in JSS/FJSS. Rewards are typically weighted makespan/tardiness, with penalties for constraint violations.
+\begin{table}[t]\centering\small
+  \caption{State, action, reward patterns observed in RL for scheduling}
+  \label{tab:state-action-reward}
+  \input{\tabledir/state_action_reward.tex}
+\end{table}
+\paragraph{Planned figure} Taxonomy diagram: methods vs.\ scheduling settings.
+\paragraph{Planned table} State/action/reward design patterns by problem class.
+
+\chapter{Comparative Performance Analysis}
+\label{c:analysis}
+Synthesize empirical results across studies, focusing on baselines, metrics, and robustness.
+\section{Performance vs.\ Classical Baselines}
+Dispatching rules, MILP/CP, metaheuristics; domain-wise comparison.
+\begin{table}[t]\centering\small
+  \caption{Baselines and metrics across domains}
+  \label{tab:baselines-metrics}
+  \input{\tabledir/baselines_metrics.tex}
+\end{table}
+\section{Generalization and Robustness}
+Out-of-distribution instances, dynamic arrivals, noise/perturbations.
+\section{Sample Efficiency and Ablations}
+Replay strategies, curriculum, reward shaping.
+\noindent \textit{Progress note:} Recent GNN/PPO and dual-attention actor-critic schedulers outperform classic PDRs on JSS/FJSS benchmarks and generalize to larger unseen instances; exact OR tools still stronger on some cases.
+\paragraph{Planned tables} Performance comparison per domain; robustness/generalization results; sample-efficiency summaries.
+\paragraph{Planned figure} Heatmap of methods vs.\ benchmarks and win/loss vs.\ baselines.
+
+\section{Constraint Handling and Feasibility}
+Penalty shaping, masking, Lagrangian/shields. Table~\ref{tab:constraint-handling} summarizes common techniques.
+\begin{table}[t]\centering\small
+  \caption{Constraint-handling techniques in RL scheduling}
+  \label{tab:constraint-handling}
+  \input{\tabledir/constraint_handling.tex}
+\end{table}
+
+\chapter{Application Domains}
+\label{c:domains}
+Short vignettes for key sectors and their specific constraints.
+\section{Semiconductor and Flexible Manufacturing}
+\section{Logistics and Transportation}
+\section{Cloud and Edge Computing}
+\section{Energy-Aware and Sustainable Scheduling}
+\paragraph{Planned tables} Domain-specific datasets/benchmarks and metrics; constraint profiles per domain.
+\paragraph{Planned figure} Timeline of notable RL-in-scheduling papers per domain.
+
+\chapter{Cross-Cutting Challenges}
+\label{c:challenges}
+Discuss systemic issues in applying RL to scheduling.
+\section{Stability and Variance}
+Seed sensitivity, policy brittleness.
+\section{Constraint Handling}
+Hard vs.\ soft constraints, feasibility preservation, masking vs.\ penalties.
+\section{Simulation-to-Real Gap}
+Domain randomization, robust policies, transfer.
+\section{Interpretability and Safety}
+Action rationale, override strategies, safe RL.
+\section{Reproducibility}
+Open code/data, hyperparameter documentation, evaluation protocols.
+\paragraph{Planned tables} Constraint-handling techniques; reproducibility checklist.
+\paragraph{Planned figure} Sim-to-real mitigation strategies.
+
+\chapter{Open Gaps and Future Directions}
+\label{c:future}
+Identify promising research avenues grounded in observed gaps.
+\section{Hybrid RL and Operations Research}
+Learning-augmented heuristics, RL-guided search, primal-dual methods.
+\section{Offline, Safe, and Risk-Sensitive RL}
+\section{Transfer, Meta-Learning, and Continual Adaptation}
+\section{Benchmarking and Standardization}
+Need for standardized environments, seeds, reporting.
+\paragraph{Planned figure} Roadmap of future research directions and milestones.
+
+\chapter{Conclusion}
+\label{c:conclusion}
+Synthesize insights, answer research questions, and highlight practical implications for deploying RL in scheduling.

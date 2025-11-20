@@ -1,0 +1,8 @@
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+Technique & Examples & Notes \\\hline
+Action masking & Feasible machines/operations only; block violating routes & Stabilizes training, keeps feasibility; used in JSS/FJSS and constrained routing \\
+Penalty shaping & Add cost for lateness, setups, energy overuse, SLA violation & Simple to implement; may struggle with hard constraints if penalties mis-tuned \\
+Shields/filters & Safety layer vetoes unsafe actions (collisions, overruns) & Effective for safety-critical transport/production; requires rule base \\
+Lagrangian/dual & Penalty multipliers updated during training & Better balance feasibility vs performance; needs tuning \\
+Curricula & Start relaxed, tighten constraints over training & Improves learning stability under heavy constraints \\
+\end{tabular}

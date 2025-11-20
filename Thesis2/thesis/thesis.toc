@@ -1,0 +1,60 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Context and Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objectives and Research Questions}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Contributions and Thesis Structure}{1}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Background}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Scheduling Fundamentals}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Reinforcement Learning Essentials}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Benchmarks and Metrics}{2}{section.2.3}%
+\contentsline {paragraph}{\nonumberline Planned figure}{2}{paragraph*.7}%
+\contentsline {paragraph}{\nonumberline Planned table}{2}{paragraph*.9}%
+\contentsline {chapter}{\numberline {3}Methodology}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Search Strategy}{3}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Inclusion and Exclusion Criteria}{3}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Quality Assessment}{3}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Data Extraction Schema}{3}{section.3.4}%
+\contentsline {paragraph}{\nonumberline Planned figure}{3}{paragraph*.11}%
+\contentsline {paragraph}{\nonumberline Planned table}{3}{paragraph*.13}%
+\contentsline {chapter}{\numberline {4}Methodology (Draft Text)}{4}{chapter.4}%
+\contentsline {chapter}{\numberline {5}RL Methods for Scheduling: Taxonomy}{5}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Value-Based Methods}{5}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Policy-Gradient and Actor-Critic Methods}{5}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Model-Based and Simulation-Augmented RL}{5}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Meta-RL, Transfer, and Curriculum Learning}{5}{section.5.4}%
+\contentsline {section}{\numberline {5.5}State, Action, Reward Design Patterns}{5}{section.5.5}%
+\contentsline {paragraph}{\nonumberline Planned figure}{5}{paragraph*.16}%
+\contentsline {paragraph}{\nonumberline Planned table}{5}{paragraph*.18}%
+\contentsline {chapter}{\numberline {6}Comparative Performance Analysis}{7}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Performance vs.\ Classical Baselines}{7}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Generalization and Robustness}{7}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Sample Efficiency and Ablations}{7}{section.6.3}%
+\contentsline {paragraph}{\nonumberline Planned tables}{7}{paragraph*.21}%
+\contentsline {paragraph}{\nonumberline Planned figure}{7}{paragraph*.23}%
+\contentsline {section}{\numberline {6.4}Constraint Handling and Feasibility}{7}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Application Domains}{9}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Semiconductor and Flexible Manufacturing}{9}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Logistics and Transportation}{9}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Cloud and Edge Computing}{9}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Energy-Aware and Sustainable Scheduling}{9}{section.7.4}%
+\contentsline {paragraph}{\nonumberline Planned tables}{9}{paragraph*.26}%
+\contentsline {paragraph}{\nonumberline Planned figure}{9}{paragraph*.28}%
+\contentsline {chapter}{\numberline {8}Cross-Cutting Challenges}{10}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Stability and Variance}{10}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Constraint Handling}{10}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Simulation-to-Real Gap}{10}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Interpretability and Safety}{10}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Reproducibility}{10}{section.8.5}%
+\contentsline {paragraph}{\nonumberline Planned tables}{10}{paragraph*.30}%
+\contentsline {paragraph}{\nonumberline Planned figure}{10}{paragraph*.32}%
+\contentsline {chapter}{\numberline {9}Open Gaps and Future Directions}{11}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Hybrid RL and Operations Research}{11}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Offline, Safe, and Risk-Sensitive RL}{11}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Transfer, Meta-Learning, and Continual Adaptation}{11}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Benchmarking and Standardization}{11}{section.9.4}%
+\contentsline {paragraph}{\nonumberline Planned figure}{11}{paragraph*.34}%
+\contentsline {chapter}{\numberline {10}Conclusion}{12}{chapter.10}%
+\contentsline {chapter}{\numberline {A}Appendix}{13}{appendix.A}%
+\contentsline {chapter}{\nonumberline Bibliography}{14}{chapter*.35}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

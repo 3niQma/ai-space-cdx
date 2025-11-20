@@ -1,0 +1,9 @@
+\begin{tabular}{p{3.2cm}p{4.2cm}p{4.0cm}p{3.8cm}}
+Problem class & State design & Action design & Reward design \\\hline
+Job shop (JSS) static/dynamic & Disjunctive graph embeddings (GNN size-agnostic) & Dispatch next eligible operation & $-$makespan / $-$tardiness with step penalties \\
+Flexible JSS (routing + sequencing) & Dual attention over operations and machines & Joint machine routing and operation sequencing & Weighted makespan + tardiness; shaping for idle time \\
+Dynamic arrivals & Queue/machine status, arrival indicators & Dispatch/route arriving jobs & Weighted tardiness/completion; penalties on lateness \\
+Energy-aware JSS & Machine load + energy profiles & Dispatch with energy-aware tie breaks & Combined makespan + energy cost; penalties for overconsumption \\
+Cloud/edge scheduling & Resource utilization, SLA/backlog & Task-to-VM/offload assignment & $-$slowdown, latency, SLA penalties, energy terms \\
+Transport/AGV & Network/vehicle positions, queue lengths & Vehicle dispatch/route choice & Throughput, delay penalties, collision avoidance penalties \\
+\end{tabular}
