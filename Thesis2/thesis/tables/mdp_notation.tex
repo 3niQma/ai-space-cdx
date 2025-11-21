@@ -1,0 +1,15 @@
+\begin{tabular}{p{2cm}p{4.2cm}p{5.8cm}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Scheduling instantiation} \\
+\midrule
+$s_t$ & State at decision step $t$ & Queues, machine status, remaining routes, clock time, energy price, backlog \\
+$a_t$ & Action at step $t$ & Pick operation-machine pair; choose route; assign job to VM/edge node; dispatch vehicle \\
+$\mathcal{A}(s_t)$ & Feasible action set & Masked legal moves obeying precedence, capacity, safety, or SLA rules \\
+$r_t$ & Reward & Negative makespan/tardiness increment, energy cost, SLA penalty, or composite \\
+$\gamma$ & Discount factor & Usually in $[0.9, 1.0]$; often close to $1$ for long-horizon scheduling \\
+$P(s_{t+1}\mid s_t,a_t)$ & Transition dynamics & Simulator of processing, travel, setups, arrivals; may include stochasticity \\
+$\pi_\theta(a\mid s)$ & Policy & Neural dispatcher (MLP, CNN, GNN, attention) producing masked logits or scores \\
+$V_\phi(s)$ & Value function & Baseline/critic estimating downstream cost; often shared encoder with policy \\
+$\hat{J}(\pi)$ & Objective & Expected cumulative reward or multi-objective scalarization (makespan/energy) \\
+\bottomrule
+\end{tabular}

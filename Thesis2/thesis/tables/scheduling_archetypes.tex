@@ -1,0 +1,13 @@
+\begin{tabular}{p{2.6cm}p{3.7cm}p{3.7cm}p{4cm}}
+\toprule
+\textbf{Problem class} & \textbf{Typical assumptions} & \textbf{Common constraints} & \textbf{RL design implications} \\
+\midrule
+Job Shop (JSS) & Fixed routing, unit machines & Precedence, machine capacity, due dates & Disjunctive-graph state, masking for machine availability and precedence \\
+Flexible Job Shop (FJSS) & Alternative machines per operation & Routing choice, setups, re-entrance & Joint routing/dispatch actions; masks couple routing with feasibility; graph encoders \\
+Flow/Hybrid Flow Shop & Stage-wise flow, parallel machines per stage & Blocking/no-wait, buffers, sequence-dependent setups & Stage-wise masking; idle/hold actions; penalty terms for blocking \\
+Parallel/Batch Machines & Identical/unrelated machines, batching allowed & Batch size, family setups, release dates & Batch-construction action spaces; reward terms for batch balance vs.\ tardiness \\
+Dynamic/Online & Job arrivals, stochastic times & Rolling horizon, response-time SLAs & Recurrent/attention states; warm-started value functions; disturbance-aware masking \\
+Transport/AGV & Coupled routing and processing & Collision/zone safety, charging windows & Multi-agent or joint action spaces; safety shields for headway/charge \\
+Cloud/Edge Scheduling & VM/edge nodes, network latency & SLA/latency, energy caps, affinity & Compact queue states; admission control in action space; power-aware rewards \\
+\bottomrule
+\end{tabular}

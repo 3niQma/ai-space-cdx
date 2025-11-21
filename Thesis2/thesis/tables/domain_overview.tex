@@ -1,0 +1,13 @@
+\begin{tabular}{p{2.8cm}p{3.2cm}p{2.8cm}p{2.8cm}p{2.9cm}}
+\hline
+\textbf{Domain} & \textbf{Problem focus} & \textbf{Typical constraints} & \textbf{Benchmarks/datasets} & \textbf{RL approach and outcomes} \\
+\hline
+Manufacturing (JSS/FJSS, semiconductor) & Static and dynamic job/flexible shops; integrated routing and setups; batching in fabs & Precedence, machine eligibility, setup/route rules, energy/carbon tariffs & FT06/10/20, Taillard, LA, Kacem/BRdata, fab simulators with ToU pricing & Masked GNN/PPO and dual-attention actors beat PDRs by 2--8\% makespan; HRL/DDQN handles arrivals; hybrids cut energy with small throughput loss \\
+\hline
+Logistics/transport (AGV, yards, rail, ride-hailing, air mobility) & Vehicle dispatch/repositioning, crane/yard assignment, timetable recovery & Capacity/headway, collision avoidance, charging/pad limits & Container terminal sims/logs, ride-hailing traces, metro corridor disturbances, air-taxi sims & MARL/actor-critic lowers turnaround and energy vs rules; clustering MARL raises revenue/service; yard Real2Sim PPO improves truck time; rail MARL reduces secondary delays \\
+\hline
+Cloud/edge scheduling & Task-to-VM/offloading with latency/energy SLAs & Resource capacity, deadlines, SLA penalties & Synthetic traces, Google-like workload repos & DeepRM-style DQN/REINFORCE and PPO reduce slowdown versus RR/MinMin; energy-aware PPO improves latency-energy trade-offs; masking mostly implicit via simulator \\
+\hline
+Energy- and carbon-aware scheduling (cross-domain) & Joint makespan/energy/carbon objectives, sometimes with transport coupling & Tariff windows, emission caps, machine/AGV availability & Carbon-priced FJSP instances, multi-AGV yard scenarios & Actor-critic and hybrid co-evolution/memetic RL reduce energy/emissions with minor makespan impact; robustness to tariff shifts largely untested \\
+\hline
+\end{tabular}

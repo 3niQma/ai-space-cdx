@@ -1,15 +1,21 @@
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Scope map of the thesis. Domain chapters feed into cross-cutting themes; energy/carbon-aware objectives intersect all domains.\relax }}{2}{figure.caption.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Metric emphasis across surveyed domains (qualitative scores). Manufacturing/transport studies favor makespan/tardiness and feasibility, while cloud/edge studies foreground SLA/latency and energy.\relax }}{9}{figure.caption.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces PRISMA-style screening flow (illustrative counts). Snowballing and screened preprints supplement database records.\relax }}{13}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Qualitative advantage of RL schedulers across domains and baseline strength. Values reflect relative trends reported in the corpus rather than absolute performance gaps.\relax }}{24}{figure.caption.23}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Constraint and realism emphasis by domain. Scores are qualitative, based on prevalence of masking/shields, explicit energy/carbon objectives, and real logs or hardware tests in the surveyed studies.\relax }}{28}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Cross-cutting gaps in RL scheduling. Evidence maturity reflects how consistently studies report seeds, ablations, and real tests; risk captures brittleness and missing validation. Scores are qualitative and derived from the surveyed corpus.\relax }}{37}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Reporting practice prevalence across domains (qualitative scores from the surveyed corpus).\relax }}{37}{figure.caption.35}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Priority vs.\ feasibility for proposed directions. Short-term focuses on reproducibility, masking/shield ablations, and tariff sweeps; mid-term targets offline RL on logs and hybrid RL+OR ablations; long-term spans sim-to-real pilots and standardized multi-domain benchmarks.\relax }}{41}{figure.caption.37}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Effort components for major research directions (qualitative stacks). Use to scope projects against available data, method maturity, and deployment appetite.\relax }}{42}{figure.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,0 +1,15 @@
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+\hline
+\textbf{Stage} & \textbf{Actions} & \textbf{Artifacts/KPIs} \\
+\hline
+Offline replay & Train/evaluate on historical logs; add offline RL baselines; mask/shield unit tests & Violation/override counts (simulated); gap vs heuristics; runtime; seed CIs \\
+\hline
+Shadow mode & Run policy in parallel, no actuation; log suggested actions vs executed & Feasibility; latency; delta-to-heuristic KPIs; operator feedback; override frequency (simulated) \\
+\hline
+Limited actuation & Actuate on subset (machines/lanes/VMs) with human override; shields on & Real violation rate; time-to-safe-state; throughput/latency; energy/carbon; override count \\
+\hline
+Scale-up/A/B & Expand coverage; A/B test vs baseline heuristics/metaheuristics & Win-rate; KPI deltas; safety events; latency distribution; compute cost; confidence intervals \\
+\hline
+Postmortem and iterate & Analyze failures, overrides, safety events; refine masks/shields/rewards & Lessons log; updated configs; retraining cost; decision to promote/rollback \\
+\hline
+\end{tabular}

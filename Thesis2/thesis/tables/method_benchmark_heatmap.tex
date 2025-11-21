@@ -1,0 +1,13 @@
+\begin{tabular}{l|c|c|c|c}
+\hline
+\textbf{RL Method} & \textbf{PDRs} & \textbf{GA/SA} & \textbf{MILP/CP} & \textbf{Dynamic Env.} \\
+\hline
+DQN/DDQN (Dispatch) & \cellcolor{green!25}Win & \cellcolor{yellow!25}Close & \cellcolor{red!25}Loss & \cellcolor{yellow!25}Mixed \\
+PPO+GNN (Graph) & \cellcolor{green!25}Win & \cellcolor{yellow!25}Close & \cellcolor{red!25}Loss & \cellcolor{green!25}Win \\
+Actor-Critic (Attention) & \cellcolor{green!50}Strong Win & \cellcolor{green!25}Win & \cellcolor{yellow!25}Close & \cellcolor{green!50}Strong Win \\
+HRL & \cellcolor{green!50}Strong Win & \cellcolor{yellow!25}Mixed & \cellcolor{red!25}Loss & \cellcolor{green!50}Strong Win \\
+Hybrid (RL+Meta) & \cellcolor{green!50}Strong Win & \cellcolor{green!25}Win & \cellcolor{yellow!25}Close & \cellcolor{green!25}Win \\
+\hline
+\end{tabular}
+\\\vspace{0.5em}
+\footnotesize{\textbf{Legend:} \cellcolor{green!50}Strong Win: Consistently outperforms baseline. \cellcolor{green!25}Win: Generally outperforms baseline. \cellcolor{yellow!25}Close/Mixed: Competitive or mixed results. \cellcolor{red!25}Loss: Generally outperformed by baseline.}

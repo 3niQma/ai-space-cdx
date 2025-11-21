@@ -1,0 +1,13 @@
+\begin{tabular}{p{2.9cm}p{3.8cm}p{3.8cm}p{4cm}}
+\hline
+\textbf{Domain} & \textbf{Instances/traces} & \textbf{Disturbances/tariffs} & \textbf{Eval metrics and scripts} \\
+\hline
+Manufacturing (JSS/FJSS) & FT/LA/Taillard train/val/test splits; mixed routing depths; blocking/no-wait variants & Arrival bursts; setup variability; machine downtime; TOU/RTP tariffs (energy/carbon) & Makespan/tardiness; feasibility rate; energy/carbon cost; runtime; gap-to-optimum (small) \\
+\hline
+Logistics/transport (AGV/yard/rail) & Open warehouse/yard layouts; metro corridor with timetable data & Blocked aisles; communication loss; demand surges; pad/headway constraints & Turnaround/delay; collisions/headway violations; override count; energy \\
+\hline
+Cloud/edge & Public traces (Google/Alibaba); DAG workflows; VM/rack topology & Workload shifts; bursty arrivals; network jitter; power caps; thermal throttling & Slowdown/latency (P95); SLA violations; energy; feasibility of actions; runtime \\
+\hline
+Energy/carbon-aware (cross-domain) & Tariff catalogs (flat/TOU/RTP); emission factors; paired with above instances & Tariff/emission sweeps; demand charges; DR events & kWh, kg CO$_2$e, energy cost vs throughput; Pareto fronts; sensitivity plots \\
+\hline
+\end{tabular}

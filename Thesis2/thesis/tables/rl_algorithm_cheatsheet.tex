@@ -1,0 +1,15 @@
+\begin{tabular}{p{2.4cm}p{3.2cm}p{3.6cm}p{3.8cm}}
+\toprule
+\textbf{Family} & \textbf{Strengths for scheduling} & \textbf{Typical pitfalls} & \textbf{When to prefer} \\
+\midrule
+DQN/DDQN/Dueling & Simple, stable on small discrete spaces; easy masking & Overestimation, slow with huge action sets & Small JSS, baseline dispatchers, ablations \\
+Rainbow/Distributional & Better value estimates, handles stochastic rewards & More hyperparameters, variance & Dynamic arrivals with noisy processing times \\
+A2C/A3C & Parallelizable, lighter footprint & Higher variance than PPO/SAC & Low-latency online dispatch on embedded hardware \\
+PPO (clip/penalty) & Robust to hyperparameters; works well with GNNs & Entropy/mask interaction; reward scaling sensitive & General-purpose JSS/FJSS with medium/large actions \\
+SAC (discrete/continuous) & Sample-efficient, entropy-regularized & Temperature tuning; slower inference & Energy-aware problems needing balanced exploration \\
+Deterministic PG/DDPG/TD3 & Works with continuous actions (e.g., timings) & Action bounds, exploration noise brittle & Hybrid control with continuous setpoints or durations \\
+Hierarchical RL & Decouples routing/dispatch; improves exploration & Credit assignment, more design choices & Large FJSS, transport with joint routing + timing \\
+Model-based/Dyna & Data-efficient, supports lookahead & Model errors; higher engineering effort & Expensive simulators, low data budgets, offline priors \\
+Offline/Batch RL & Uses logs; safer for regulated settings & Distribution shift; needs conservative Q & Sites without sim access; shadow deployment logs \\
+\bottomrule
+\end{tabular}

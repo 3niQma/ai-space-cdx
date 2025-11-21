@@ -1,0 +1,15 @@
+\begin{tabular}{p{2.6cm}p{3.8cm}p{6cm}}
+\toprule
+\textbf{Metric / KPI} & \textbf{Definition (informal)} & \textbf{Notes for RL evaluation} \\
+\midrule
+Makespan $C_{\max}$ & Completion time of last job & Report gap to optimum/MILP where available; include decision latency if inference is non-negligible \\
+Total/mean tardiness & Sum/mean of delays beyond due dates & Distinguish lateness vs.\ tardiness; show distribution, not just mean \\
+Flow time / WIP & Time jobs spend in system; work-in-process & Sensitive to dispatch jitter; useful for dynamic shops and queues \\
+Energy / carbon & kWh or kg CO$_2$e consumed & Specify tariff, PUE, emission factors; report trade-offs vs.\ throughput \\
+SLA violation rate & Fraction of jobs exceeding deadlines & Standard in cloud/edge; pair with tail latency (p95/p99) \\
+Throughput & Jobs completed per unit time & For transport/AGV and cloud workloads; pair with utilization \\
+Utilization / busy ratio & Fraction of resource busy time & Helps interpret makespan improvements vs.\ idleness \\
+Feasibility / violation count & Illegal actions or repaired solutions & Mandatory with masks/shields; publish violation rate and repair policy \\
+Runtime / latency & Per-decision and end-to-end runtime & Compare to heuristic baselines; needed for real-time deployability \\
+\bottomrule
+\end{tabular}

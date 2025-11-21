@@ -1,0 +1,19 @@
+\begin{tabular}{p{3.8cm}p{4.5cm}p{5cm}}
+\hline
+\textbf{Scenario} & \textbf{What to vary} & \textbf{What to report} \\
+\hline
+Arrival/processing noise & Burst arrivals; stochastic processing times; rush orders & Makespan/tardiness shift; violation rate; recovery time; win-rate vs heuristics \\
+\hline
+Machine/agent downtime & Random failures; scheduled maintenance; blocked resources & Feasibility; reroute latency; KPI degradation and recovery; fallback frequency \\
+\hline
+Setup/sequence variability & Sequence-dependent setups; no-wait/blocking constraints & Feasibility under setups; impact on throughput; mask/shield ablation results \\
+\hline
+Energy/carbon price shifts & Flat vs TOU vs RTP tariffs; emission factors & KPI sensitivity (kWh, kg CO$_2$e, cost); Pareto fronts; overfit detection \\
+\hline
+Network/communication faults (cloud/edge/logistics) & Jitter; dropped messages; delayed acks & SLA violations; decision latency; safety overrides; throughput impact \\
+\hline
+Layout/topology changes (logistics/shop) & Altered aisles, yard layout, machine graph & Transfer performance; collision/headway violations; re-training cost \\
+\hline
+Scale-up/generalization & Larger/smaller instance sizes; new trace mixes & Win-rate vs baselines; gap-to-optimum (where possible); sample efficiency \\
+\hline
+\end{tabular}

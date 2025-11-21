@@ -1,0 +1,19 @@
+\begin{tabular}{p{2.9cm}p{3.3cm}p{3cm}p{4.5cm}p{2.5cm}}
+\hline
+\textbf{Challenge} & \textbf{Symptoms} & \textbf{Typical causes} & \textbf{Mitigations} & \textbf{Evidence status} \\
+\hline
+High variance & Single-seed results; no error bars; inconsistent wins & Unstable exploration; small training sets; hybrid GA/RL randomness & Multi-seed runs with CIs; curriculum; action masking; validation splits & Rare multi-seed reporting; some curricula, minimal ablations \\
+\hline
+Constraint violations & Infeasible schedules, hidden penalties & Penalty-only shaping; missing masks/shields & Masking/eligibility pruning; shields or Lagrangian tuning; feasibility tests in eval sets & Masking common in JSS/FJSS; shields seldom evaluated on hardware \\
+\hline
+Sim-to-real gap & Simulator-only claims; no disturbance tests & Narrow domain randomization; static tariffs; no hardware or logs & Domain randomization; stress tests (bursts, noise); held-out plants; pilot-on-logs before hardware & Real2Sim truck dispatch is a lone partial case \\
+\hline
+Weak interpretability/safety & No action justifications; no override hooks & Pure NN policies; no safety layer; missing UI & Saliency/attribution for actions; veto layers; heuristic fallback under uncertainty & Very limited; proposals without user tests \\
+\hline
+Reproducibility gaps & No code/data; missing seeds/hparams; ad-hoc splits & Proprietary data; time pressure; no checklists & Release code/data or synthetic env; fixed seeds; publish splits; log hyperparams and compute & Improving for DeepRM/TechRxiv; scarce elsewhere \\
+\hline
+Energy/carbon sensitivity & Gains vanish under tariff shifts; unreported emission factors & Single tariff; static factors; tuned weights & Sweep tariffs/emission factors; report sensitivity; use public tariffs when possible & Almost absent; only a few carbon-aware studies explore scenarios \\
+\hline
+Offline/safe RL baselines missing & No BCQ/CRR/CQL comparisons; safety not quantified & Simulator-first culture; lack of logged data & Add offline RL baselines on logs; safety metrics; shielded deployment plans & Missing except a few offline JSS papers \\
+\hline
+\end{tabular}

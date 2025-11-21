@@ -1,0 +1,13 @@
+\begin{tabular}{p{3.5cm}p{10cm}}
+\toprule
+\textbf{Dimension} & \textbf{Operationalization} \\
+\midrule
+Baseline strength & Includes PDRs and tuned metaheuristics; MILP/CP where feasible; cloud/edge includes bin-packing + DVFS controllers \\
+Statistical validity & $\geq$5 seeds or CIs/stdev reported; learning curves provided; per-instance scores for test sets \\
+Constraint handling & Feasibility explicitly reported (violation/repair counts); action masking or shields described and ablated \\
+Reproducibility & Code or simulator released OR fixed train/val/test splits published; tariff/disturbance catalogs provided; hyperparameters listed \\
+Generalization tests & Held-out instances, size extrapolation, domain shifts (tariffs, arrivals, topology); stress tests reported \\
+Runtime and footprint & Inference latency and hardware disclosed; compare latency to heuristics/control-cycle deadlines \\
+Energy/carbon clarity & Tariff/emission factors specified; absolute units (kWh, kg CO$_2$e) and trade-offs vs throughput reported \\
+\bottomrule
+\end{tabular}

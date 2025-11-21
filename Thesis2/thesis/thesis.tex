@@ -33,11 +33,15 @@
 \usepackage{subcaption}
 \usepackage{scrlayer-scrpage}
 \usepackage{epstopdf}
+\usepackage{booktabs}
 \usepackage[english]{babel}
+\usepackage[table]{xcolor}         % z.B. für schattierte Boxen
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
 \usepackage{listings}
 \usepackage{microtype}  % optischer Randausgleich etc.
-
-\usepackage{xcolor}         % z.B. für schattierte Boxen
 
 % Links im PDF
 \usepackage[colorlinks=false,
@@ -89,13 +93,6 @@
 \hypersetup{pageanchor=true}
 
 \include{chapters}
-
-
-
-\appendix
-\include{append}
-
-\cleardoublepage
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

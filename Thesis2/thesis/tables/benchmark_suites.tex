@@ -1,0 +1,14 @@
+\begin{tabular}{p{3cm}p{3.5cm}p{3.2cm}p{3.8cm}}
+\toprule
+\textbf{Suite / source} & \textbf{Scale / features} & \textbf{What it probes} & \textbf{RL usage notes} \\
+\midrule
+FT06/10/20, LA & Small--medium JSS & Dispatch quality, makespan gap to optimum & Masks guarantee feasibility; useful for ablations and gap-to-optimum reporting \\
+Taillard (tai20--100) & Medium--large JSS/FJSS & Cross-size generalization, scalability & Popular for train/val/test splits; supports curriculum from small to large \\
+BRdata / OR-Lib & FJSS with alternate machines & Routing/dispatch coupling & Good for testing routing masks and dual-attention encoders \\
+Dynamic JSS generators & Arrival bursts, stochastic times & Robustness to non-stationarity & Enables stress suites with downtime and rush orders \\
+AGV/warehouse layouts (bespoke) & Multi-AGV, collisions, charging & Safety and multi-agent coordination & Requires shields/masks; latency constraints matter \\
+Port/yard traces & Trucks, cranes, energy tariffs & Sim-to-real signal quality & Real traces for domain randomization; compare to rule-based dispatch \\
+Cloud traces (Google, Alibaba) & Heterogeneous jobs, deadlines & SLA, energy bins, resource fragmentation & Supports batch/offline RL; admission and bin packing baselines needed \\
+Edge/IoT toy suites & Small graphs, limited compute & Decision latency under constraints & Useful for profiling policy runtime vs.\ heuristics \\
+\bottomrule
+\end{tabular}

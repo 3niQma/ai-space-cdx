@@ -1,0 +1,11 @@
+\begin{tabular}{p{3.2cm}p{3.0cm}p{4.0cm}p{4.0cm}}
+Study/Domain & Train/test split & OOD size or perturbation & Robustness outcome \\\hline
+GNN+PPO JSS (Park 2021) & Taillard 15/15 train, unseen 20/20 & Larger job/machine counts & Maintains high win rate vs.\ PDRs; drop vs.\ GA on largest cases \\
+YOTO JSS (Zeng 2022) & Train once on small Taillard & Unseen larger instances & Single policy transfers with modest makespan loss \\
+Dual-attention FJSS (Wang 2023) & FT06/10 train, FT20 test & Larger jobs, unseen routes & Generalizes with small makespan loss; feasibility via masking \\
+HRL FJSS (Lei 2023) & Dynamic arrivals & Higher arrival rates & HRL sustains tardiness gains vs.\ PDR under heavier loads \\
+Cloud scheduling (DeepRM variants) & Synthetic traces split 70/30 & Burst arrivals, noise & Latency degrades modestly; still ahead of round-robin/MinMin \\
+Real2Sim port trucks (Jin 2023) & Train in randomized sim & Domain randomization & Policy retains gains across randomized yard conditions; no physical test \\
+Taxi dispatch MARL (Rajeh 2024) & Historical traces, cross-day & Peak/off-peak shifts & Revenue/wait improvements persist across days \\
+Rail timetabling MARL (Li 2022) & Disturbance scenarios & Different delay patterns & Reduced secondary delays vs.\ heuristics across disturbance sets \\
+\end{tabular}

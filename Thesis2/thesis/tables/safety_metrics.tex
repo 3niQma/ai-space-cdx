@@ -1,0 +1,19 @@
+\begin{tabular}{p{4.2cm}p{5.5cm}p{3.8cm}}
+\hline
+\textbf{Metric} & \textbf{Definition/measurement} & \textbf{Applies to} \\
+\hline
+Violation rate & Fraction of actions/schedules that violate hard constraints (precedence, headway, capacity) & All domains; report per episode and as average \\
+\hline
+Repaired schedule rate & Share of outputs requiring repair/post-processing & Manufacturing, logistics \\
+\hline
+Shield/override frequency & Fraction of steps where shield or operator vetoed the policy & Safety-critical shops, logistics, rail \\
+\hline
+Time-to-safe-state & Steps/time to return to feasible state after a violation or disturbance & Dynamic shops, logistics/rail \\
+\hline
+Collision/headway breaches & Number and duration of collision/spacing violations & AGV/yard, rail, air-mobility \\
+\hline
+SLA violation rate & Percentage of jobs/requests missing deadlines or SLAs & Cloud/edge, ride-hailing \\
+\hline
+Gap-to-optimum under safety & Gap vs MILP/CP or heuristics when safety/shields enabled & Small instances across domains \\
+\hline
+\end{tabular}

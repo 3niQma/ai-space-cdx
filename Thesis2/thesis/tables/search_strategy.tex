@@ -1,0 +1,10 @@
+\begin{tabular}{p{3cm}p{5.2cm}p{5.2cm}}
+\toprule
+\textbf{Source} & \textbf{Core query} & \textbf{Filters / notes} \\
+\midrule
+IEEE Xplore, ACM DL & (``reinforcement learning'' OR DQN OR PPO OR SAC) AND (scheduling OR ``job shop'' OR ``flow shop'' OR ``production scheduling'' OR ``dispatching'') & Years 2016--2025; English; conference/journal only; subject area: computing/engineering \\
+Scopus, Web of Science & (``deep reinforcement learning'' OR DRL) AND (``flexible job shop'' OR ``cloud scheduling'' OR ``edge scheduling'' OR ``production planning'') & Years 2016--2025; English; remove duplicates against IEEE/ACM; exclude notes/errata \\
+Google Scholar (snowball) & Key paper titles and authors; backward/forward snowballing & First 100 hits per seed paper; include TechRxiv/ArXiv only if quantitative baselines reported \\
+Hand searches & Reference lists of recent surveys \cite{wang2021_csms, panzer2022_ijpr, waubert2022_jim} & Capture domain-specific venues (OR, manufacturing, logistics, cloud) outside main indexes \\
+\bottomrule
+\end{tabular}

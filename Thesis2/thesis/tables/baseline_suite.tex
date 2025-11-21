@@ -1,0 +1,17 @@
+\begin{tabular}{p{3.6cm}p{3.8cm}p{5.3cm}}
+\hline
+\textbf{Problem class} & \textbf{Must-include baselines} & \textbf{Stretch baselines (when feasible)} \\
+\hline
+Static JSS/FJSS & PDRs (SPT/EDD/LPT); GA/SA/EDA; tabu/ILS & MILP/CP on small instances; exact bounds; graph-heuristic hybrids \\
+\hline
+Dynamic JSS/FJSS (arrivals) & PDRs with re-planning; dispatching+rollout; tuned GA/NSGA-II & HRL/DDQN published baselines; MILP/CP (toy cases) for gap-to-optimum \\
+\hline
+Transport/logistics (AGV, yards, rail, ride-hailing) & Rule-based dispatch; nearest/greedy; shortest-path; simple MARL & Optimization/timetable solvers (rail); domain heuristics from ops teams \\
+\hline
+Cloud/edge scheduling & Round-robin; MinMin/MaxMin; greedy bin packing; power-capping heuristic & Modern bin packing + DVFS; offline RL/BCQ on logs; exact on small DAGs \\
+\hline
+Energy/carbon-aware & Energy-aware heuristics; GA/NSGA-II; tariff-aware dispatch & MILP with tariffs (small); Lagrangian relaxation; Pareto frontier against metaheuristics \\
+\hline
+Offline/safe RL settings & Behavior cloning; BCQ/CRR/CQL on logs; shielded heuristics & Shielded RL with provable guarantees; Lyapunov critics (toy cases) \\
+\hline
+\end{tabular}

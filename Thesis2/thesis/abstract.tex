@@ -1,9 +1,8 @@
-\chapter*{Kurzfassung}
+\chapter*{Abstract}
 \thispagestyle{empty}
-text
+Reinforcement learning (RL) is reshaping how complex scheduling problems are tackled across manufacturing, logistics, cloud/edge computing, and energy-aware operations. This thesis delivers a PRISMA-aligned systematic review of RL-based schedulers from 2016--2025, emphasizing feasibility handling, empirical rigor, and deployment readiness. The protocol spans IEEE/ACM/Scopus/Web of Science searches and snowballing, yielding 60 studies coded for problem class, state/action/reward design, constraint handling, baselines, metrics, generalization tests, and code availability. The synthesis shows masked graph-based actors and hybrid RL+search methods consistently outperform classic dispatching rules and approach tuned metaheuristics on job shop and flexible job shop benchmarks; energy-aware hybrids reduce emissions with minimal throughput loss. However, evidence remains fragile: most studies rely on simulators, report single seeds, omit decision latency or gap-to-optimum, and rarely test tariff/disturbance robustness or safety shields. Cross-domain generalization and sim-to-real validation are sparse, and reporting of violation rates is inconsistent. To address these gaps, the thesis proposes a deployment playbook—offline replay on logs, shadow mode, then shielded limited actuation with latency budgets—and a benchmarking blueprint with tariff/disturbance catalogs, stronger baselines (including offline RL), and multi-seed reporting. Closing the reproducibility, stress-testing, and safety gaps is the critical path to moving RL schedulers from promising experiments to trustworthy operational tools adopted on shop floors, yards, and data centers.
 
 \bigskip
 
 \noindent
-Schlagworte: 
-
+Keywords: reinforcement learning, scheduling, job shop, flexible job shop, cloud/edge scheduling, logistics, action masking, safety shields, energy-aware scheduling, PRISMA, sim-to-real

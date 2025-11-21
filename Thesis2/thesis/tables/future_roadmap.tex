@@ -1,0 +1,13 @@
+\begin{tabular}{p{2.1cm}p{3.2cm}p{5.4cm}p{3.5cm}}
+\hline
+\textbf{Horizon} & \textbf{Goal} & \textbf{Key tasks} & \textbf{Dependencies/Deliverables} \\
+\hline
+Short-term (0--6 mo) & Make studies reproducible and fair & Release code/data or generators; multi-seed runs with CIs; mask/shield ablations; tariff/emission sweeps for energy-aware cases; report gap-to-optimum where MILP fits & Checklists (Table~\ref{tab:repro-checklist}); updated baselines; public splits \\
+\hline
+Mid-term (6--18 mo) & Strengthen robustness and offline safety & Build logged datasets; add BCQ/CRR/CQL baselines; evaluate shielded policies; disturbance/domain-randomized tests (arrivals, processing noise, tariffs) & Open log-based benchmarks; robustness reports with stress suites \\
+\hline
+Mid-term (6--18 mo) & Hybrid RL+OR that beats tuned metaheuristics & RL-guided operator portfolios; primal-dual warm starts; compare to GA/NSGA-II/EDA and MILP/CP on small instances; runtime vs.\ quality analysis & Reproducible hybrid pipelines; ablation reports; runtime/quality Pareto plots \\
+\hline
+Long-term (18+ mo) & Generalizable, safe, sim-to-real schedulers & Cross-plant/trace transfer; continual/meta-RL; sim-to-real pilots for yards/shops; interpretable dashboards with overrides & Multi-domain benchmark suite (manufacturing, logistics, cloud); pilot reports with safety KPIs \\
+\hline
+\end{tabular}

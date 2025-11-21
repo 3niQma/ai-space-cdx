@@ -1,0 +1,15 @@
+\begin{tabular}{p{2.6cm}p{3.3cm}p{3cm}p{2.6cm}p{2.4cm}}
+\hline
+\textbf{Domain} & \textbf{Hard constraints} & \textbf{Soft objectives/KPIs} & \textbf{Common baselines} & \textbf{Evidence gaps} \\
+\hline
+Manufacturing (JSS/FJSS) & Precedence graphs, machine eligibility, no-wait/sequence-dependent setups, routing, AGV coupling & Makespan, tardiness, energy/carbon cost, WIP & PDRs (SPT/EDD), GA/SA/EDA, MILP/CP (small), metaheuristics & Few gap-to-optimum reports; limited multi-seed robustness; scarce real shop data \\
+\hline
+Semiconductor fabs & Batching/lot size, recipe routes, tool dedication, re-entrant flows & Cycle time, throughput, waiting time & Fab rules, dispatch lists, simulation-optimized heuristics & Simulator-only validation; no public datasets; minimal ablations \\
+\hline
+Logistics/transport (AGV, yards, rail, ride-hailing) & Collision avoidance, headway and capacity limits, charging windows, pad/track occupancy & Turnaround time, delay, service rate, energy, revenue & Heuristic dispatch, nearest-vehicle, rule-based yard control, optimization for rail & Sim-to-real mostly untested; small sample of real traces; safety guarantees absent \\
+\hline
+Cloud/edge & Capacity and QoS feasibility in simulator, queue limits & Slowdown/latency, energy, SLA violations & Round-robin, MinMin/MaxMin, greedy bin packing & Little masking/shielding; limited cross-trace generalization and confidence intervals \\
+\hline
+Energy/carbon-aware (cross-domain) & Tariff windows, emission caps, machine/AGV availability & Energy use, carbon cost, makespan balance & Energy-aware PDRs, GA/NSGA-II, MILP (small) & Tariff sensitivity rarely tested; carbon accounting assumptions opaque; no hardware validation \\
+\hline
+\end{tabular}

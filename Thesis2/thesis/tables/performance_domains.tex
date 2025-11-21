@@ -1,0 +1,13 @@
+\begin{tabular}{p{2.5cm}p{2.8cm}p{3.0cm}p{3.0cm}p{4.0cm}}
+Domain & Metric & RL method & Strongest baseline & Outcome \\\hline
+JSS & Makespan & DDQN dispatch (Zhang 2020) & PDR (SPT/EDD), GA/SA & RL wins vs.\ PDR; close to GA/SA on FT10/20 \\
+FJSS & Makespan/tardiness & GNN+PPO (Park 2021) & PDR, GA/metaheuristics & RL improves avg.\ makespan; gap narrows vs.\ tuned GA \\
+FJSS dynamic & Makespan/tardiness & Dual-attention actor-critic (Wang 2023) & PDR, GA & RL best on medium instances; GA competitive on small \\
+FJSS dynamic (HRL) & Tardiness & Hierarchical DDQN (Lei 2023) & PDR (SPT/EDD) & HRL lowers tardiness under random arrivals vs.\ PDR \\
+Energy/carbon FJSS & Energy + makespan & Actor-critic \& co-evo/ memetic \cite{li2023_coevo_energy, zhang2024_memetic_energyagv, wang2022_cea_fjsp} & GA/EDA, MILP (small) & RL hybrids cut energy/emissions with small makespan loss \\
+Cloud/Edge & Slowdown/latency & DeepRM-style DQN/PPO & Round-robin, MinMin, bin packing & RL lowers mean slowdown; near MinMin/bin packing on synthetic traces \\
+Logistics/AGV & Throughput/delay/energy & MADDPG/actor-critic (Hu 2021; Gong 2024) & Heuristic dispatch & RL/DRL reduces turnaround and energy vs.\ yard rules \\
+Port trucks & Turnaround & Real2Sim PPO (Jin 2023) & Rule-based dispatch & Domain-randomized PPO cuts truck time in stochastic yards \\
+Taxi dispatch & Revenue/wait & MARL clustering (Rajeh 2024) & Heuristic matching & MARL raises revenue and service rate vs.\ platform heuristics \\
+Rail timetabling & Delay/energy & MARL (Li 2022) & Heuristic rescheduling & MARL lowers secondary delays under disturbances \\
+\end{tabular}
